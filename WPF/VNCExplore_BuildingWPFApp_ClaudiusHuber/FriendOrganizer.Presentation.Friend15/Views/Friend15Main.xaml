@@ -1,0 +1,46 @@
+﻿<UserControl 
+    x:Class="FriendOrganizer.Presentation.Friend15.Views.Friend15Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:infra="clr-namespace:VNCExplore_FriendOrganizer.Core;assembly=VNCExplore_FriendOrganizer.Core"
+    xmlns:prism="http://prismlibrary.com/"    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:views="clr-namespace:FriendOrganizer.Presentation.Friend15.Views"
+    xmlns:viewModels="clr-namespace:FriendOrganizer.Presentation.Friend15.ViewModels"
+    mc:Ignorable="d" 
+    Background="{StaticResource Friend15MainBackground}"
+    d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--These are implicit DataTemplates-->
+        <DataTemplate DataType="{x:Type viewModels:Friend15DetailViewModel}">
+            <views:Friend15Detail />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:Meeting15DetailViewModel}">
+            <views:Meeting15Detail />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2" FontSize="16">
+            <MenuItem Header="Create">
+                <MenuItem Header="Add Friend" Command="{Binding CreateNewDetailCommand}"
+                          CommandParameter="{x:Type viewModels:Friend15DetailViewModel}"/>
+                <MenuItem Header="Add Meeting" Command="{Binding CreateNewDetailCommand}"
+                          CommandParameter="{x:Type viewModels:Meeting15DetailViewModel}"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl Grid.Row="1" Grid.Column="0" 
+                        prism:RegionManager.RegionName="{x:Static infra:RegionNames.Region15}" 
+                        DataContext="{Binding Navigation15ViewModel}" />
+         <ContentControl Grid.Row="1" Grid.Column="1" 
+                        Content="{Binding DetailViewModel}" />
+    </Grid>
+</UserControl>

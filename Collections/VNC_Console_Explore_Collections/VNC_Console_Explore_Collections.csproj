@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{429E7889-C155-43AD-A7B0-15B457D49573}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VNC_Console_Explore_Collections</RootNamespace>
+    <AssemblyName>VNC_Console_Explore_Collections</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ParallelBenchmarkM6.cs" />
+    <Compile Include="Classes\SalesPersonM3.cs" />
+    <Compile Include="Classes\SalesPersonM5.cs" />
+    <Compile Include="Classes\SingleThreadBenchmarkM6.cs" />
+    <Compile Include="Classes\StaffLogsForBonusesM3.cs" />
+    <Compile Include="Classes\StaffLogsForBonusesM5.cs" />
+    <Compile Include="Classes\StockControllerM3.cs" />
+    <Compile Include="Classes\StockControllerM5.cs" />
+    <Compile Include="Classes\ToDoQueueM5.cs" />
+    <Compile Include="Classes\ToDoQueueM3.cs" />
+    <Compile Include="Classes\TradeM5.cs" />
+    <Compile Include="Classes\TradeM3.cs" />
+    <Compile Include="Classes\WorkerM6.cs" />
+    <Compile Include="MenuPages\ConcurrentMenu.cs" />
+    <Compile Include="MenuPages\StacksMenu.cs" />
+    <Compile Include="MenuPages\HashTablesMenu.cs" />
+    <Compile Include="Pages\Arrays\Array_DaysOfWeek.cs" />
+    <Compile Include="Pages\Arrays\Array2.cs" />
+    <Compile Include="Pages\Arrays\Array1.cs" />
+    <Compile Include="MenuPages\DictionariesMenu.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M2_End.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M2_Start.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M3_BuyAndSell.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M4_ConcurrentBag.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M4_Interface.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M4_ConcurrentStack.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M4_Queue.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M4_ConcurrentQueue.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M1_RunProgramConcurrent.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M1_RunProgramMultiThreaded.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M1_RunProgramOneThread.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M1_RunProgramWithLock.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M5_SalesBonusesAfter.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M5_SalesBonuses.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M6_EnumerateConcurrentDictionary.cs" />
+    <Compile Include="Pages\Concurrent\Concurrent_M6_EnumerateDictionary.cs" />
+    <Compile Include="Pages\Concurrent\M6_SingleThreadBenchmarkConcurrentDictionary.cs" />
+    <Compile Include="Pages\Concurrent\M6_ParallelBenchmarkConcurrentDictionary.cs" />
+    <Compile Include="Pages\Concurrent\M6_SingleThreadBenchmark.cs" />
+    <Compile Include="Pages\Dictionaries\Dictionary2.cs" />
+    <Compile Include="Pages\Dictionaries\Dictionary1.cs" />
+    <Compile Include="MenuPages\InputPage.cs" />
+    <Compile Include="MenuPages\MainMenu.cs" />
+    <Compile Include="MenuPages\ArraysMenu.cs" />
+    <Compile Include="MenuPages\ListsMenu.cs" />
+    <Compile Include="MenuLoader.cs" />
+    <Compile Include="MenuPages\SetsMenu.cs" />
+    <Compile Include="Pages\HashTables\HashTable2.cs" />
+    <Compile Include="Pages\HashTables\HashTable1.cs" />
+    <Compile Include="Pages\Lists\List2.cs" />
+    <Compile Include="Pages\Lists\List1.cs" />
+    <Compile Include="Pages\Queues\Queue2.cs" />
+    <Compile Include="Pages\Queues\Queue1.cs" />
+    <Compile Include="Pages\Sets\Set2.cs" />
+    <Compile Include="Pages\Sets\Set1.cs" />
+    <Compile Include="Pages\Stacks\Stack2.cs" />
+    <Compile Include="Pages\Stacks\Stack1.cs" />
+    <Compile Include="ProgramMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EasyConsole">
+      <Version>1.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

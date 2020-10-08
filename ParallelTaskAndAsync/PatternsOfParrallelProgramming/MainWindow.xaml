@@ -1,0 +1,14 @@
+﻿<Window x:Class="PatternsOfParallelProgramming.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="446" Width="540">
+    <Grid>
+        <Button Content="Go" Height="23" HorizontalAlignment="Left" Margin="12,64,0,0" Name="btnGo" VerticalAlignment="Top" Width="97" Click="btnGo_Click" />
+        <Button Content="Go Parallel" Height="23" HorizontalAlignment="Left" Margin="12,93,0,0" Name="btnGoParallel" VerticalAlignment="Top" Width="97" Click="btnGoParallel_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="80,12,0,0" Name="txtInclusiveLowerBound" VerticalAlignment="Top" Width="60" Text="0" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="198,12,0,0" Name="txtExclusiveUpperBound" VerticalAlignment="Top" Width="60" Text="10" />
+        <Label Content="From" Height="28" HorizontalAlignment="Left" Margin="12,10,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="To" Height="28" HorizontalAlignment="Left" Margin="160,10,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="348" HorizontalAlignment="Left" Margin="275,47,0,0" Name="txtOutput" VerticalAlignment="Top" Width="231" />
+    </Grid>
+</Window>

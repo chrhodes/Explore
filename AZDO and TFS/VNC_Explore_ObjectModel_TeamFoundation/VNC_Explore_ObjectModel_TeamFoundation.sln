@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC_Explore_ObjectModel_TeamFoundation", "VNC_Explore_ObjectModel_TeamFoundation.csproj", "{071705E2-089B-4C32-896A-1426155267AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{071705E2-089B-4C32-896A-1426155267AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071705E2-089B-4C32-896A-1426155267AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071705E2-089B-4C32-896A-1426155267AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071705E2-089B-4C32-896A-1426155267AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11ECB2AE-D344-4140-931F-E6865FCFF1A9}
+	EndGlobalSection
+EndGlobal

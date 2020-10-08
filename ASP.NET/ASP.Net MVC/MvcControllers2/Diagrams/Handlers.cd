@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Mvc.MvcRouteHandler">
+    <Position X="1.75" Y="2.5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.MvcHandler">
+    <Position X="2" Y="5.5" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.MvcHttpHandler">
+    <Position X="5.25" Y="7" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.UrlRoutingHandler">
+    <Position X="5.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.Web.Routing.IRouteHandler">
+    <Position X="4.75" Y="2" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.IHttpAsyncHandler">
+    <Position X="7" Y="2" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.IHttpHandler">
+    <Position X="7" Y="4" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.SessionState.IRequiresSessionState">
+    <Position X="9.5" Y="2" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

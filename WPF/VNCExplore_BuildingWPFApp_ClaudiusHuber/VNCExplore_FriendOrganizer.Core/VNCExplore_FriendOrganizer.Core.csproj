@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{190C9FB3-0FC6-4415-A62C-5557B858CF74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VNCExplore_FriendOrganizer.Core</RootNamespace>
+    <AssemblyName>VNCExplore_FriendOrganizer.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationCommands.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendDataService08.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendLookupDataService06.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendDataService06.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository19.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository16.cs" />
+    <Compile Include="DomainServices\Interfaces\IMeetingLookupDataService15.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendLookupDataService10.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository15.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository14.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository13.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository12.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendRepository10.cs" />
+    <Compile Include="DomainServices\Interfaces\IGenericRepository`1.cs" />
+    <Compile Include="DomainServices\Interfaces\IMeetingRepository19.cs" />
+    <Compile Include="DomainServices\Interfaces\IMeetingRepository16.cs" />
+    <Compile Include="DomainServices\Interfaces\IMeetingRepository15.cs" />
+    <Compile Include="DomainServices\Interfaces\IProgrammingLanguageLookupDataService12.cs" />
+    <Compile Include="DomainServices\Interfaces\IProgrammingLanguageRepository18.cs" />
+    <Compile Include="Events\Module11\AfterFriendSavedEventArgs11.cs" />
+    <Compile Include="Events\Module16\AfterDetailDeletedEvent16.cs" />
+    <Compile Include="Events\Module15\AfterDetailDeletedEvent15.cs" />
+    <Compile Include="Events\Module14\AfterDetailDeletedEvent14.cs" />
+    <Compile Include="Events\Module14\AfterDetailSavedEvent14.cs" />
+    <Compile Include="Events\Module16\AfterDetailSavedEvent16.cs" />
+    <Compile Include="Events\Module13\AfterFriendDeletedEvent13.cs" />
+    <Compile Include="Events\Module12\AfterFriendDeletedEvent12.cs" />
+    <Compile Include="Events\Module11\AfterFriendDeletedEvent11.cs" />
+    <Compile Include="Events\Module15\AfterDetailSavedEvent15.cs" />
+    <Compile Include="Events\Module13\AfterFriendSavedEvent13.cs" />
+    <Compile Include="Events\Module13\AfterFriendSavedEventArgs13.cs" />
+    <Compile Include="Events\Module12\AfterFriendSavedEventArgs12.cs" />
+    <Compile Include="Events\Module12\AfterFriendSavedEvent12.cs" />
+    <Compile Include="Events\Module11\AfterFriendSavedEvent11.cs" />
+    <Compile Include="Events\Module08\AfterFriendSavedEvent08.cs" />
+    <Compile Include="Events\Module08\AfterFriendSavedEventArgs08.cs" />
+    <Compile Include="Events\Module16\OpenDetailViewEvent16.cs" />
+    <Compile Include="Events\Module15\OpenDetailViewEvent15.cs" />
+    <Compile Include="Events\Module08\OpenFriendDetailViewEvent08.cs" />
+    <Compile Include="Events\Module09\OpenFriendDetailViewEvent09.cs" />
+    <Compile Include="Events\Module14\OpenDetailViewEvent14.cs" />
+    <Compile Include="Events\Module13\OpenFriendDetailViewEvent13.cs" />
+    <Compile Include="Events\Module12\OpenFriendDetailViewEvent12.cs" />
+    <Compile Include="Events\Module11\OpenFriendDetailViewEvent11.cs" />
+    <Compile Include="Events\Module10\OpenFriendDetailViewEvent10B.cs" />
+    <Compile Include="Events\Module10\OpenFriendDetailViewEvent10A.cs" />
+    <Compile Include="Events\Module10\OpenFriendDetailViewEvent10.cs" />
+    <Compile Include="Events\Module07\OpenFriendDetailViewEvent07.cs" />
+    <Compile Include="Events\Module17\AfterDetailClosedEvent17.cs" />
+    <Compile Include="Events\Module17\AfterDetailDeletedEvent17.cs" />
+    <Compile Include="Events\Module17\AfterDetailSavedEvent17.cs" />
+    <Compile Include="Events\Module17\OpenDetailViewEvent17.cs" />
+    <Compile Include="Events\Module18\AfterCollectionSavedEvent18.cs" />
+    <Compile Include="Events\Module18\AfterDetailClosedEvent18.cs" />
+    <Compile Include="Events\Module18\AfterDetailDeletedEvent18.cs" />
+    <Compile Include="Events\Module18\AfterDetailSavedEvent18.cs" />
+    <Compile Include="Events\Module18\OpenDetailViewEvent18.cs" />
+    <Compile Include="Events\Module19\AfterCollectionSavedEvent19.cs" />
+    <Compile Include="Events\Module19\AfterDetailClosedEvent19.cs" />
+    <Compile Include="Events\Module19\AfterDetailDeletedEvent19.cs" />
+    <Compile Include="Events\Module19\AfterDetailSavedEvent19.cs" />
+    <Compile Include="Events\Module19\OpenDetailViewEvent19.cs" />
+    <Compile Include="GlobalCommands.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendDataService05.cs" />
+    <Compile Include="DomainServices\Interfaces\IFriendDataService04.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionNames.cs" />
+    <Compile Include="Resources\Xaml\MenuButton_Styles.cs" />
+    <Compile Include="Services\Interfaces\IMessageDialogService.cs" />
+    <Compile Include="Services\MessageDialogService.cs" />
+    <Compile Include="Services\ServiceResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity">
+      <Version>7.2.0.1422</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\VNC.Core\VNC.Core.csproj">
+      <Project>{C4E954D3-2A7A-48D2-B212-8B9A96BFEB4F}</Project>
+      <Name>VNC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\04-BasicUI\FriendOrganizer.Model\FriendOrganizer.Model04.csproj">
+      <Project>{3943529C-DD85-4EC1-908E-93409B052684}</Project>
+      <Name>FriendOrganizer.Model04</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Domain\FriendOrganizer.Domain.csproj">
+      <Project>{7B947978-3A26-4B09-8D83-497774BCDF6E}</Project>
+      <Name>FriendOrganizer.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Xaml\AutoHideGroup_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Xaml\Button_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Xaml\ColumnHeader_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Xaml\Display_StylesAndTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Xaml\GridControl_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Xaml\Layout_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Xaml\MenuButton_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Icons\application.ico" />
+    <Content Include="Resources\Images\VNCDeveloperMotivation.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

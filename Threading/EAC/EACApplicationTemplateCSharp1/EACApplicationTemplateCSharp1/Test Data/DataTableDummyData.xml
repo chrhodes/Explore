@@ -1,0 +1,17 @@
+﻿<DataTable>
+  <Row>
+    <Column1>Red1</Column1>
+    <Column2>Green1</Column2>
+    <Column3>Blue1</Column3>
+  </Row>
+  <Row>
+    <Column1>Red2</Column1>
+    <Column2>Green2</Column2>
+    <Column3>Blue2</Column3>
+  </Row>
+  <Row>
+    <Column1>Red3</Column1>
+    <Column2>Green3</Column2>
+    <Column3>Blue3</Column3>
+  </Row>
+</DataTable>

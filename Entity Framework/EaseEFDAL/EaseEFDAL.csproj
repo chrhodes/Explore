@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E378F10-A134-4494-9895-DC28E7E503AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EaseEFDAL</RootNamespace>
+    <AssemblyName>EaseEFDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EF\MCREntities.cs" />
+    <Compile Include="Models\PCNAREATEMPLATE.cs" />
+    <Compile Include="Models\PCNAREATEMPLATE_Partial.cs" />
+    <Compile Include="Models\PCNAUTHGROUP.cs" />
+    <Compile Include="Models\PCNAUTHGROUP_Partial.cs" />
+    <Compile Include="Models\PCNCHANGETEXT.cs" />
+    <Compile Include="Models\PCNCHANGETEXT_Partial.cs" />
+    <Compile Include="Models\PCNHEADER.cs" />
+    <Compile Include="Models\PCNHEADER_Partial.cs" />
+    <Compile Include="Models\PCNMM.cs" />
+    <Compile Include="Models\PCNMM_Partial.cs" />
+    <Compile Include="Models\PCNNOTE.cs" />
+    <Compile Include="Models\PCNNOTE_Partial.cs" />
+    <Compile Include="Models\PCNNotifyQuestion.cs" />
+    <Compile Include="Models\PCNNotifyQuestion_Partial.cs" />
+    <Compile Include="Models\PCNPART.cs" />
+    <Compile Include="Models\PCNPART_Partial.cs" />
+    <Compile Include="Models\PCNRFCCAT.cs" />
+    <Compile Include="Models\PCNRFCCATEGORY.cs" />
+    <Compile Include="Models\PCNRFCCAT_Partial.cs" />
+    <Compile Include="Models\PCNRFCCOMMENT.cs" />
+    <Compile Include="Models\PCNRFCCOMMENT_Partial.cs" />
+    <Compile Include="Models\PCNRFCGROUP.cs" />
+    <Compile Include="Models\PCNRFCGROUP_Partial.cs" />
+    <Compile Include="Models\PCNSD.cs" />
+    <Compile Include="Models\PCNSDAuth.cs" />
+    <Compile Include="Models\PCNSDAUTHCNT.cs" />
+    <Compile Include="Models\PCNSDAUTHCNT_Partial.cs" />
+    <Compile Include="Models\PCNSDAuth_Partial.cs" />
+    <Compile Include="Models\PCNSD_Partial.cs" />
+    <Compile Include="Models\PCNTASK.cs" />
+    <Compile Include="Models\PCNTASKDueDateChanx.cs" />
+    <Compile Include="Models\PCNTASKDueDateChanx_Partial.cs" />
+    <Compile Include="Models\PCNTASKEscalate.cs" />
+    <Compile Include="Models\PCNTASKEscalate_Partial.cs" />
+    <Compile Include="Models\PCNTASKLIST.cs" />
+    <Compile Include="Models\PCNTASKLIST_Partial.cs" />
+    <Compile Include="Models\PCNTASK_Partial.cs" />
+    <Compile Include="Models\PCNWITEXT.cs" />
+    <Compile Include="Models\PCNWITEXT_Partial.cs" />
+    <Compile Include="Models\PCNWITHDRAW.cs" />
+    <Compile Include="Models\OPHDR.cs" />
+    <Compile Include="Models\OPHDR_Partial.cs" />
+    <Compile Include="Models\PARTXFEF_Partial.cs" />
+    <Compile Include="Models\PARTXREF.cs" />
+    <Compile Include="Models\PCNWITHDRAW_Partial.cs" />
+    <Compile Include="Models\ROUTEHDR.cs" />
+    <Compile Include="EF\RoutingEntities.cs" />
+    <Compile Include="Models\ROUTEHDR_Partial.cs" />
+    <Compile Include="Models\SUBHDR.cs" />
+    <Compile Include="Models\SUBHDR_Partial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

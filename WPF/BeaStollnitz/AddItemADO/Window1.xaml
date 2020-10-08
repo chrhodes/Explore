@@ -1,0 +1,13 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="AddItemADO.Window1"
+	x:Name="Window"
+	Title="Window1"
+	Width="640" Height="480">
+
+  <StackPanel>
+    <ListBox ItemsSource="{Binding}" DisplayMemberPath="Name" />
+    <Button Click="AddItem">Add item</Button>
+  </StackPanel>
+</Window>

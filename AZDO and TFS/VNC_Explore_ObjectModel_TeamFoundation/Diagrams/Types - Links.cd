@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.WorkItemLinkTypeEnd">
+    <Position X="8.25" Y="6.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.WorkItemLinkType">
+    <Position X="11.25" Y="5.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Microsoft.TeamFoundation.WorkItemTracking.Client.WorkItemLinkType.Topology">
+        <TypeIdentifier />
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.WorkItemLink">
+    <Position X="9.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.RelatedLink">
+    <Position X="6.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.ExternalLink">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.Link">
+    <Position X="4.75" Y="5.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.Hyperlink">
+    <Position X="3.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.RegisteredLinkType">
+    <Position X="1.75" Y="6" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.LinkCollection">
+    <Position X="5.25" Y="8.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.WorkItemTracking.Client.WorkItemLinkCollection">
+    <Position X="2.5" Y="9.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Microsoft.TeamFoundation.WorkItemTracking.Client.WorkItemLinkInfo">
+    <Position X="8" Y="10.25" Width="2.25" />
+    <TypeIdentifier />
+  </Struct>
+  <Enum Name="Microsoft.TeamFoundation.WorkItemTracking.Client.LinkAction">
+    <Position X="1.75" Y="14" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="Microsoft.TeamFoundation.WorkItemTracking.Client.BaseLinkType">
+    <Position X="0.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

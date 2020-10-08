@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDispatcher", "WpfDispatcher\WpfDispatcher.csproj", "{0FDB4C06-03E5-43D6-9199-59BEDE0E7609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDispatcher3", "WpfDispatcher2\WpfDispatcher3.csproj", "{FEF42F70-7643-45FA-88A5-727ECAD78031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FDB4C06-03E5-43D6-9199-59BEDE0E7609}.Debug|x86.ActiveCfg = Debug|x86
+		{0FDB4C06-03E5-43D6-9199-59BEDE0E7609}.Debug|x86.Build.0 = Debug|x86
+		{0FDB4C06-03E5-43D6-9199-59BEDE0E7609}.Release|x86.ActiveCfg = Release|x86
+		{0FDB4C06-03E5-43D6-9199-59BEDE0E7609}.Release|x86.Build.0 = Release|x86
+		{FEF42F70-7643-45FA-88A5-727ECAD78031}.Debug|x86.ActiveCfg = Debug|x86
+		{FEF42F70-7643-45FA-88A5-727ECAD78031}.Debug|x86.Build.0 = Debug|x86
+		{FEF42F70-7643-45FA-88A5-727ECAD78031}.Release|x86.ActiveCfg = Release|x86
+		{FEF42F70-7643-45FA-88A5-727ECAD78031}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

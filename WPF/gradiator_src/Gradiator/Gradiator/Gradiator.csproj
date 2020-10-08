@@ -1,0 +1,124 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8447118E-66F6-431F-B01A-3673892638BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gradiator</RootNamespace>
+    <AssemblyName>Gradiator</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomColorSelectorLib\CustomColorSelectorLib.csproj">
+      <Project>{90184A14-AE38-44AB-AEF7-0F27789D3474}</Project>
+      <Name>CustomColorSelectorLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomSliderControlLib\CustomSliderControlLib.csproj">
+      <Project>{948EA82F-7E93-4025-9961-0FCE1C0A245F}</Project>
+      <Name>CustomSliderControlLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShapesClassLib\ShapesClassLib.csproj">
+      <Project>{E16DB6EA-789C-4937-9447-B2B8107FED6A}</Project>
+      <Name>ShapesClassLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SketcherControlLib\SketcherControlLib.csproj">
+      <Project>{091C66F7-346E-490A-B20A-3ED870EDF099}</Project>
+      <Name>SketcherControlLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Embedd Object Compile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up Arrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down Arrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpArrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DownArrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DownArrrow1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpArrow1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document Folder.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

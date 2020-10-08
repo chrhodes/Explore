@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Delegate Name="System.Data.DataColumnChangeEventHandler">
+    <Position X="0.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.DataRowChangeEventHandler">
+    <Position X="3.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.DataTableClearEventHandler">
+    <Position X="5.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.DataTableNewRowEventHandler">
+    <Position X="8.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.FillErrorEventHandler">
+    <Position X="0.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.MergeFailedEventHandler">
+    <Position X="2.75" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.StateChangeEventHandler">
+    <Position X="5" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.StatementCompletedEventHandler">
+    <Position X="7.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.Odbc.OdbcInfoMessageEventHandler">
+    <Position X="0.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.Odbc.OdbcRowUpdatedEventHandler">
+    <Position X="3.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.Odbc.OdbcRowUpdatingEventHandler">
+    <Position X="6.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.OleDb.OleDbInfoMessageEventHandler">
+    <Position X="0.5" Y="6.25" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.OleDb.OleDbRowUpdatedEventHandler">
+    <Position X="3.5" Y="6.25" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.OleDb.OleDbRowUpdatingEventHandler">
+    <Position X="6.25" Y="6.25" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.SqlClient.OnChangeEventHandler">
+    <Position X="0.5" Y="9.5" Width="2" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.SqlClient.SqlInfoMessageEventHandler" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.SqlClient.SqlRowsCopiedEventHandler">
+    <Position X="2.75" Y="9.5" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.SqlClient.SqlRowUpdatedEventHandler">
+    <Position X="3.5" Y="7.75" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Data.SqlClient.SqlRowUpdatingEventHandler">
+    <Position X="6.25" Y="7.75" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

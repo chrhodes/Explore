@@ -1,0 +1,79 @@
+﻿<Window x:Class="DataBindingLookupTable.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" xmlns:my="clr-namespace:DataBindingLookupTable" Loaded="Window_Loaded">
+    <Window.Resources>
+        <my:DataSet1 x:Key="dataSet1" />
+        <CollectionViewSource x:Key="customersViewSource" 
+            Source="{Binding Path=Customers, Source={StaticResource dataSet1}}" />
+        <CollectionViewSource x:Key="customersOrdersViewSource" 
+            Source="{Binding Path=FK_Orders_Customers, Source={StaticResource customersViewSource}}" />
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource customersViewSource}">
+        <Grid DataContext="{StaticResource customersOrdersViewSource}" 
+              HorizontalAlignment="Left" 
+              Margin="84,71,0,0" 
+              Name="grid1" 
+              VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="Customer ID:" Grid.Column="0" Grid.Row="0" 
+                   HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0" Height="23" 
+                     HorizontalAlignment="Left" Margin="3" 
+                     Name="customerIDTextBox" 
+                     Text="{Binding Path=CustomerID, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                     VerticalAlignment="Center" Width="120" />
+        </Grid>
+        
+        <Grid DataContext="{StaticResource customersOrdersViewSource}" 
+              HorizontalAlignment="Left" 
+              Margin="122,228,0,0" 
+              Name="grid2" 
+              VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="Customer ID:" 
+                   Grid.Column="0" Grid.Row="0" 
+                   HorizontalAlignment="Left" Margin="3" 
+                   VerticalAlignment="Center" />
+            <ComboBox DisplayMemberPath="CompanyName" 
+                      Grid.Column="1" Grid.Row="0" Height="23" 
+                      HorizontalAlignment="Left" 
+                      ItemsSource="{Binding Source={StaticResource customersViewSource}}" 
+                      Margin="3" 
+                      Name="customerIDComboBox" 
+                      VerticalAlignment="Center" 
+                      Width="120" 
+                      SelectedValue="{Binding Path=CustomerID}" 
+                      SelectedValuePath="CustomerID">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</Window>
+    
+<!--<TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" Name="customerIDTextBox" Text="{Binding Path=CustomerID, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" VerticalAlignment="Center" Width="120" />-->
+
+<!--<ComboBox DisplayMemberPath="CustomerID" Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="3" Name="customerIDComboBox" VerticalAlignment="Center" Width="120">
+    <ComboBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <VirtualizingStackPanel />
+        </ItemsPanelTemplate>
+    </ComboBox.ItemsPanel>
+</ComboBox>-->

@@ -1,0 +1,189 @@
+﻿@model IEnumerable<EaseEFDAL.Models.SUBHDR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECTYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHSEQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHANGEFLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODEL1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODEL2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESTINATION1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESTINATION2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPTION1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPTION2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXCLUDEFROMPRINT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SETUPTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CYCLETIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GANTTSTARTFROM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LBSTICKY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MISCFLAG1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MISCFLAG2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MISCFLAG3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MISCFLAG4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LaborType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumMen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESC2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLATTENID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECTYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHSEQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHANGEFLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODEL1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODEL2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESTINATION1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESTINATION2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPTION1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPTION2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXCLUDEFROMPRINT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SETUPTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CYCLETIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GANTTSTARTFROM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LBSTICKY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MISCFLAG1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MISCFLAG2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MISCFLAG3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MISCFLAG4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LaborType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumMen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESC2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLATTENID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SHID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SHID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SHID })
+        </td>
+    </tr>
+}
+
+</table>

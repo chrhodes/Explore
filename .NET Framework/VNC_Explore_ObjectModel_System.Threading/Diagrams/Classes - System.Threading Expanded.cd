@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Threading.AutoResetEvent">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.CompressedStack">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.EventWaitHandle">
+    <Position X="1.25" Y="5.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ExecutionContext">
+    <Position X="0.75" Y="13.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.HostExecutionContext">
+    <Position X="5.75" Y="13.5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.HostExecutionContextManager">
+    <Position X="5.75" Y="17" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Interlocked">
+    <Position X="11.75" Y="3.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ManualResetEvent">
+    <Position X="2.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Monitor">
+    <Position X="11.75" Y="6" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Mutex">
+    <Position X="4" Y="5.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Overlapped">
+    <Position X="3.5" Y="13.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ReaderWriterLock">
+    <Position X="0.75" Y="16.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.RegisteredWaitHandle">
+    <Position X="3.5" Y="17.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Semaphore">
+    <Position X="6.5" Y="5.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.SemaphoreFullException">
+    <Position X="0.5" Y="21.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.SynchronizationContext">
+    <Position X="3.5" Y="19.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Thread">
+    <Position X="9" Y="3.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.ThreadExceptionEventArgs">
+    <Position X="3" Y="23.25" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ThreadPool">
+    <Position X="11.75" Y="8.5" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Timeout">
+    <Position X="11.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Timer">
+    <Position X="0.75" Y="23.25" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.WaitHandle">
+    <Position X="4" Y="9" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

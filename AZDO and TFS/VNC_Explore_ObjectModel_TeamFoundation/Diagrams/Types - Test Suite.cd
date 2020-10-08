@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IStaticTestSuite2">
+    <Position X="15.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IRequirementTestSuite2">
+    <Position X="11.5" Y="4.25" Width="2" />
+    <InheritanceLine Type="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuiteBase" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="11" />
+        <Point X="8.25" Y="10.028" />
+        <Point X="9.75" Y="10.028" />
+        <Point X="9.75" Y="7.002" />
+        <Point X="12.5" Y="7.002" />
+        <Point X="12.5" Y="6.412" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Microsoft.TeamFoundation.TestManagement.Client.ITestSuiteBase" ManuallyRouted="true">
+      <Path>
+        <Point X="11.25" Y="14.5" />
+        <Point X="11.25" Y="7.03" />
+        <Point X="12.5" Y="7.03" />
+        <Point X="12.5" Y="6.412" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuiteBase2" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="7.75" />
+        <Point X="8.5" Y="6.995" />
+        <Point X="12.5" Y="6.995" />
+        <Point X="12.5" Y="6.412" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Microsoft.TeamFoundation.TestManagement.Client.ITestSuiteBase2" ManuallyRouted="true">
+      <Path>
+        <Point X="11.875" Y="11" />
+        <Point X="11.875" Y="10.028" />
+        <Point X="11.243" Y="10.028" />
+        <Point X="11.243" Y="7.051" />
+        <Point X="12.5" Y="7.051" />
+        <Point X="12.5" Y="6.412" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestSuiteEntry">
+    <Position X="0.5" Y="2.75" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IRequirementTestSuite">
+    <Position X="12.25" Y="7.5" Width="2" />
+    <InheritanceLine Type="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuiteBase" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="11" />
+        <Point X="8.25" Y="10.049" />
+        <Point X="11.167" Y="10.049" Type="JumpStart" />
+        <Point X="11.333" Y="10.049" Type="JumpEnd" />
+        <Point X="11.792" Y="10.049" Type="JumpStart" />
+        <Point X="11.958" Y="10.049" Type="JumpEnd" />
+        <Point X="12.917" Y="10.049" Type="JumpStart" />
+        <Point X="13.083" Y="10.049" Type="JumpEnd" />
+        <Point X="13.25" Y="10.049" />
+        <Point X="13.25" Y="9.509" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestSuiteBase2">
+    <Position X="11" Y="11" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IStaticTestSuite">
+    <Position X="14.5" Y="11" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuite2">
+    <Position X="7.25" Y="1.25" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuiteBase">
+    <Position X="7.25" Y="11" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuiteBase2">
+    <Position X="7.5" Y="7.75" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IDynamicTestSuite">
+    <Position X="8.5" Y="4.5" Width="2" />
+    <InheritanceLine Type="Microsoft.TeamFoundation.TestManagement.Client.ITestSuiteBase" ManuallyRouted="true">
+      <Path>
+        <Point X="11.25" Y="14.5" />
+        <Point X="11.25" Y="7.009" />
+        <Point X="9.5" Y="7.009" />
+        <Point X="9.5" Y="6.509" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestSuiteBase">
+    <Position X="9" Y="14.5" Width="4.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Microsoft.TeamFoundation.TestManagement.Client.TestSuiteType">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

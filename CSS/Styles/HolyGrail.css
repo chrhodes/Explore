@@ -1,0 +1,43 @@
+﻿/* HolyGrail.css */
+
+body {
+    min-width: 550px;   /* 2 * LeftCol width + Right Column width */
+}
+
+#container {
+    background-color: #FFFFFF;
+    padding-left: 200px;    /* Left Column width */
+    padding-right: 150px;    /* Right Column width */
+}
+
+#container .column {
+    float:left;
+    position: relative;
+}
+
+#header {
+    background-color: lightsteelblue;
+}
+
+#center {
+    background-color: #DB7093;
+    width: 100%;
+}
+
+#left {
+    background-color: #98FB98;
+    width: 200px;   /* Left Column width */
+    margin-left: -100%;
+    right: 200PX;
+}
+
+#right { 
+    background-color: #FFFF00;
+    width: 150px;   /* Right Column width */
+    margin-right: -150PX;
+}
+
+#footer {
+    background-color:#9932CC;
+    clear: both;
+}

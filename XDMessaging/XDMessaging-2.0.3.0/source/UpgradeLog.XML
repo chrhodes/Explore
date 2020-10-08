@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="XDMessaging">
+</Property><Property Name="Solution File" Value="C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\XDMessaging.sln">
+</Property><Property Name="Date" Value="Tuesday, December 27, 2011">
+</Property><Property Name="Time" Value="18:56 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="XDMessaging.sln" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\XDMessaging.sln">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessaging.csproj" Description="Project file successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\XDMessaging.csproj">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\IOStream\XDIOStreamListener.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\IOStream\XDIOStreamListener.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MailSlot\MailSlotThreadInfo.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MailSlot\MailSlotThreadInfo.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MailSlot\XDMailSlotBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MailSlot\XDMailSlotBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MailSlot\Native.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MailSlot\Native.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MailSlot\XDMailSlotListener.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MailSlot\XDMailSlotListener.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MultiBroadcast\NetworkRelayBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MultiBroadcast\NetworkRelayBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MultiBroadcast\XDMultiBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MultiBroadcast\XDMultiBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\MultiBroadcast\NetworkRelayListener.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\MultiBroadcast\NetworkRelayListener.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Interfaces\IXDBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Interfaces\IXDBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Interfaces\IXDListener.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Interfaces\IXDListener.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\XDBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\IOStream\XDIOStreamBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\IOStream\XDIOStreamBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\WindowsMessaging\XDWindowsMessaging.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\WindowsMessaging\XDWindowsMessaging.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDListener.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\XDListener.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="DataGram.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\DataGram.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessageEventArgs.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\XDMessageEventArgs.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\WindowsMessaging\Native.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\WindowsMessaging\Native.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\WindowsMessaging\WindowEnumFilter.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\WindowsMessaging\WindowEnumFilter.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Concrete\WindowsMessaging\WindowsEnum.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\Concrete\WindowsMessaging\WindowsEnum.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDTransportMode.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging-2.0.3.0\source\Backup\XDTransportMode.cs">
+</Event><Event ErrorLevel="1" Project="XDMessaging" Source="XDMessaging.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessaging.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="XDMessaging" Source="XDMessaging.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="XDMessaging.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="XDMessaging.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessaging.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

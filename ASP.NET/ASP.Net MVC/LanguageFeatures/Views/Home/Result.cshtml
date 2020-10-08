@@ -1,0 +1,35 @@
+﻿@model String
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Result</title>
+</head>
+<body>
+    <div> 
+        @Model
+    </div>
+    <div>
+        @Html.ActionLink("Index", "Index", "Home");
+
+        @Html.ActionLink("CreateProduct", "CreateProduct", "Home");
+        @Html.ActionLink("CreateCollection", "CreateCollection", "Home");
+        @Html.ActionLink("CreateProduct2", "CreateProduct2", "Home");
+        @Html.ActionLink("UseExtension", "UseExtension", "Home");
+        @Html.ActionLink("UseExtensionEnumerable", "UseExtensionEnumerable", "Home");
+        @Html.ActionLink("UseFilterExtensionMethod", "UseFilterExtensionMethod", "Home");
+        @Html.ActionLink("CreateAnonArray", "CreateAnonArray", "Home");
+        @Html.ActionLink("FindProducts", "FindProducts", "Home");
+        @Html.ActionLink("FindProductsLinq", "FindProductsLinq", "Home");
+        @Html.ActionLink("FindProductsLinqExt", "FindProductsLinqExt", "Home");
+        @Html.ActionLink("GetLength", "GetLength", "Home");
+        @Html.ActionLink("GetLength2", "GetLength2", "Home");
+    </div>
+</body>
+</html>

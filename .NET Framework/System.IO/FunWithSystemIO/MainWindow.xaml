@@ -1,0 +1,33 @@
+﻿<Window x:Class="FunWithSystemIO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="713">
+    <Grid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="147,170,0,0" Name="txtName" VerticalAlignment="Top" Width="170" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="489,170,0,0" Name="txtExtension" VerticalAlignment="Top" Width="151" />
+        <Label Content="InputFileName-Path" Height="28" HorizontalAlignment="Left" Margin="25,28,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Extension" Height="28" HorizontalAlignment="Left" Margin="410,165,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="86,165,0,0" Name="label3" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="147,28,0,0" Name="cbFileName" VerticalAlignment="Top" Width="308" SelectionChanged="cbFileName_SelectionChanged">
+            <ComboBoxItem Content="foo.txt" />
+            <ComboBoxItem Content="foo" />
+            <ComboBoxItem Content="foo." />
+            <ComboBoxItem Content=".foo." />
+            <ComboBoxItem Content=".txt" />
+            <ComboBoxItem Content=".txt." />
+            <ComboBoxItem Content="..txt" />            
+            <ComboBoxItem Content="..." />
+            <ComboBoxItem Content="foo.bar.txt" />
+            <ComboBoxItem Content=".foo..txt" />
+            <ComboBoxItem Content="tom.jones" />
+            <ComboBoxItem Content="alex.tol" />
+            <ComboBoxItem Content="jerry.men" />
+            <ComboBoxItem Content="christopher.rho" />
+            <ComboBoxItem />
+        </ComboBox>
+        <Label Content="FullName" Height="28" HorizontalAlignment="Left" Margin="68,90,0,0" Name="label4" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="147,90,0,0" Name="txtFullName" VerticalAlignment="Top" Width="493" />
+        <Label Content="DirectoryName" Height="28" HorizontalAlignment="Left" Margin="39,131,0,0" Name="label5" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="147,131,0,0" Name="txtDirectoryName" VerticalAlignment="Top" Width="493" />
+    </Grid>
+</Window>

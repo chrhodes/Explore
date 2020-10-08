@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="System.Collections.Generic.ICollection&lt;T&gt;">
+    <Position X="2" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IComparer&lt;T&gt;">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;">
+    <Position X="2.75" Y="1" Width="2.75" />
+    <InheritanceLine Type="System.Collections.Generic.ICollection&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="2.75" Y="6.25" />
+        <Point X="2.75" Y="5.605" />
+        <Point X="4.125" Y="5.605" />
+        <Point X="4.125" Y="3.905" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IEnumerable&lt;T&gt;">
+    <Position X="3.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IEnumerator&lt;T&gt;">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IEqualityComparer&lt;T&gt;">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IList&lt;T&gt;">
+    <Position X="6" Y="1" Width="1.5" />
+    <InheritanceLine Type="System.Collections.Generic.IEnumerable&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="4.25" Y="10.75" />
+        <Point X="4.25" Y="5.627" />
+        <Point X="6.75" Y="5.627" />
+        <Point X="6.75" Y="3.328" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IReadOnlyCollection&lt;T&gt;">
+    <Position X="9.5" Y="7" Width="2" />
+    <InheritanceLine Type="System.Collections.Generic.IEnumerable&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="4.25" Y="10.75" />
+        <Point X="4.25" Y="9.352" />
+        <Point X="10.5" Y="9.352" />
+        <Point X="10.5" Y="8.362" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IReadOnlyDictionary&lt;TKey, TValue&gt;">
+    <Position X="7.75" Y="3.5" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IReadOnlyList&lt;T&gt;" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.ISet&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

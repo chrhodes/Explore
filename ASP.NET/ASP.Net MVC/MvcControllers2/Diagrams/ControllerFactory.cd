@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Mvc.ControllerBuilder">
+    <Position X="7.25" Y="6.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.DefaultControllerFactory">
+    <Position X="4.25" Y="6.25" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.Web.Mvc.IControllerFactory">
+    <Position X="4.25" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

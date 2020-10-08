@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC_Explore_ObjectModel_Prism6.3", "VNC_Explore_ObjectModel_Prism6.3.csproj", "{DEDAE871-23F8-4354-81D3-7B1ACD660980}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEDAE871-23F8-4354-81D3-7B1ACD660980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDAE871-23F8-4354-81D3-7B1ACD660980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDAE871-23F8-4354-81D3-7B1ACD660980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDAE871-23F8-4354-81D3-7B1ACD660980}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F3ECDD8-ECB2-45A6-AD44-1CFAB472DF95}
+	EndGlobalSection
+EndGlobal

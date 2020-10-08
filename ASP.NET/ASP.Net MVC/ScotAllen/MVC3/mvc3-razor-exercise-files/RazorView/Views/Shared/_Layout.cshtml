@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="header">
+        @if (IsSectionDefined("header"))
+        {
+                @RenderSection("header", required: false)
+        }
+        else
+        { 
+            <h3>This is the default header</h3>
+        }
+    </div>
+
+    <div id="body">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        Your copyright goes here!
+    </div>
+
+</body>
+</html>

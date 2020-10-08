@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Concurrent;
+using System.Linq;
+using System.Threading;
+using VNC_Console_Explore_Collections.Pages;
+
+namespace VNC_Console_Explore_Collections.Classes
+{
+	public class StockControllerM5
+	{
+		ConcurrentDictionary<string, int> _stock = new ConcurrentDictionary<string, int>();
+		int _totalQuantityBought;
+		int _totalQuantitySold;
+		ToDoQueueM5 _toDoQueue;
+
+		public StockControllerM5(ToDoQueueM5 bonusCalculator)
+		{
+			this._toDoQueue = bonusCalculator;
+		}
+
+		public void BuyStock(SalesPersonM5 person, string item, int quantity)
+		{
+			_stock.AddOrUpdate(item, quantity, (key, oldValue) => oldValue + quantity);
+			Interlocked.Add(ref _totalQuantityBought, quantity);
+			_toDoQueue.AddTrade(new TradeM5(person, -quantity));
+		}
+
+		public bool TrySellItem(SalesPersonM5 person, string item)
+		{
+			bool success = false;
+			int newStockLevel = _stock.AddOrUpdate(item,
+				(itemName) => { success = false; return 0; },
+				(itemName, oldValue) => {
+					if (oldValue == 0)
+					{
+						success = false;
+						return 0;
+					}
+					else
+					{
+						success = true;
+						return oldValue - 1;
+					}
+				});
+			if (success)
+			{
+				Interlocked.Increment(ref _totalQuantitySold);
+				_toDoQueue.AddTrade(new TradeM5(person, 1));
+			}
+			return success;
+		}
+
+		public bool TrySellItem2(SalesPersonM5 person, string item)
+		{
+			int newStockLevel = _stock.AddOrUpdate(item, -1, (key, oldValue) => oldValue - 1);
+			if (newStockLevel < 0)
+			{
+				_stock.AddOrUpdate(item, 1, (key, oldValue) => oldValue + 1);
+				return false;
+			}
+			else
+			{
+				Interlocked.Increment(ref _totalQuantitySold);
+				_toDoQueue.AddTrade(new TradeM5(person, 1));
+				return true;
+			}
+		}
+
+		public void DisplayStatus()
+		{
+			int totalStock = _stock.Values.Sum();
+			Console.WriteLine("\r\nBought = " + _totalQuantityBought);
+			Console.WriteLine("Sold   = " + _totalQuantitySold);
+			Console.WriteLine("Stock  = " + totalStock);
+			int error = totalStock + _totalQuantitySold - _totalQuantityBought;
+			if (error == 0)
+				Console.WriteLine("Stock levels match");
+			else
+				Console.WriteLine("Error in stock level: " + error);
+
+			Console.WriteLine();
+			Console.WriteLine("Stock levels by item:");
+			foreach (string itemName in Concurrent_M5_SalesBonuses.AllShirtNames)
+			{
+				int stockLevel = _stock.GetOrAdd(itemName, 0);
+				Console.WriteLine("{0,-30}: {1}", itemName, stockLevel);
+			}
+		}
+	}
+}

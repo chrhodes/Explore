@@ -1,0 +1,312 @@
+<samples>
+
+  <sample new="false" updated="true">
+    <name>Release Notes and Online Resources</name>
+    <dxarea>Docs</dxarea>
+    <dxsubarea></dxsubarea>
+    <type>sample</type>
+    <yearadded>2012</yearadded>
+    <monthadded>1</monthadded>
+    <description>
+      <![CDATA[
+Web page with known issues and links to any updated or new resources.
+]]>
+    </description>
+    <folder>Documentation</folder>
+    <exefolder></exefolder>
+    <exe></exe>
+    <doc>http://go.microsoft.com/fwlink/?LinkID=239942</doc>
+    <screenshot>Tools\SampleBrowser\Thumbnails\article.jpg</screenshot>
+    <language>C++, C#, VB</language>
+    <complexity>100</complexity>
+    <keywords>
+      <keyword>API</keyword>
+    </keywords>
+    <visible>true</visible>
+  </sample>
+
+  <sample new="false" updated="false">
+        <name>Kinect SDK API Reference</name>
+        <dxarea>Docs</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+The Kinect SDK API reference compiled help.
+]]>
+        </description>
+        <folder>Documentation</folder>
+        <exefolder></exefolder>
+        <exe></exe>
+        <doc>Documentation\KinectSDK.chm</doc>
+        <screenshot>Tools\SampleBrowser\Thumbnails\article.jpg</screenshot>
+        <language>C++, C#, VB</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>API</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Kinect Explorer</name>
+        <dxarea>C#</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+Demonstrates how to use the Kinect's ColorImageStream, DepthImageStream, SkeletonStream and AudioSource in a C#/WPF application.
+]]>
+        </description>
+        <folder>Samples\C#\KinectExplorer</folder>
+        <exefolder>Samples\bin</exefolder>
+        <exe>Samples\Bin\KinectExplorer.exe</exe>
+        <doc>Samples\C#\KinectExplorer\Readme.txt</doc>
+        <screenshot>Samples\C#\KinectExplorer\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C#">
+            <folder>Samples\C#\KinectExplorer</folder>
+            <folder>Samples\C#\KinectWpfViewers</folder>
+        </install>
+        <language>C#</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>KinectExplorer</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Shape Game</name>
+        <dxarea>C#</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+Demonstrates a simple game using skeletal tracking and speech recognition in a C#/WPF application.
+]]>
+        </description>
+        <folder>Samples\C#\ShapeGame</folder>
+        <exefolder>Samples\bin</exefolder>
+        <exe>Samples\Bin\ShapeGame.exe</exe>
+        <doc>Samples\C#\ShapeGame\Readme.txt</doc>
+        <screenshot>Samples\C#\ShapeGame\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C#">
+            <folder>Samples\C#\ShapeGame</folder>
+            <folder>Samples\C#\KinectWpfViewers</folder>
+        </install>
+        <language>C#</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>SkeletalViewer</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Skeletal Viewer</name>
+        <dxarea>C++</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+Demonstrates how to use the Kinect's ColorImageStream, DepthImageStream, and SkeletonStream in a C++/DirectX application.
+]]>
+        </description>
+        <folder>Samples\C++\SkeletalViewer</folder>
+        <exefolder>Samples\bin</exefolder>
+        <exe>Samples\Bin\SkeletalViewer.exe</exe>
+        <doc>Samples\C++\SkeletalViewer\Readme.txt</doc>
+        <screenshot>Samples\C#\SkeletalViewer\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C++">
+            <folder>Samples\C++\SkeletalViewer</folder>
+        </install>
+        <language>C++</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>SkeletalViewer</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Kinect Audio Demo</name>
+        <dxarea>C#</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+This module provides sample code used to demonstrate how to perform speech recognition
+on audio captured from a Kinect device, by integrating KinectAudioSource functionality
+with the Microsoft Speech SDK.
+Visualizations of sound wave and sound source direction are shown in application UI.
+Recognized text is also shown, together with it's associated recognition confidence.
+]]>
+        </description>
+        <folder>Samples\C#\KinectAudioDemo</folder>
+        <exefolder>Samples\bin</exefolder>
+        <exe>Samples\Bin\KinectAudioDemo.exe</exe>
+        <doc>Samples\C#\KinectAudioDemo\ReadMe.txt</doc>
+        <screenshot>Samples\C#\KinectAudioDemo\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C#">
+            <folder>Samples\C#\KinectAudioDemo</folder>
+            <folder>Samples\C#\KinectWpfViewers</folder>
+        </install>
+        <language>C#</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>SkeletalViewer</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Record Audio</name>
+        <dxarea>C#</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+A C#/console application that demonstrates how to record audio from a Kinect's AudioSource.
+]]>
+        </description>
+        <folder>Samples\C#\RecordAudio</folder>
+        <exefolder></exefolder>
+        <exe></exe>
+        <doc>Samples\C#\RecordAudio\ReadMe.txt</doc>
+        <screenshot>Samples\C#\RecordAudio\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C#">
+            <folder>Samples\C#\RecordAudio</folder>
+        </install>
+        <language>C#</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>Record, Audio</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Speech</name>
+        <dxarea>C#</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+A C#/console application that demonstrates how to do speech recognition on Audio from a Kinect's AudioSource.
+]]>
+        </description>
+        <folder>Samples\C#\Speech</folder>
+        <exefolder></exefolder>
+        <exe></exe>
+        <doc>Samples\C#\Speech\ReadMe.txt</doc>
+        <screenshot>Samples\C#\Speech\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C#">
+            <folder>Samples\C#\Speech</folder>
+        </install>
+        <language>C#</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>Speech</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>Audio Capture Raw</name>
+        <dxarea>C++</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+A C++/console application that demonstrates how to capture audio from a Kinect's AudioSource.
+]]>
+        </description>
+        <folder>Samples\C++\AudioCaptureRaw</folder>
+        <exefolder></exefolder>
+        <exe></exe>
+        <doc>Samples\C++\AudioCaptureRaw\ReadMe.txt</doc>
+        <screenshot>Samples\C++\AudioCaptureRaw\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C++">
+            <folder>Samples\C++\AudioCaptureRaw</folder>
+        </install>
+        <language>C++</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>Record,Audio</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>MF Audio Filter</name>
+        <dxarea>C++</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+A C++/console sample demonstrating the Kinect Audio DMO filtering audio as part of a Media Foundation topology.
+]]>
+        </description>
+        <folder>Samples\C++\MFAudioFilter</folder>
+        <exefolder></exefolder>
+        <exe></exe>
+        <doc>Samples\C++\MFAudioFilter\ReadMe.txt</doc>
+        <screenshot>Samples\C++\MFAudioFilter\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C++">
+            <folder>Samples\C++\MFAudioFilter</folder>
+        </install>
+        <language>C++</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>Audio</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+    <sample new="false" updated="false">
+        <name>MicArray Echo Cancellation</name>
+        <dxarea>C++</dxarea>
+        <dxsubarea></dxsubarea>
+        <type>sample</type>
+        <yearadded>2011</yearadded>
+        <monthadded>10</monthadded>
+        <description>
+            <![CDATA[
+A C++/console application demonstrating MicArray echo cancellation.
+]]>
+        </description>
+        <folder>Samples\C++\MicArrayEchoCancellation</folder>
+        <exefolder></exefolder>
+        <exe></exe>
+        <doc>Samples\C++\MicArrayEchoCancellation\ReadMe.txt</doc>
+        <screenshot>Samples\C++\MicArrayEchoCancellation\screenshot.jpg</screenshot>
+        <install DestinationPrefix="C++">
+            <folder>Samples\C++\MicArrayEchoCancellation</folder>
+        </install>
+        <language>C++</language>
+        <complexity>1000</complexity>
+        <keywords>
+            <keyword>Audio</keyword>
+        </keywords>
+        <visible>true</visible>
+    </sample>
+
+</samples>

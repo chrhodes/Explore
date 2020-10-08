@@ -1,0 +1,12 @@
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+<Button Width="75" VerticalAlignment="Center" >
+	<StackPanel>
+	<Ellipse Fill="Red" Width="40" Height="15" />
+	<TextBlock Text="Go WPF" />
+	<Ellipse Fill="Blue" Width="40" Height="15" />
+	</StackPanel>
+</Button>
+</Grid>

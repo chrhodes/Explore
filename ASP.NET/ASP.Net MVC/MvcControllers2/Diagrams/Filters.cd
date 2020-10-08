@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Mvc.ActionFilterAttribute">
+    <Position X="14.25" Y="8.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.FilterAttribute">
+    <Position X="14" Y="11.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Attribute">
+    <Position X="13.25" Y="14" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.OutputCacheAttribute">
+    <Position X="12.75" Y="2.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.AsyncTimeoutAttribute">
+    <Position X="15.5" Y="5.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.NoAsyncTimeoutAttribute">
+    <Position X="15.5" Y="4" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.AuthorizeAttribute">
+    <Position X="18" Y="3" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.ChildActionOnlyAttribute">
+    <Position X="16.75" Y="8.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.HiddenInputAttribute">
+    <Position X="18.25" Y="14.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.CustomModelBinderAttribute">
+    <Position X="21" Y="13.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ModelBinderAttribute">
+    <Position X="21" Y="11" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.AdditionalMetadataAttribute">
+    <Position X="20.75" Y="5" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.AllowAnonymousAttribute">
+    <Position X="19.5" Y="7.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.AllowHtmlAttribute">
+    <Position X="23" Y="7.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.BindAttribute">
+    <Position X="24.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.CompareAttribute">
+    <Position X="24.5" Y="11.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.HandleErrorAttribute">
+    <Position X="25.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.RouteAreaAttribute">
+    <Position X="21.25" Y="15.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.RouteAttribute">
+    <Position X="14.5" Y="18" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.RoutePrefixAttribute">
+    <Position X="19" Y="18.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.SessionStateAttribute">
+    <Position X="22.75" Y="18.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.OverrideActionFiltersAttribute">
+    <Position X="0.5" Y="2.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.OverrideAuthenticationAttribute">
+    <Position X="7" Y="3.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.OverrideAuthorizationAttribute">
+    <Position X="3.75" Y="3.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.OverrideExceptionFiltersAttribute">
+    <Position X="3.25" Y="6.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.OverrideResultFiltersAttribute">
+    <Position X="6.25" Y="7.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.RequireHttpsAttribute">
+    <Position X="9.75" Y="6.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.ValidateAntiForgeryTokenAttribute">
+    <Position X="6.75" Y="11.25" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.ValidateInputAttribute">
+    <Position X="7.5" Y="15" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.Web.Mvc.IActionFilter">
+    <Position X="1" Y="11.25" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.IAuthorizationFilter">
+    <Position X="1.5" Y="13.5" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.IExceptionFilter">
+    <Position X="4.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.IResultFilter">
+    <Position X="3.25" Y="14.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.IMvcFilter">
+    <Position X="0.5" Y="15.25" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

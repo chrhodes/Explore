@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC_Explore_ObjectModel_System.Xaml", "VNC_Explore_ObjectModel_System.Xaml.csproj", "{122FC243-F056-408D-86C9-9D1D5A9AFA1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{122FC243-F056-408D-86C9-9D1D5A9AFA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122FC243-F056-408D-86C9-9D1D5A9AFA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122FC243-F056-408D-86C9-9D1D5A9AFA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122FC243-F056-408D-86C9-9D1D5A9AFA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F5284FC-7F22-4802-A111-486D12D535DC}
+	EndGlobalSection
+EndGlobal

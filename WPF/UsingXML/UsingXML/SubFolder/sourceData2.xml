@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sensors>
+  <Sensor Name="2Base Value" >
+    2Base
+    <Manufacturer>2NA</Manufacturer>
+    <Quantity>210</Quantity>
+  </Sensor>
+  <Sensor Name="21101 - IR Distance Adapter 4-30cm" >
+    21101
+    <Manufacturer>2Phidgets</Manufacturer>
+    <Quantity>220</Quantity>    
+  </Sensor>
+  <Sensor Name="21105 - Light Sensor" >
+    21105
+    <Manufacturer>2Whidgets</Manufacturer>
+    <Quantity>230</Quantity>    
+  </Sensor>
+</Sensors>

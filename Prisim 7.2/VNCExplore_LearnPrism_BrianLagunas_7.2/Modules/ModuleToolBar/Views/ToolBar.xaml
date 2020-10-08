@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ModuleToolBar.ToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:infra="clr-namespace:VNCExplore_LearnPrism_BrianLagunas.Infrastructure;assembly=VNCExplore_LearnPrism_BrianLagunas.Infrastructure"
+             Height="Auto" Width="Auto">
+    <ToolBar>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{x:Static infra:GlobalCommands.SaveAllCommandCC}" >Save All CC</Button>
+            <Button Command="{x:Static infra:GlobalCommands.SaveAllCommandEA}" >Save All EA</Button>
+            <Button Command="{x:Static infra:GlobalCommands.SaveAllCommandSS}" >Save All SS</Button>
+        </StackPanel>
+    </ToolBar>
+</UserControl>

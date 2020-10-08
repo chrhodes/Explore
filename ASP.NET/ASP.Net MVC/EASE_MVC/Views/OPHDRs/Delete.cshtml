@@ -1,0 +1,432 @@
+﻿@model EaseEFDAL.Models.OPHDR
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OPHDR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OPSEQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPSEQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPDESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPDESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKCENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKCENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAXBATCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAXBATCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATAREC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATAREC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PFDCYC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PFDCYC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PFDSETUP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PFDSETUP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REALCYC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REALCYC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REALSETUP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REALSETUP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACOSTRATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACOSTRATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACYCTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACYCTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ASETUPTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASETUPTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MATRECNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATRECNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MACHRECNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MACHRECNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EffectiveFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EffectiveFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISMETRIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISMETRIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MISCFLAG1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MISCFLAG1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCNNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCNNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MISCFLAG2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MISCFLAG2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USERDEF1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERDEF1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USERDEF2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERDEF2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USERDEF3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERDEF3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOOLCOSTRUN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOOLCOSTRUN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOOLCOSTSU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOOLCOSTSU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROCESSFLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROCESSFLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BALANCEFLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BALANCEFLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ALTFLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ALTFLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COSTKEY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COSTKEY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RULEID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RULEID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATIONTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATIONTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Engineer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Engineer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleasedFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleasedFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InUseFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InUseFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRITOPTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRITOPTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRITOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRITOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESSNVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESSNVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpRev)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpRev)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOut_Engineer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOut_Engineer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpRelDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpRelDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EffectiveTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EffectiveTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPARE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPARE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPARE2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPARE2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPARE3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPARE3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHAREDOPID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHAREDOPID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasicRunTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasicRunTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasicSetupTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasicSetupTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KVICODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KVICODE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

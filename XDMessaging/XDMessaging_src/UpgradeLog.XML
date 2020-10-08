@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="XDMessaging">
+</Property><Property Name="Solution File" Value="C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\XDMessaging.sln">
+</Property><Property Name="Date" Value="Tuesday, December 27, 2011">
+</Property><Property Name="Time" Value="18:47 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="XDMessaging.sln" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\XDMessaging.sln">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessaging.csproj" Description="Project file successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\XDMessaging.csproj">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDBroadcast.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\XDBroadcast.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDListener.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\XDListener.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="DataGram.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\DataGram.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessageEventArgs.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\XDMessageEventArgs.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Native\Native.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\Native\Native.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="WindowEnumFilter.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\WindowEnumFilter.cs">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="Utils\WindowsEnum.cs" Description="File successfully backed up as C:\TFS_Home\VNC\Explore\XDMessaging\XDMessaging_src\Backup\Utils\WindowsEnum.cs">
+</Event><Event ErrorLevel="1" Project="XDMessaging" Source="XDMessaging.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessaging.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="XDMessaging" Source="XDMessaging.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="XDMessaging.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="XDMessaging.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="XDMessaging" Source="XDMessaging.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SketcherControlLib", "SketcherControlLib\SketcherControlLib.csproj", "{091C66F7-346E-490A-B20A-3ED870EDF099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gradiator", "Gradiator\Gradiator.csproj", "{8447118E-66F6-431F-B01A-3673892638BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesClassLib", "ShapesClassLib\ShapesClassLib.csproj", "{E16DB6EA-789C-4937-9447-B2B8107FED6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSliderControlLib", "CustomSliderControlLib\CustomSliderControlLib.csproj", "{948EA82F-7E93-4025-9961-0FCE1C0A245F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomColorSelectorLib", "CustomColorSelectorLib\CustomColorSelectorLib.csproj", "{90184A14-AE38-44AB-AEF7-0F27789D3474}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{091C66F7-346E-490A-B20A-3ED870EDF099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091C66F7-346E-490A-B20A-3ED870EDF099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091C66F7-346E-490A-B20A-3ED870EDF099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091C66F7-346E-490A-B20A-3ED870EDF099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8447118E-66F6-431F-B01A-3673892638BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8447118E-66F6-431F-B01A-3673892638BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8447118E-66F6-431F-B01A-3673892638BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8447118E-66F6-431F-B01A-3673892638BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E16DB6EA-789C-4937-9447-B2B8107FED6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16DB6EA-789C-4937-9447-B2B8107FED6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16DB6EA-789C-4937-9447-B2B8107FED6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16DB6EA-789C-4937-9447-B2B8107FED6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948EA82F-7E93-4025-9961-0FCE1C0A245F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948EA82F-7E93-4025-9961-0FCE1C0A245F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948EA82F-7E93-4025-9961-0FCE1C0A245F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948EA82F-7E93-4025-9961-0FCE1C0A245F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90184A14-AE38-44AB-AEF7-0F27789D3474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90184A14-AE38-44AB-AEF7-0F27789D3474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90184A14-AE38-44AB-AEF7-0F27789D3474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90184A14-AE38-44AB-AEF7-0F27789D3474}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

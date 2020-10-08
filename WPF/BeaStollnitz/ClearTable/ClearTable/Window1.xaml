@@ -1,0 +1,10 @@
+﻿<Window x:Class="ClearTable.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ClearTable" Height="300" Width="300"
+    >
+	<StackPanel>
+		<TextBox Text="{Binding Path=[Name]}" />
+		<Button Click="ClearRepopulate">Clear and repopulate table</Button>
+	</StackPanel>
+</Window>

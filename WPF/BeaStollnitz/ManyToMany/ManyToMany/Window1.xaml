@@ -1,0 +1,10 @@
+﻿<Window x:Class="ManyToMany.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ManyToMany" Height="500" Width="700"
+    >
+	<StackPanel Name="sp" Margin="20">
+		<ListBox ItemsSource="{Binding}" DisplayMemberPath="Title" SelectionChanged="UpdateBorrowers" IsSynchronizedWithCurrentItem="true" Name="lbBooks"/>
+		<ListBox DisplayMemberPath="Borrower_Name" IsSynchronizedWithCurrentItem="true" Name="lbBorrowers"/>
+	</StackPanel>
+</Window>

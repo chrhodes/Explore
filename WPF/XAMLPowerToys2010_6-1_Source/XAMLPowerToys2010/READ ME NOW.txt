@@ -1,0 +1,17 @@
+Inside the folder named "Copy File In Here" you will find the "XAMLPowerToys2010 - For Testing.AddIn" file.
+
+If you want to develop and test the add-in in a debugger, you MUST copy this file to the "\Visual studio 2010\addins" folder.
+
+This file contains the following line:
+
+    <Assembly>XAMLPowerToys2010.dll</Assembly>
+
+You must edit this line to point to the folder and file name of where your DEBUG build for the XAMLPowerToys.dll is.  
+
+This is typically a long path name.  
+
+on my computer that line reads:   <Assembly>C:\Users\karl\Documents\Visual Studio 2010\Projects\XAMLPowerToys2010\XAMLPowerToys2010\bin\XAMLPowerToys2010.dll</Assembly>
+
+Yours will be different.
+
+When you are running the LIVE version from the Little Richie Software direcotry, either remove or rename the "XAMLPowerToys2010 - For Testing.AddIn" file to avoid confusion.

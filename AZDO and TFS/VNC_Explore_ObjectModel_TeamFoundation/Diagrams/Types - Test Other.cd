@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IDataCollectorHelper">
+    <Position X="5" Y="9" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestMessageLogOwner">
+    <Position X="0.5" Y="10" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestSettings">
+    <Position X="0.5" Y="5" Width="3.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestFailureType">
+    <Position X="4.5" Y="6.25" Width="2.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestEnvironment">
+    <Position X="4.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestController">
+    <Position X="7.75" Y="0.5" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestConfiguration">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestAction">
+    <Position X="7.5" Y="6.5" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IMachineRole">
+    <Position X="14.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestVariable">
+    <Position X="11.5" Y="0.5" Width="4" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestEnvironmentHelper">
+    <Position X="10.75" Y="6.75" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Microsoft.TeamFoundation.TestManagement.Client.TestControllerState">
+    <Position X="10" Y="4.75" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

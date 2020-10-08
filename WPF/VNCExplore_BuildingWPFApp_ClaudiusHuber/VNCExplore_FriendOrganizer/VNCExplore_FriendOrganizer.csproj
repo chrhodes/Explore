@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40E01232-E73C-488E-9504-24C96F64E5C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VNCExplore.FriendOrganizer</RootNamespace>
+    <AssemblyName>VNCExplore.FriendOrganizer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ViewModels\Interfaces\IMainWindowDxLayoutViewModel09.cs" />
+    <Compile Include="ViewModels\Interfaces\IMainWindowDxLayoutViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowDxLayoutViewModel06.cs" />
+    <Compile Include="ViewModels\MainWindowDxLayoutViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\MainWindowDxLayout06.xaml.cs">
+      <DependentUpon>MainWindowDxLayout06.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindowDxLayout.xaml.cs">
+      <DependentUpon>MainWindowDxLayout.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\Xaml\Display_StylesAndTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\MainWindowDxLayout06.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindowDxLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\VNC.Core\VNC.Core.csproj">
+      <Project>{c4e954d3-2a7a-48d2-b212-8b9a96bfeb4f}</Project>
+      <Name>VNC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.DomainServices.FriendDataService\FriendOrganizer.DomainServices.csproj">
+      <Project>{06ad7abc-115a-4f86-a001-57d5d2518ae8}</Project>
+      <Name>FriendOrganizer.DomainServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Domain\FriendOrganizer.Domain.csproj">
+      <Project>{7b947978-3a26-4b09-8d83-497774bcdf6e}</Project>
+      <Name>FriendOrganizer.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend06Detail\FriendOrganizer.Presentation.Friend06Detail.csproj">
+      <Project>{c12a9ccb-d7db-4c18-9fe5-20d640426e4f}</Project>
+      <Name>FriendOrganizer.Presentation.Friend06Detail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend06\FriendOrganizer.Presentation.Friend06.csproj">
+      <Project>{0852f70e-6595-40f6-ba29-99ddbc73d262}</Project>
+      <Name>FriendOrganizer.Presentation.Friend06</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend07\FriendOrganizer.Presentation.Friend07.csproj">
+      <Project>{9b5ad2d3-937e-460a-a160-b0bdb3a64dae}</Project>
+      <Name>FriendOrganizer.Presentation.Friend07</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend08\FriendOrganizer.Presentation.Friend08.csproj">
+      <Project>{80dce244-fa08-49c0-a114-778176c81881}</Project>
+      <Name>FriendOrganizer.Presentation.Friend08</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend09\FriendOrganizer.Presentation.Friend09.csproj">
+      <Project>{3602b293-2ebf-45af-b288-923915c2eed0}</Project>
+      <Name>FriendOrganizer.Presentation.Friend09</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend10A\FriendOrganizer.Presentation.Friend10A.csproj">
+      <Project>{a764d4ab-5db4-4970-bed9-2e3fcbe9e65a}</Project>
+      <Name>FriendOrganizer.Presentation.Friend10A</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend10B\FriendOrganizer.Presentation.Friend10B.csproj">
+      <Project>{d5d55619-efce-4676-a99e-7e459c9ac243}</Project>
+      <Name>FriendOrganizer.Presentation.Friend10B</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend10\FriendOrganizer.Presentation.Friend10.csproj">
+      <Project>{255b1dc5-0d7e-4180-baad-581b91571448}</Project>
+      <Name>FriendOrganizer.Presentation.Friend10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend11\FriendOrganizer.Presentation.Friend11.csproj">
+      <Project>{0cb4b4ed-d5f4-4d09-983d-27f1b48037fa}</Project>
+      <Name>FriendOrganizer.Presentation.Friend11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend12\FriendOrganizer.Presentation.Friend12.csproj">
+      <Project>{3210486b-2c85-45ca-a7e6-1eb521999459}</Project>
+      <Name>FriendOrganizer.Presentation.Friend12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend13\FriendOrganizer.Presentation.Friend13.csproj">
+      <Project>{73b33e65-933a-4196-8b93-ec2352882f0d}</Project>
+      <Name>FriendOrganizer.Presentation.Friend13</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend14\FriendOrganizer.Presentation.Friend14.csproj">
+      <Project>{7dbebf73-1244-4f63-be8c-1f3697abad40}</Project>
+      <Name>FriendOrganizer.Presentation.Friend14</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend15\FriendOrganizer.Presentation.Friend15.csproj">
+      <Project>{ef721ff0-1618-4594-8eae-142159e2a5f7}</Project>
+      <Name>FriendOrganizer.Presentation.Friend15</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend16\FriendOrganizer.Presentation.Friend16.csproj">
+      <Project>{0a6f4468-f6e3-4037-8b37-72adb330e0af}</Project>
+      <Name>FriendOrganizer.Presentation.Friend16</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend17\FriendOrganizer.Presentation.Friend17.csproj">
+      <Project>{baada8f0-467c-44d1-97b6-682c33dd0c7d}</Project>
+      <Name>FriendOrganizer.Presentation.Friend17</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend18\FriendOrganizer.Presentation.Friend18.csproj">
+      <Project>{67586e9c-daf7-4621-96fd-2566a59e7303}</Project>
+      <Name>FriendOrganizer.Presentation.Friend18</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendOrganizer.Presentation.Friend19\FriendOrganizer.Presentation.Friend19.csproj">
+      <Project>{249873cc-cdc2-47af-bc20-bf0b7722d2cf}</Project>
+      <Name>FriendOrganizer.Presentation.Friend19</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VNCExplore_FriendOrganizer.Core\VNCExplore_FriendOrganizer.Core.csproj">
+      <Project>{190c9fb3-0fc6-4415-a62c-5557b858cf74}</Project>
+      <Name>VNCExplore_FriendOrganizer.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity">
+      <Version>7.2.0.1422</Version>
+    </PackageReference>
+    <PackageReference Include="Unity">
+      <Version>5.11.2</Version>
+    </PackageReference>
+    <PackageReference Include="Unity.Abstractions">
+      <Version>5.11.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

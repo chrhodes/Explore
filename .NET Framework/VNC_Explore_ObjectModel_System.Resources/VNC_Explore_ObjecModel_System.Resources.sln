@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC_Explore_ObjecModel_System.Resources", "VNC_Explore_ObjecModel_System.Resources.csproj", "{945F05D0-6D04-4AF5-894A-40537E17A67B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{945F05D0-6D04-4AF5-894A-40537E17A67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945F05D0-6D04-4AF5-894A-40537E17A67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945F05D0-6D04-4AF5-894A-40537E17A67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945F05D0-6D04-4AF5-894A-40537E17A67B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {587B7F15-B9C0-4828-9875-CB8AD5802A31}
+	EndGlobalSection
+EndGlobal

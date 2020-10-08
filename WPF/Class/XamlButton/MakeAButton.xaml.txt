@@ -1,0 +1,324 @@
+1. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button>_Ok</Button>
+	
+</Grid>
+
+2. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100">_Ok</Button>
+	
+</Grid>
+
+3. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Content="OK" Width="100" Height="100" />
+	
+</Grid>
+
+4. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100">
+	<Ellipse Fill="Red" Width="40" Height="20" />
+	_Ok
+	</Button>
+	
+</Grid>
+
+5. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+		<StackPanel>
+			<Ellipse Fill="Yellow" Width="40" Height="15" />
+			<TextBlock Text="Go WPF" />
+			<Ellipse Fill="Blue" Width="40" Height="15" />
+		</StackPanel>
+	</Button>
+	
+</Grid>
+
+6. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" >
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+		
+			</ControlTemplate>
+		</Button.Template>
+	_Ok
+	</Button>
+	
+</Grid>
+
+7. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" >
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Rectangle Fill="Green" RadiusX="5" RadiusY="5" />
+			</ControlTemplate>
+		</Button.Template>
+	_Ok
+	</Button>
+	
+</Grid>
+
+8. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Rectangle Fill="Green" RadiusX="5" RadiusY="5" />
+			</ControlTemplate>
+		</Button.Template>
+	_Ok
+	</Button>
+	
+</Grid>
+
+9. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+				<TextBlock Text="{TemplateBinding Content}" />
+			</ControlTemplate>
+		</Button.Template>
+	_Ok
+	</Button>
+	
+</Grid>
+
+10. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<TextBlock Text="{TemplateBinding Content}" />
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+	_Ok
+	</Button>
+	
+</Grid>
+
+11. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<TextBlock Text="{TemplateBinding Content}" />
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+		<Ellipse Fill="Yellow" Height="20" Width="40" />
+	</Button>
+	
+</Grid>
+
+12. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<ContentPresenter Content="{TemplateBinding Content}" />
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+		<Ellipse Fill="Yellow" Height="20" Width="40" />
+	</Button>
+	
+</Grid>
+
+13. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<ContentPresenter Content="{TemplateBinding Content}" />
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+	_OK Again
+	</Button>
+	
+</Grid>
+
+14. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding Content}" />
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+	_OK Again
+	</Button>
+	
+</Grid>
+
+15. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding Content}" 
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+	_OK Again
+	</Button>
+	
+</Grid>
+	
+16. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Button Width="100" Height="100" Background="Red">
+	
+		<Button.Template>
+			<ControlTemplate TargetType="Button">
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+					<ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding Content}" 
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+				</Grid>		
+			</ControlTemplate>
+		</Button.Template>
+		
+		<StackPanel>
+			<Ellipse Fill="Yellow" Width="40" Height="15" />
+			<TextBlock Text="Go WPF" />
+			<Ellipse Fill="Blue" Width="40" Height="15" />
+		</StackPanel>
+	</Button>	
+	
+</Grid>
+
+17. ---------------------
+
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<Grid.Resources>
+	
+		<ControlTemplate x:Key="myButtonTemplate" TargetType="Button">
+			<Grid>
+				<Rectangle Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
+				<ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding Content}" 
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+			</Grid>		
+		</ControlTemplate>
+		
+	</Grid.Resources>
+		
+	<Button Width="100" Height="100" Background="Red" Template="{StaticResource myButtonTemplate}">
+	
+		<StackPanel>
+			<Ellipse Fill="Yellow" Width="40" Height="15" />
+			<TextBlock Text="Go WPF" />
+			<Ellipse Fill="Blue" Width="40" Height="15" />
+		</StackPanel>
+		
+	</Button>	
+	
+</Grid>

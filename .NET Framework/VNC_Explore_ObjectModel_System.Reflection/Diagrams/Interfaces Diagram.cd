@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="System.Reflection.ICustomAttributeProvider">
+    <Position X="1" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Reflection.IReflect">
+    <Position X="3.75" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

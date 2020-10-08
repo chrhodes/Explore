@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Threading.AutoResetEvent" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.CompressedStack" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.EventWaitHandle" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ExecutionContext" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.HostExecutionContext" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.HostExecutionContextManager" Collapsed="true">
+    <Position X="5" Y="6.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Interlocked" Collapsed="true">
+    <Position X="6.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ManualResetEvent" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Monitor" Collapsed="true">
+    <Position X="6.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Mutex" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Overlapped" Collapsed="true">
+    <Position X="0.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ReaderWriterLock" Collapsed="true">
+    <Position X="0.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.RegisteredWaitHandle" Collapsed="true">
+    <Position X="3" Y="8" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Semaphore" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.SemaphoreFullException" Collapsed="true">
+    <Position X="0.75" Y="9" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.SynchronizationContext" Collapsed="true">
+    <Position X="3" Y="9" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Thread" Collapsed="true">
+    <Position X="3.5" Y="10" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.ThreadExceptionEventArgs" Collapsed="true">
+    <Position X="0.75" Y="10" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.ThreadPool" Collapsed="true">
+    <Position X="6.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Timeout" Collapsed="true">
+    <Position X="6.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Timer" Collapsed="true">
+    <Position X="0.75" Y="11" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.WaitHandle" Collapsed="true">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

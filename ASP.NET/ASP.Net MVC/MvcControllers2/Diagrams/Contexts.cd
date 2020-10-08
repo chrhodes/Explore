@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Routing.RequestContext">
+    <Position X="2" Y="6" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.HttpContext">
+    <Position X="5.25" Y="3.25" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.HttpContextBase">
+    <Position X="8.5" Y="3.25" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.TraceContext">
+    <Position X="1.5" Y="9" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="System.IServiceProvider">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Reflection.Assembly" Collapsed="true">
+    <Position X="0.5" Y="2" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.AssemblyName" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.Binder" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.ConstructorInfo" Collapsed="true">
+    <Position X="9.25" Y="8.25" Width="2" />
+    <InheritanceLine Type="System.Reflection.MethodBase" ManuallyRouted="true">
+      <Path>
+        <Point X="9" Y="6.941" />
+        <Point X="9" Y="7.544" />
+        <Point X="10.25" Y="7.544" />
+        <Point X="10.25" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.CustomAttributeData" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.EventInfo" Collapsed="true">
+    <Position X="4.25" Y="6.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.ExceptionHandlingClause" Collapsed="true">
+    <Position X="0.5" Y="8" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.FieldInfo" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="2.5" />
+    <InheritanceLine Type="System.Reflection.MemberInfo" ManuallyRouted="true">
+      <Path>
+        <Point X="4.875" Y="4.812" />
+        <Point X="4.875" Y="5.09" />
+        <Point X="6.66" Y="5.09" />
+        <Point X="6.66" Y="5.823" />
+        <Point X="12" Y="5.823" />
+        <Point X="12" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.LocalVariableInfo" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.ManifestResourceInfo" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.MemberInfo" Collapsed="true">
+    <Position X="3.75" Y="4.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.AssemblyNameProxy" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.MethodBase" Collapsed="true">
+    <Position X="7.75" Y="6.25" Width="2.5" />
+    <InheritanceLine Type="System.Reflection.MemberInfo" ManuallyRouted="true">
+      <Path>
+        <Point X="4.875" Y="4.812" />
+        <Point X="4.875" Y="5.09" />
+        <Point X="6.66" Y="5.09" />
+        <Point X="6.66" Y="5.812" />
+        <Point X="9" Y="5.812" />
+        <Point X="9" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.MethodBody" Collapsed="true">
+    <Position X="5.25" Y="8.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.MethodInfo" Collapsed="true">
+    <Position X="9.25" Y="10.5" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.Missing" Collapsed="true">
+    <Position X="10" Y="2" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.Module" Collapsed="true">
+    <Position X="4.5" Y="2" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.ParameterInfo" Collapsed="true">
+    <Position X="14.25" Y="10" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.Pointer" Collapsed="true">
+    <Position X="8.25" Y="2" Width="1.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.PropertyInfo" Collapsed="true">
+    <Position X="13.75" Y="6.25" Width="2.5" />
+    <InheritanceLine Type="System.Reflection.MemberInfo" ManuallyRouted="true">
+      <Path>
+        <Point X="4.875" Y="4.812" />
+        <Point X="4.875" Y="5.09" />
+        <Point X="6.66" Y="5.09" />
+        <Point X="6.66" Y="5.844" />
+        <Point X="15" Y="5.844" />
+        <Point X="15" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.StrongNameKeyPair" Collapsed="true">
+    <Position X="12.25" Y="2" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.TypeDelegator" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Type" Collapsed="true">
+    <Position X="16.75" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="System.Reflection.MemberInfo" ManuallyRouted="true">
+      <Path>
+        <Point X="4.875" Y="4.812" />
+        <Point X="4.875" Y="5.09" />
+        <Point X="6.66" Y="5.09" />
+        <Point X="6.66" Y="5.834" />
+        <Point X="17.5" Y="5.834" />
+        <Point X="17.5" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.Runtime.InteropServices._ParameterInfo" Collapsed="true">
+    <Position X="14.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.Serialization.ISerializable">
+    <Position X="8.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._PropertyInfo" Collapsed="true">
+    <Position X="14" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._MethodInfo" Collapsed="true">
+    <Position X="9.25" Y="9.25" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Reflection.ICustomAttributeProvider" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._MemberInfo" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._FieldInfo" Collapsed="true">
+    <Position X="11" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._MethodBase" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._EventInfo" Collapsed="true">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._AssemblyName" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._ConstructorInfo" Collapsed="true">
+    <Position X="10.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._Assembly" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Runtime.InteropServices._Type" Collapsed="true">
+    <Position X="16.75" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

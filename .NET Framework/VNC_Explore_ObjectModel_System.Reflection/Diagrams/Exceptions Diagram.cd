@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Reflection.AmbiguousMatchException">
+    <Position X="1.25" Y="1.5" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.CustomAttributeFormatException">
+    <Position X="1.25" Y="3" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.InvalidFilterCriteriaException">
+    <Position X="1.25" Y="4.5" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.ReflectionTypeLoadException">
+    <Position X="1.25" Y="6" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Reflection.TargetInvocationException">
+    <Position X="5" Y="1.5" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Reflection.TargetParameterCountException">
+    <Position X="5" Y="3" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

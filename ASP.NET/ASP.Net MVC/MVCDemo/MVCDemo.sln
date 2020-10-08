@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcDemo", "MvcDemo\MvcDemo.csproj", "{1F39ACFC-476F-46B4-AF35-1AEF7382198C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcDemo.Tests", "MvcDemo.Tests\MvcDemo.Tests.csproj", "{16D886AA-7419-41FB-8625-2245B14E7985}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{13DA60FA-8AA3-4632-9A20-E1E125A3C2B3}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{6EB2158F-26E8-4A10-8879-8049D4E64C79}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\MvcDemo-WAWS-dev.json = PublishScripts\Configurations\MvcDemo-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F39ACFC-476F-46B4-AF35-1AEF7382198C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F39ACFC-476F-46B4-AF35-1AEF7382198C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F39ACFC-476F-46B4-AF35-1AEF7382198C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F39ACFC-476F-46B4-AF35-1AEF7382198C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D886AA-7419-41FB-8625-2245B14E7985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D886AA-7419-41FB-8625-2245B14E7985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D886AA-7419-41FB-8625-2245B14E7985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D886AA-7419-41FB-8625-2245B14E7985}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EB2158F-26E8-4A10-8879-8049D4E64C79} = {13DA60FA-8AA3-4632-9A20-E1E125A3C2B3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://infinityrhodes.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MvcDemo.Tests\\MvcDemo.Tests.csproj
+		SccProjectName1 = MvcDemo.Tests
+		SccLocalPath1 = MvcDemo.Tests
+		SccProjectUniqueName2 = MvcDemo\\MvcDemo.csproj
+		SccProjectName2 = MvcDemo
+		SccLocalPath2 = MvcDemo
+	EndGlobalSection
+EndGlobal

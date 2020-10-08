@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Mvc.ActionExecutedContext">
+    <Position X="0.5" Y="4" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ActionExecutingContext">
+    <Position X="0.5" Y="6.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.AreaRegistrationContext">
+    <Position X="8" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.AuthorizationContext">
+    <Position X="0.5" Y="9.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ControllerContext">
+    <Position X="2.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ExceptionContext">
+    <Position X="0.5" Y="11.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.FormContext">
+    <Position X="8" Y="3" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ModelBindingContext">
+    <Position X="8" Y="6" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ResultExecutedContext">
+    <Position X="4.25" Y="4.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ResultExecutingContext">
+    <Position X="4.25" Y="6.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.ViewContext">
+    <Position X="4.25" Y="9" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

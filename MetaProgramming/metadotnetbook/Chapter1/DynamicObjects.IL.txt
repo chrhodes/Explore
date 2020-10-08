@@ -1,0 +1,91 @@
+string name = "Kevin";
+//dynamic name = "Kevin";
+System.Console.WriteLine("{0} ({1})", name, name.Length);
+
+IL_0001:  ldstr       "Kevin"
+IL_0006:  stloc.0     // name
+IL_0007:  ldstr       "{0} ({1})"
+IL_000C:  ldloc.0     // name
+IL_000D:  ldloc.0     // name
+IL_000E:  callvirt    System.String.get_Length
+IL_0013:  box         System.Int32
+IL_0018:  call        System.Console.WriteLine
+
+string name = "Kevin";
+//dynamic name = "Kevin";
+System.Console.WriteLine("{0} ({1})", name, name.Length);
+
+IL_0001:  ldstr       "Kevin"
+IL_0006:  stloc.0     // name
+IL_0007:  ldsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site1
+IL_000C:  brtrue.s    IL_0065
+IL_000E:  ldc.i4      00 01 00 00 
+IL_0013:  ldstr       "WriteLine"
+IL_0018:  ldnull      
+IL_0019:  ldtoken     UserQuery
+IL_001E:  call        System.Type.GetTypeFromHandle
+IL_0023:  ldc.i4.4    
+IL_0024:  newarr      Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo
+IL_0029:  stloc.1     // CS$0$0000
+IL_002A:  ldloc.1     // CS$0$0000
+IL_002B:  ldc.i4.0    
+IL_002C:  ldc.i4.s    21 
+IL_002E:  ldnull      
+IL_002F:  call        Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create
+IL_0034:  stelem.ref  
+IL_0035:  ldloc.1     // CS$0$0000
+IL_0036:  ldc.i4.1    
+IL_0037:  ldc.i4.3    
+IL_0038:  ldnull      
+IL_0039:  call        Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create
+IL_003E:  stelem.ref  
+IL_003F:  ldloc.1     // CS$0$0000
+IL_0040:  ldc.i4.2    
+IL_0041:  ldc.i4.0    
+IL_0042:  ldnull      
+IL_0043:  call        Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create
+IL_0048:  stelem.ref  
+IL_0049:  ldloc.1     // CS$0$0000
+IL_004A:  ldc.i4.3    
+IL_004B:  ldc.i4.0    
+IL_004C:  ldnull      
+IL_004D:  call        Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create
+IL_0052:  stelem.ref  
+IL_0053:  ldloc.1     // CS$0$0000
+IL_0054:  call        Microsoft.CSharp.RuntimeBinder.Binder.InvokeMember
+IL_0059:  call        System.Runtime.CompilerServices.CallSite<System.Action<System.Runtime.CompilerServices.CallSite,System.Type,System.String,System.Object,System.Object>>.Create
+IL_005E:  stsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site1
+IL_0063:  br.s        IL_0065
+IL_0065:  ldsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site1
+IL_006A:  ldfld       System.Runtime.CompilerServices.CallSite<System.Action<System.Runtime.CompilerServices.CallSite,System.Type,System.String,System.Object,System.Object>>.Target
+IL_006F:  ldsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site1
+IL_0074:  ldtoken     System.Console
+IL_0079:  call        System.Type.GetTypeFromHandle
+IL_007E:  ldstr       "{0} ({1})"
+IL_0083:  ldloc.0     // name
+IL_0084:  ldsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site2
+IL_0089:  brtrue.s    IL_00BE
+IL_008B:  ldc.i4.0    
+IL_008C:  ldstr       "Length"
+IL_0091:  ldtoken     UserQuery
+IL_0096:  call        System.Type.GetTypeFromHandle
+IL_009B:  ldc.i4.1    
+IL_009C:  newarr      Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo
+IL_00A1:  stloc.1     // CS$0$0000
+IL_00A2:  ldloc.1     // CS$0$0000
+IL_00A3:  ldc.i4.0    
+IL_00A4:  ldc.i4.0    
+IL_00A5:  ldnull      
+IL_00A6:  call        Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create
+IL_00AB:  stelem.ref  
+IL_00AC:  ldloc.1     // CS$0$0000
+IL_00AD:  call        Microsoft.CSharp.RuntimeBinder.Binder.GetMember
+IL_00B2:  call        System.Runtime.CompilerServices.CallSite<System.Func<System.Runtime.CompilerServices.CallSite,System.Object,System.Object>>.Create
+IL_00B7:  stsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site2
+IL_00BC:  br.s        IL_00BE
+IL_00BE:  ldsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site2
+IL_00C3:  ldfld       System.Runtime.CompilerServices.CallSite<System.Func<System.Runtime.CompilerServices.CallSite,System.Object,System.Object>>.Target
+IL_00C8:  ldsfld      UserQuery+<RunUserAuthoredQuery>o__SiteContainer0.<>p__Site2
+IL_00CD:  ldloc.0     // name
+IL_00CE:  callvirt    System.Func<System.Runtime.CompilerServices.CallSite,System.Object,System.Object>.Invoke
+IL_00D3:  callvirt    System.Action<System.Runtime.CompilerServices.CallSite,System.Type,System.String,System.Object,System.Object>.Invoke

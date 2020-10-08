@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestResult">
+    <Position X="10.5" Y="16" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestCaseResult">
+    <Position X="9.5" Y="1" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestBase">
+    <Position X="4.75" Y="9.5" Width="4.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestCase2">
+    <Position X="1.5" Y="0.75" Width="3.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestCase">
+    <Position X="2.5" Y="4" Width="3.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IAttachmentOwner">
+    <Position X="0.5" Y="13.5" Width="4.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestIterationResult">
+    <Position X="14" Y="6.25" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestImplementation">
+    <Position X="14.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

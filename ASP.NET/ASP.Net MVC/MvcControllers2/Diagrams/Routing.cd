@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Routing.RouteBase">
+    <Position X="1" Y="1" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Routing.Route">
+    <Position X="1" Y="3.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Routing.PageRouteHandler">
+    <Position X="9" Y="2.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.HttpMethodConstraint">
+    <Position X="5.25" Y="11.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.RouteData">
+    <Position X="3.5" Y="5.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Routing.RouteTable">
+    <Position X="5.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Routing.RouteValueDictionary">
+    <Position X="1.75" Y="9.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.StopRoutingHandler">
+    <Position X="11.75" Y="2.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.UrlRoutingHandler">
+    <Position X="6.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.UrlRoutingModule">
+    <Position X="6.75" Y="5.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Routing.VirtualPathData">
+    <Position X="7.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Routing.RequestContext">
+    <Position X="3.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Routing.RouteCollection">
+    <Position X="9.75" Y="7.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.ObjectModel.Collection&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.Web.Routing.IRouteConstraint">
+    <Position X="5.25" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Routing.IRouteHandler">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.IHttpHandler">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="System.Web.Routing.RouteDirection">
+    <Position X="0.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

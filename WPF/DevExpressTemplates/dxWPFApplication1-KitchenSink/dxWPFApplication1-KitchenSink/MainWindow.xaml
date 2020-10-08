@@ -1,0 +1,332 @@
+﻿<dxr:DXRibbonWindow
+    x:Class="dxWPFApplication1_KitchenSink.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:dxWPFApplication1_KitchenSink"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxbh="http://schemas.devexpress.com/winfx/2008/xaml/bars/internal"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+    xmlns:dxnb="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+    Title="DXApplication" Height="700" Width="1100"
+    SnapsToDevicePixels="True" UseLayoutRounding="True"
+    dx:ThemeManager.ThemeName="DXStyle"
+    >
+    <dxr:DXRibbonWindow.Resources>
+
+    </dxr:DXRibbonWindow.Resources>
+
+    <dxb:BarManager x:Name="barManager" dxbh:BlendHelperForBarsAndRibbon.IsDesignControl="true">
+        <dxb:BarManager.Items>
+            <dxb:BarEditItem Name="eEditItem" EditWidth="74" Content="Edit Item:">
+                <dxb:BarEditItem.EditSettings>
+                    <dxe:TextEditSettings />
+                </dxb:BarEditItem.EditSettings>
+            </dxb:BarEditItem>
+            <dxb:BarCheckItem Name="eCheckItem" Content="Check item" />
+            <dxb:BarStaticItem Name="eStaticItem" Content="Static item" />
+            <dxb:BarButtonItem x:Name="bHelp" Content="Help" Glyph="Images/Icons/index-16x16.png" LargeGlyph="Images/Icons/index-32x32.png" />
+            <dxb:BarButtonItem x:Name="bCut"  Content="Cut"  Glyph="Images/Icons/cut-16x16.png"   LargeGlyph="Images/Icons/cut-32x32.png" />
+            <dxb:BarButtonItem x:Name="bCopy" Content="Copy" Glyph="Images/Icons/copy-16x16.png" LargeGlyph="Images/Icons/copy-32x32.png" />
+            <dxb:BarButtonItem x:Name="bPaste" Content="Paste" Glyph="Images/Icons/paste-16x16.png" LargeGlyph="Images/Icons/paste-32x32.png" />
+            <dxb:BarButtonItem x:Name="bNew" Content="New" Glyph="Images/Icons/new-16x16.png" LargeGlyph="Images/Icons/New-32x32.png" />
+            <dxb:BarButtonItem x:Name="bPrint" Content="Print" Glyph="Images/Icons/print-16x16.png" LargeGlyph="Images/Icons/print-32x32.png" />
+            <dxb:BarButtonItem x:Name="bOpen" Content="Open" Glyph="Images/Icons/open-16x16.png" LargeGlyph="Images/Icons/open-32x32.png" />
+            <dxb:BarSplitButtonItem x:Name="bSplitButton" Content="open" Glyph="Images/Icons/open-16x16.png" LargeGlyph="Images/Icons/open-32x32.png" />
+            <dxb:BarSubItem x:Name="mmFile" Content="File" Glyph="Images/Icons/zoom-16x16.png" LargeGlyph="Images/Icons/zoom-32x32.png">
+                <dxb:BarSubItem.ItemLinks>
+                    <dxb:BarButtonItemLink BarItemName="bNew" />
+                    <dxb:BarButtonItemLink BarItemName="bOpen" />
+                </dxb:BarSubItem.ItemLinks>
+            </dxb:BarSubItem>
+            <dxr:BarButtonGroup x:Name="bgButtons1">
+                <dxr:BarButtonGroup.ItemLinks>
+                    <dxb:BarButtonItemLink BarItemName="bCopy" />
+                    <dxb:BarSplitButtonItemLink BarItemName="bSplitButton" />
+                    <dxb:BarSubItemLink BarItemName="mmFile" />
+                </dxr:BarButtonGroup.ItemLinks>
+            </dxr:BarButtonGroup>
+            <dxr:BarButtonGroup x:Name="bgButtons2">
+                <dxr:BarButtonGroup.ItemLinks>
+                    <dxb:BarButtonItemLink BarItemName="bCopy" />
+                    <dxb:BarButtonItemLink BarItemName="bCut" />
+                    <dxb:BarButtonItemLink BarItemName="bPaste" />
+                </dxr:BarButtonGroup.ItemLinks>
+            </dxr:BarButtonGroup>
+            <dxr:BarButtonGroup x:Name="bgItems1">
+                <dxr:BarButtonGroup.ItemLinks>
+                    <dxb:BarCheckItemLink BarItemName="eCheckItem" />
+                </dxr:BarButtonGroup.ItemLinks>
+            </dxr:BarButtonGroup>
+            <dxr:BarButtonGroup x:Name="bgItems2">
+                <dxr:BarButtonGroup.ItemLinks>
+                    <dxb:BarEditItemLink BarItemName="eEditItem" />
+                </dxr:BarButtonGroup.ItemLinks>
+            </dxr:BarButtonGroup>
+            <dxr:RibbonGalleryBarItem Name="itemGallery" DropDownGalleryMenuItemsGlyphSize="Small">
+                <dxr:RibbonGalleryBarItem.DropDownMenuItemLinks>
+                    <dxb:BarEditItemLink BarItemName="eEditItem" />
+                    <dxb:BarEditItemLink BarItemName="eEditItem" />
+                </dxr:RibbonGalleryBarItem.DropDownMenuItemLinks>
+                <dxr:RibbonGalleryBarItem.Gallery>
+                    <dxb:Gallery ColCount="6" MinColCount="3" RowCount="3" ItemGlyphMargin="1" ItemCaptionMargin="1" ItemGlyphLocation="Right" ItemGlyphHorizontalAlignment="Right" ItemGlyphVerticalAlignment="Bottom" FilterCaption="Gallery control" AllowFilter="True" AllowHoverImages="True" IsItemCaptionVisible="False" IsItemDescriptionVisible="False" IsGroupCaptionVisible="False" SizeMode="Both" ItemCheckMode="Single" dxbh:BlendHelperForBarsAndRibbon.IsDesignControl="True">
+                        <dxb:Gallery.Groups>
+                            <dxb:GalleryItemGroup Name="Group11" Caption="Group 1">
+                                <dxb:GalleryItemGroup.Items>
+                                    <dxb:GalleryItem Glyph="Images/Icons/open-16x16.png" Caption="Item 1" Description="Set font" HoverGlyph="Images/Icons/open-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/zoom-16x16.png" Caption="Item 2" Description="Create a new file" HoverGlyph="Images/Icons/zoom-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/print-16x16.png" Caption="Font size decrease" Description="Decrease the font size." HoverGlyph="Images/Icons/print-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/paste-16x16.png" Caption="Font size increase" HoverGlyph="Images/Icons/paste-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/copy-16x16.png" Caption="Hidden text" HoverGlyph="Images/Icons/copy-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/new-16x16.png" Caption="Highlight" HoverGlyph="Images/Icons/new-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/print-16x16.png" Caption="Font size decrease" Description="Decrease the font size." HoverGlyph="Images/Icons/print-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/paste-16x16.png" Caption="Font size increase" HoverGlyph="Images/Icons/paste-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/copy-16x16.png" Caption="Hidden text" HoverGlyph="Images/Icons/copy-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/new-16x16.png" Caption="Highlight" HoverGlyph="Images/Icons/new-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/print-16x16.png" Caption="Font size decrease" Description="Decrease the font size." HoverGlyph="Images/Icons/print-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/paste-16x16.png" Caption="Font size increase" HoverGlyph="Images/Icons/paste-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/copy-16x16.png" Caption="Hidden text" HoverGlyph="Images/Icons/copy-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/new-16x16.png" Caption="Highlight" HoverGlyph="Images/Icons/new-32x32.png" />
+                                </dxb:GalleryItemGroup.Items>
+                            </dxb:GalleryItemGroup>
+                            <dxb:GalleryItemGroup Name="Group12" Caption="Group 2">
+                                <dxb:GalleryItemGroup.Items>
+                                    <dxb:GalleryItem Glyph="Images/Icons/print-16x16.png" Caption="Font size decrease" Description="Decrease the font size." HoverGlyph="Images/Icons/print-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/paste-16x16.png" Caption="Font size increase" HoverGlyph="Images/Icons/paste-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/copy-16x16.png" Caption="Hidden text" HoverGlyph="Images/Icons/copy-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/new-16x16.png" Caption="Highlight" HoverGlyph="Images/Icons/new-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/print-16x16.png" Caption="Font size decrease" Description="Decrease the font size." HoverGlyph="Images/Icons/print-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/paste-16x16.png" Caption="Font size increase" HoverGlyph="Images/Icons/paste-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/copy-16x16.png" Caption="Hidden text" HoverGlyph="Images/Icons/copy-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/new-16x16.png" Caption="Highlight" HoverGlyph="Images/Icons/new-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/print-16x16.png" Caption="Font size decrease" Description="Decrease the font size." HoverGlyph="Images/Icons/print-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/paste-16x16.png" Caption="Font size increase" HoverGlyph="Images/Icons/paste-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/copy-16x16.png" Caption="Hidden text" HoverGlyph="Images/Icons/copy-32x32.png" />
+                                    <dxb:GalleryItem Glyph="Images/Icons/new-16x16.png" Caption="Highlight" HoverGlyph="Images/Icons/new-32x32.png" />
+                                </dxb:GalleryItemGroup.Items>
+                            </dxb:GalleryItemGroup>
+                        </dxb:Gallery.Groups>
+                    </dxb:Gallery>
+                </dxr:RibbonGalleryBarItem.Gallery>
+            </dxr:RibbonGalleryBarItem>
+        </dxb:BarManager.Items>
+        <DockPanel>
+            <dxr:RibbonControl x:Name="ribbonControl1" RibbonStyle="Office2010" dxbh:BlendHelperForBarsAndRibbon.IsDesignControl="true" DockPanel.Dock="Top">
+                <dxr:RibbonControl.ApplicationMenu>
+                    <dxr:ApplicationMenuInfo RightPaneWidth="280" ShowRightPane="True">
+                        <dxr:ApplicationMenuInfo.ItemLinks>
+                            <dxb:BarButtonItemLink BarItemName="bNew" />
+                            <dxb:BarButtonItemLink BarItemName="bOpen" />
+                            <dxb:BarButtonItemLink BarItemName="bHelp" />
+                        </dxr:ApplicationMenuInfo.ItemLinks>
+                        <dxr:ApplicationMenuInfo.RightPane>
+                            <Button Content="Right Pane" />
+                        </dxr:ApplicationMenuInfo.RightPane>
+                        <dxr:ApplicationMenuInfo.BottomPane>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="OK button" />
+                            </StackPanel>
+                        </dxr:ApplicationMenuInfo.BottomPane>
+                    </dxr:ApplicationMenuInfo>
+                </dxr:RibbonControl.ApplicationMenu>
+                <dxr:RibbonControl.PageHeaderItemLinks>
+                    <dxb:BarButtonItemLink BarItemName="bNew" />
+                    <dxb:BarButtonItemLink BarItemName="bOpen" />
+                    <dxb:BarButtonItemLink BarItemName="bHelp" />
+                </dxr:RibbonControl.PageHeaderItemLinks>
+                <dxr:RibbonDefaultPageCategory>
+                    <dxr:RibbonPage Name="Home" Caption="Home">
+                        <dxr:RibbonPageGroup Caption="Buttons">
+                            <dxr:RibbonPageGroup.ItemLinks>
+                                <dxb:BarButtonItemLink BarItemName="bNew" />
+                                <dxb:BarSubItemLink BarItemName="mmFile" RibbonStyle="Large" />
+                                <dxb:BarButtonItemLink BarItemName="bOpen" RibbonStyle="SmallWithText" />
+                                <dxb:BarSubItemLink BarItemName="mmFile" RibbonStyle="SmallWithText" />
+                                <dxb:BarButtonItemLink BarItemName="bPrint" RibbonStyle="SmallWithText" />
+                                <dxb:BarItemLinkSeparator />
+                                <dxb:BarButtonItemLink BarItemName="bOpen" RibbonStyle="SmallWithoutText" />
+                                <dxb:BarSubItemLink BarItemName="mmFile" RibbonStyle="SmallWithoutText" />
+                                <dxb:BarButtonItemLink BarItemName="bPrint" RibbonStyle="SmallWithoutText" />
+                            </dxr:RibbonPageGroup.ItemLinks>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Button groups">
+                            <dxr:RibbonPageGroup.ItemLinks>
+                                <dxr:BarButtonGroupLink BarItemName="bgButtons1" />
+                                <dxr:BarButtonGroupLink BarItemName="bgButtons2" />
+                                <dxr:BarButtonGroupLink BarItemName="bgItems1" />
+                                <dxr:BarButtonGroupLink BarItemName="bgItems2" />
+                            </dxr:RibbonPageGroup.ItemLinks>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Gallery">
+                            <dxr:RibbonPageGroup.ItemLinks>
+                                <dxb:BarItemLink BarItemName="itemGallery" />
+                            </dxr:RibbonPageGroup.ItemLinks>
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Name="Second" Caption="Second Page">
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Name="Third" Caption="Third Page">
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Name="Forth" Caption="Forth Page">
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Name="Fifth" Caption="Fifth Page">
+                    </dxr:RibbonPage>
+                </dxr:RibbonDefaultPageCategory>
+                <dxr:RibbonControl.ToolbarItemLinks>
+                    <dxb:BarButtonItemLink BarItemName="bNew" />
+                    <dxb:BarButtonItemLink BarItemName="bOpen" />
+                    <dxb:BarItemLinkSeparator />
+                    <dxb:BarButtonItemLink BarItemName="bCopy" />
+                    <dxb:BarButtonItemLink BarItemName="bPaste" />
+                </dxr:RibbonControl.ToolbarItemLinks>
+            </dxr:RibbonControl>
+            <dxr:RibbonStatusBarControl dxbh:BlendHelperForBarsAndRibbon.IsDesignControl="true" DockPanel.Dock="Bottom">
+                <dxr:RibbonStatusBarControl.LeftItemLinks>
+                    <dxb:BarEditItemLink BarItemName="eEditItem" />
+                    <dxb:BarCheckItemLink BarItemName="eCheckItem" />
+                    <dxb:BarStaticItemLink BarItemName="eStaticItem" />
+                    <dxb:BarButtonItemLink BarItemName="bCut" />
+                </dxr:RibbonStatusBarControl.LeftItemLinks>
+                <dxr:RibbonStatusBarControl.RightItemLinks>
+                    <dxb:BarEditItemLink BarItemName="eEditItem" />
+                    <dxb:BarCheckItemLink BarItemName="eCheckItem" />
+                    <dxb:BarStaticItemLink BarItemName="eStaticItem" />
+                    <dxb:BarButtonItemLink BarItemName="bCut" />
+                </dxr:RibbonStatusBarControl.RightItemLinks>
+            </dxr:RibbonStatusBarControl>
+            <dxd:DockLayoutManager x:Name="dockLayoutManager">
+                <dxd:LayoutGroup>
+                    <dxd:LayoutGroup Orientation="Vertical"  ItemWidth="3*">
+                        <dxd:DocumentGroup ItemHeight="3*">
+                            <dxd:DocumentPanel Caption="Document1" ItemHeight="3*">
+                                <dxg:GridControl x:Name="gridControl" AutoPopulateColumns="True" ShowBorder="False">
+                                    <dxg:GridControl.ItemsSource>
+                                        <local:SourceList>
+                                            <local:TestData Text="Row0" Number="0"/>
+                                            <local:TestData Text="Row1" Number="1"/>
+                                            <local:TestData Text="Row2" Number="2"/>
+                                            <local:TestData Text="Row3" Number="3"/>
+                                            <local:TestData Text="Row4" Number="4"/>
+                                            <local:TestData Text="Row5" Number="5"/>
+                                            <local:TestData Text="Row6" Number="6"/>
+                                            <local:TestData Text="Row7" Number="7"/>
+                                            <local:TestData Text="Row8" Number="8"/>
+                                            <local:TestData Text="Row9" Number="9"/>
+                                        </local:SourceList>
+                                    </dxg:GridControl.ItemsSource>
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView/>
+                                    </dxg:GridControl.View>
+                                </dxg:GridControl>
+                            </dxd:DocumentPanel>
+                        </dxd:DocumentGroup>
+                        <dxd:LayoutPanel Caption="DetailView" ItemHeight="2*">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="65*" />
+                                    <ColumnDefinition Width="35*" />
+                                </Grid.ColumnDefinitions>
+                                <dxc:ChartControl x:Name="chartControl" BorderThickness="0">
+                                    <dxc:ChartControl.Diagram>
+                                        <dxc:XYDiagram2D x:Name="diagram">
+                                            <dxc:XYDiagram2D.Series>
+                                                <dxc:BarSideBySideSeries2D x:Name="series1" DisplayName="Series 1" ArgumentScaleType="Numerical">
+                                                    <dxc:BarSideBySideSeries2D.Label>
+                                                        <dxc:SeriesLabel Visible="True"/>
+                                                    </dxc:BarSideBySideSeries2D.Label>
+                                                    <dxc:BarSideBySideSeries2D.Points>
+                                                        <dxc:SeriesPoint Argument="1" Value="5.87"/>
+                                                        <dxc:SeriesPoint Argument="2" Value="6.56"/>
+                                                        <dxc:SeriesPoint Argument="3" Value="2.82"/>
+                                                        <dxc:SeriesPoint Argument="4" Value="6.31"/>
+                                                        <dxc:SeriesPoint Argument="5" Value="3.16"/>
+                                                    </dxc:BarSideBySideSeries2D.Points>
+                                                </dxc:BarSideBySideSeries2D>
+                                                <dxc:BarSideBySideSeries2D x:Name="series2" DisplayName="Series 2" ArgumentScaleType="Numerical">
+                                                    <dxc:BarSideBySideSeries2D.Label>
+                                                        <dxc:SeriesLabel Visible="True"/>
+                                                    </dxc:BarSideBySideSeries2D.Label>
+                                                    <dxc:BarSideBySideSeries2D.Points>
+                                                        <dxc:SeriesPoint Argument="1" Value="2.68"/>
+                                                        <dxc:SeriesPoint Argument="2" Value="9.14"/>
+                                                        <dxc:SeriesPoint Argument="3" Value="9.2"/>
+                                                        <dxc:SeriesPoint Argument="4" Value="2.34"/>
+                                                        <dxc:SeriesPoint Argument="5" Value="8.78"/>
+                                                    </dxc:BarSideBySideSeries2D.Points>
+                                                </dxc:BarSideBySideSeries2D>
+                                            </dxc:XYDiagram2D.Series>
+                                        </dxc:XYDiagram2D>
+                                    </dxc:ChartControl.Diagram>
+                                    <dxc:ChartControl.Palette>
+                                        <dxc:OfficePalette/>
+                                    </dxc:ChartControl.Palette>
+                                    <dxc:ChartControl.Legend>
+                                        <dxc:Legend x:Name="legend"/>
+                                    </dxc:ChartControl.Legend>
+                                </dxc:ChartControl>
+                                <dxga:CircularGaugeControl Name="circularGaugeControl" Grid.Column="1" Padding="16" Background="White">
+                                    <dxga:CircularGaugeControl.Model>
+                                        <dxga:CircularDefaultModel/>
+                                    </dxga:CircularGaugeControl.Model>
+                                    <dxga:CircularGaugeControl.Scales>
+                                        <dxga:ArcScale>
+                                            <dxga:ArcScale.Ranges>
+                                                <dxga:ArcScaleRange EndValue="33%"/>
+                                                <dxga:ArcScaleRange EndValue="66%" StartValue="33%" />
+                                                <dxga:ArcScaleRange EndValue="100%" StartValue="66%" />
+                                            </dxga:ArcScale.Ranges>
+                                            <dxga:ArcScale.Needles>
+                                                <dxga:ArcScaleNeedle Value="40" />
+                                            </dxga:ArcScale.Needles>
+                                            <dxga:ArcScale.Layers>
+                                                <dxga:ArcScaleLayer />
+                                                <dxga:ArcScaleLayer />
+                                            </dxga:ArcScale.Layers>
+                                        </dxga:ArcScale>
+                                    </dxga:CircularGaugeControl.Scales>
+                                </dxga:CircularGaugeControl>
+                            </Grid>
+                        </dxd:LayoutPanel>
+                    </dxd:LayoutGroup>
+                    <dxd:TabbedGroup ItemWidth="*">
+                        <dxd:LayoutPanel Caption="Properties" />
+                        <dxd:LayoutPanel Caption="Explorer" />
+                    </dxd:TabbedGroup>
+                </dxd:LayoutGroup>
+                <dxd:DockLayoutManager.AutoHideGroups>
+                    <dxd:AutoHideGroup >
+                        <dxd:LayoutPanel Caption="Navigation" ItemWidth="200" Padding="1">
+                            <dxnb:NavBarControl Name="navBarControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1">
+                                <dxnb:NavBarControl.Groups>
+                                    <dxnb:NavBarGroup Header="Group1" ImageSource="Images/Icons/Group.png">
+                                        <dxnb:NavBarItem Content="Item1" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
+                                    </dxnb:NavBarGroup>
+                                    <dxnb:NavBarGroup Header="Group2" ImageSource="Images/Icons/Group.png">
+                                        <dxnb:NavBarItem Content="Item1" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
+                                        <dxnb:NavBarItem Content="Item5" ImageSource="Images/Icons/Item.png"/>
+                                    </dxnb:NavBarGroup>
+                                </dxnb:NavBarControl.Groups>
+                                <dxnb:NavBarControl.View>
+                                    <dxnb:NavigationPaneView IsExpandButtonVisible="False"/>
+                                </dxnb:NavBarControl.View>
+                            </dxnb:NavBarControl>
+                        </dxd:LayoutPanel>
+                        <dxd:LayoutPanel Caption="Tools"/>
+                    </dxd:AutoHideGroup>
+                </dxd:DockLayoutManager.AutoHideGroups>
+            </dxd:DockLayoutManager>
+        </DockPanel>
+    </dxb:BarManager>
+</dxr:DXRibbonWindow>

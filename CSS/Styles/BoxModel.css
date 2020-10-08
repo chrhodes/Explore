@@ -1,0 +1,127 @@
+﻿
+/* BoxModel.css */
+
+.body_BoxModel,
+    .box1_BoxModel, .box2_BoxModel, .box3_BoxModel, .box4_BoxModel, .box5_BoxModel,
+    .box6_BoxModel, .box7_BoxModel, .box8_BoxModel, .box9_BoxModel, .box10_BoxModel {
+    color:salmon;
+    border:5px salmon solid;
+    margin:20px;
+    padding:20px;
+}
+
+.body_BoxModel p {
+    color:orange;
+    border:5px orange solid;
+    margin:20px;
+    padding:20px;
+}
+
+
+.box1_BoxModel {
+    box-shadow: 5px 5px red;
+}
+
+.box1_BoxModel_Header {
+    box-shadow: 5px 5px 5px green;
+}
+
+.box1_BoxModel_Content {
+    box-shadow: 5px 5px 5px 10px blue ;
+}
+
+.box2_BoxModel {
+    display:flexbox;
+}
+
+.box2_BoxModel_Header {
+    display:grid;
+}
+
+.box2_BoxModel_Content {
+    display:inline;
+}
+
+.box3_BoxModel {
+    display:inline-block;
+}
+
+.box3_BoxModel_Header {
+    display:inline-flex;
+}
+
+.box3_BoxModel_Content {
+    display:inline-flexbox;
+}
+
+.box4_BoxModel {
+    display:inline-grid;
+}
+
+.box4_BoxModel_Heade{
+    display:inline-table;
+}
+
+.box4_BoxModel_Content {
+    display:list-item;
+}
+
+.box5_BoxModel {
+
+}
+
+.box5_BoxModel_Header {
+    display:none;
+}
+
+.box5_BoxModel_Content {
+    display:none;
+}
+
+.box6_BoxModel {
+
+}
+
+.box6_BoxModel_Header {
+    display:table;
+}
+
+.box6_BoxModel_Content {
+    display: table-caption;
+}
+
+.box7_BoxModel {
+    display:run-in;
+}
+
+.box7_BoxModel_Header {
+    display:table;
+}
+
+.box7_BoxModel_Content {
+    display: table-caption;
+}
+
+.box8_BoxModel {
+    display: table-cell;
+}
+
+.box8_BoxModel_Header {
+    display:table-column;
+}
+
+.box8_BoxModel_Content {
+    display:table-column-group;
+}
+
+.box9_BoxModel {
+    display: table-footer-group;
+}
+
+.box9_BoxModel_Header {
+    display:table-header-group;
+}
+
+.box9_BoxModel_Content {
+    display:table-row;
+}

@@ -1,0 +1,39 @@
+﻿<UserControl 
+    x:Class="FriendOrganizer.Presentation.Friend11.Views.Friend11Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:infra="clr-namespace:VNCExplore_FriendOrganizer.Core;assembly=VNCExplore_FriendOrganizer.Core"
+    xmlns:prism="http://prismlibrary.com/"    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:views="clr-namespace:FriendOrganizer.Presentation.Friend11.Views"
+    xmlns:viewModels="clr-namespace:FriendOrganizer.Presentation.Friend11.ViewModels"
+    mc:Ignorable="d" 
+    Background="{StaticResource Friend11MainBackground}"
+    d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewModels:Friend11DetailViewModel}">
+            <views:Friend11Detail />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2" FontSize="20">
+            <MenuItem Header="Add Friend" Command="{Binding AddNewFriendCommand}" />
+        </Menu>
+        <ContentControl Grid.Row="1" Grid.Column="0" prism:RegionManager.RegionName="{x:Static infra:RegionNames.Region11}" 
+                        DataContext="{Binding Friend11ViewModel}" />
+        <!--<ContentControl Grid.Row="1" Grid.Column="1" 
+                        prism:RegionManager.RegionName="{x:Static infra:RegionNames.Region11Detail}"
+                        DataContext="{Binding Friend11DetailViewModel}" />-->
+        <ContentControl Grid.Row="1" Grid.Column="1" 
+                        Content="{Binding Friend11DetailViewModel}" />
+    </Grid>
+</UserControl>

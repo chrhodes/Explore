@@ -1,0 +1,104 @@
+﻿/* Backgrounds */
+
+.body_Backgrounds {
+
+}
+
+.box1_Backgrounds, .box2_Backgrounds, .box3_Backgrounds, .box4_Backgrounds  {
+    border: 2px black solid;
+    /*margin: 5px;
+    padding:5px;*/
+}
+
+.box1_Backgrounds_Header {
+    background-image: url(/Images/BackGround1.gif);
+}
+
+.box1_Backgrounds_Content {
+
+}
+
+.box2_Backgrounds {
+
+}
+
+.box2_Backgrounds_Header {
+
+}
+
+.box2_Backgrounds_Content {
+
+}
+
+.box3_Backgrounds {
+
+}
+
+.box3_Backgrounds_Header {
+
+}
+
+.box3_Backgrounds_Content {
+
+}
+
+.box4_Backgrounds {
+
+}
+
+.box4_Backgrounds_Header {
+    background-image: url(/Images/Application.png);
+    background-repeat:no-repeat;
+    height:96px;
+    width:72px;
+    padding:2px;
+    padding-top:30px;
+    font-size:7pt;
+    text-align:center;
+}
+
+.box4_Backgrounds_Content {
+    background-image: url(/Images/Application.png);
+    background-repeat:no-repeat;
+    height:96px;
+    width:72px;
+    padding:2px;
+    padding-top:30px;
+    font-size:8pt;
+    text-align:center;
+}
+
+.box5_Backgrounds {
+
+}
+
+.box5_Backgrounds_Header {
+    background-image: url(/Images/Application.png);
+    background-repeat:no-repeat;
+    height:96px;
+    width:72px;
+    padding:2px;
+    padding-top:30px;
+    font-size:7pt;
+    text-align:center;
+    word-spacing:66px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.box5_Backgrounds_Content {
+    background-image: url(/Images/Application.png);
+    background-repeat:no-repeat;
+    height:96px;
+    width:72px;
+    padding:2px;
+    padding-top:30px;
+    font-size:8pt;
+    text-align:center;
+    word-spacing:66px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { 
+    transform: scale(1.25) translate(10px);
+}

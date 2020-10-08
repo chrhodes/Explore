@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Tasks\Tasks.csproj", "{52C68A9B-C814-4891-97BC-94766A3CF3F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksWinForm", "TasksWinForm\TasksWinForm.csproj", "{B134AA7A-7D53-4FB8-9E72-6584ABDD29AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsOfParallelProgramming", "PatternsOfParrallelProgramming\PatternsOfParallelProgramming.csproj", "{1C9927D5-4CAA-46DF-ADE8-939DBB8D0778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsOfParallelProgrammingWinForms", "PatternsOfParrallelProgrammingWinForms\PatternsOfParallelProgrammingWinForms.csproj", "{0CFF7023-7FCE-40C8-BCD4-678ACD83D705}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52C68A9B-C814-4891-97BC-94766A3CF3F4}.Debug|x86.ActiveCfg = Debug|x86
+		{52C68A9B-C814-4891-97BC-94766A3CF3F4}.Debug|x86.Build.0 = Debug|x86
+		{52C68A9B-C814-4891-97BC-94766A3CF3F4}.Release|x86.ActiveCfg = Release|x86
+		{52C68A9B-C814-4891-97BC-94766A3CF3F4}.Release|x86.Build.0 = Release|x86
+		{B134AA7A-7D53-4FB8-9E72-6584ABDD29AB}.Debug|x86.ActiveCfg = Debug|x86
+		{B134AA7A-7D53-4FB8-9E72-6584ABDD29AB}.Debug|x86.Build.0 = Debug|x86
+		{B134AA7A-7D53-4FB8-9E72-6584ABDD29AB}.Release|x86.ActiveCfg = Release|x86
+		{B134AA7A-7D53-4FB8-9E72-6584ABDD29AB}.Release|x86.Build.0 = Release|x86
+		{1C9927D5-4CAA-46DF-ADE8-939DBB8D0778}.Debug|x86.ActiveCfg = Debug|x86
+		{1C9927D5-4CAA-46DF-ADE8-939DBB8D0778}.Debug|x86.Build.0 = Debug|x86
+		{1C9927D5-4CAA-46DF-ADE8-939DBB8D0778}.Release|x86.ActiveCfg = Release|x86
+		{1C9927D5-4CAA-46DF-ADE8-939DBB8D0778}.Release|x86.Build.0 = Release|x86
+		{0CFF7023-7FCE-40C8-BCD4-678ACD83D705}.Debug|x86.ActiveCfg = Debug|x86
+		{0CFF7023-7FCE-40C8-BCD4-678ACD83D705}.Debug|x86.Build.0 = Debug|x86
+		{0CFF7023-7FCE-40C8-BCD4-678ACD83D705}.Release|x86.ActiveCfg = Release|x86
+		{0CFF7023-7FCE-40C8-BCD4-678ACD83D705}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

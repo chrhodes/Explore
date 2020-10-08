@@ -1,0 +1,124 @@
+﻿/* StyleSheet.css */
+/* NB.  
+    Importing a style sheet requires another HTTP Request.  Best to include in one file.
+    Using @import in this learning project to keep the sheets small and focused
+*/
+
+@import url("/Styles/Artifacts.css");
+@import url("/Styles/Backgrounds.css");
+@import url("/Styles/Borders.css");
+@import url("/Styles/BoxModel.css");
+@import url("/Styles/HolyGrail.css");
+@import url("/Styles/Layouts.css");
+
+body {
+    background-color:#99FFFF;
+}
+
+.box1 {
+    border: 2px black solid;
+    width: 200px;
+    height: 100px;
+    text-align:center;
+}
+
+.box1_Header {
+    border: 2px green solid;
+}
+
+.box1_Content {
+    border: 2px red solid;
+}
+
+.box2 {
+    border: 2px black solid;
+    width: 100px;
+    height: 50px;
+    text-align:center;
+}
+
+.box2_Header {
+    border: 2px green solid;
+}
+
+.box2_Content {
+    border: 2px red solid;
+}
+
+.box3 {
+    border: 2px black solid;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.box3_Header {
+    border: 2px green solid;
+}
+
+.box3_Content {
+    border: 2px red solid;
+}
+
+.box4 {
+    border: 2px black solid;
+    border-radius: 5px 10px;
+    text-align:center;
+}
+
+.box4_Header {
+    border: 2px green solid;
+    border-style: ridge;
+}
+
+.box4_Content {
+    border: 2px red solid;
+    border-style: double;
+}
+
+.box5 {
+    border: 2px black solid;
+    width: 600px;
+    height: 326px;
+    text-align:center;
+    background-image: url(/Images/PurpleCloud-600x326.png);
+}
+
+.box5_Header {
+    border: 2px green solid;
+}
+
+.box5_Content {
+    border: 2px red solid;
+}
+
+.box6 {
+    border: 2px black solid;
+    width: 300px;
+    height: 163px;
+    text-align:center;
+    background-image: url(/Images/PurpleCloud-300x163.png);
+}
+
+.box6_Header {
+    border: 2px green solid;
+}
+
+.box6_Content {
+    border: 2px red solid;
+}
+
+.box7 {
+    border: 2px black solid;
+    width: 100px;
+    height: 55px;
+    text-align:center;
+    background-image: url(/Images/PurpleCloud.png);
+}
+
+.box7_Header {
+    border: 2px green solid;
+}
+
+.box7_Content {
+    border: 2px red solid;
+}

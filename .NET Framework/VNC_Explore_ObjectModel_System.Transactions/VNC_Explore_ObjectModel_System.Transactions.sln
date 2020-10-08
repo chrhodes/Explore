@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC_Explore_ObjectModel_System.Transactions", "VNC_Explore_ObjectModel_System.Transactions.csproj", "{876C9496-2FA9-46FE-B13D-C37790768F28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{876C9496-2FA9-46FE-B13D-C37790768F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876C9496-2FA9-46FE-B13D-C37790768F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876C9496-2FA9-46FE-B13D-C37790768F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876C9496-2FA9-46FE-B13D-C37790768F28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3405068C-E915-4569-9D8A-E0809BD58E11}
+	EndGlobalSection
+EndGlobal

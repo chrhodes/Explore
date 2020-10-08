@@ -1,0 +1,31 @@
+Talk about Xaml and Code
+
+Talk about XamlPad
+
+Talk about namespaces
+
+Talk about type converters
+
+Talk about UI Tree - Logical tree of elements - Controls and primitives
+	Logical Tree (What you see in Xaml or declare in code)
+	Visual Tree (What gets presented/rendered)
+
+Talk about eventing
+
+Talk about lookless controls
+
+Talk about Property Element syntax (Element.Property) (Classname.PropertyName)
+
+Talk about "{  }" Markup extentions
+	Decide at runtime how properties will be set.
+
+Talk about Primitive Elements (Framework Element) (Lower than controls) - Define appearance.  Do not have templates.
+
+Vector Graphics
+	Rectangle, Ellipse, Path
+
+Simple Text
+	TextBlock (Not a control)
+
+Bitmaps and Video
+	Image, Media

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Web.Mvc.Routing.DefaultDirectRouteProvider">
+    <Position X="0.5" Y="1" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.Routing.DefaultInlineConstraintResolver">
+    <Position X="0.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Mvc.Routing.DirectRouteFactoryContext">
+    <Position X="0.5" Y="6.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.Routing.RouteBuilder">
+    <Position X="6.5" Y="1.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.Routing.RouteEntry">
+    <Position X="6.5" Y="3.75" Width="1.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Mvc.Routing.RouteFactoryAttribute">
+    <Position X="6.25" Y="7" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Attribute" Collapsed="true">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.Web.Mvc.Routing.IDirectRouteBuilder">
+    <Position X="3.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.Routing.IDirectRouteFactory">
+    <Position X="3.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.Routing.IDirectRouteProvider">
+    <Position X="3.75" Y="5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.Routing.IInlineConstraintResolver">
+    <Position X="3.5" Y="6.25" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.Routing.IRouteInfoProvider">
+    <Position X="3.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Web.Mvc.Routing.IRoutePrefix">
+    <Position X="4" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

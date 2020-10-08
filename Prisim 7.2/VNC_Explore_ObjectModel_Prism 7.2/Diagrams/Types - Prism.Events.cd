@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Prism.Events.BackgroundEventSubscription">
+    <Position X="7.25" Y="0.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.BackgroundEventSubscription&lt;TPayload&gt;">
+    <Position X="7.5" Y="6" Width="6.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.DataEventArgs&lt;TData&gt;">
+    <Position X="0.5" Y="6.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.DelegateReference">
+    <Position X="0.5" Y="11.5" Width="4.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Events.DispatcherEventSubscription">
+    <Position X="13" Y="0.5" Width="6.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.DispatcherEventSubscription&lt;TPayload&gt;">
+    <Position X="14.5" Y="6" Width="8.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.EventAggregator">
+    <Position X="4" Y="6.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Events.EventBase">
+    <Position X="9.75" Y="15" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.EventSubscription">
+    <Position X="10.75" Y="2.75" Width="3.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Events.EventSubscription&lt;TPayload&gt;">
+    <Position X="11.25" Y="8.5" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Events.PubSubEvent">
+    <Position X="5.5" Y="11.25" Width="7" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.PubSubEvent&lt;TPayload&gt;">
+    <Position X="13" Y="11.25" Width="9.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Events.SubscriptionToken">
+    <Position X="0.5" Y="9" Width="4.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Prism.Events.IDelegateReference">
+    <Position X="0.5" Y="1.5" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Prism.Events.IEventAggregator">
+    <Position X="0.5" Y="3" Width="2.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Prism.Events.IEventSubscription">
+    <Position X="0.5" Y="4.5" Width="3.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Prism.Events.ThreadOption">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

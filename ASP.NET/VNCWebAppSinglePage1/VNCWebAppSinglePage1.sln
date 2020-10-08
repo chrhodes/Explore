@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22609.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNCWebAppSinglePage1", "VNCWebAppSinglePage1\VNCWebAppSinglePage1.csproj", "{BBD6F627-892D-42D7-8660-15907051B34A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{08134C31-2869-4614-ADEB-5DC40151111A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBD6F627-892D-42D7-8660-15907051B34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD6F627-892D-42D7-8660-15907051B34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD6F627-892D-42D7-8660-15907051B34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD6F627-892D-42D7-8660-15907051B34A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://infinityrhodes.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = VNCWebAppSinglePage1\\VNCWebAppSinglePage1.csproj
+		SccProjectName1 = VNCWebAppSinglePage1
+		SccLocalPath1 = VNCWebAppSinglePage1
+	EndGlobalSection
+EndGlobal

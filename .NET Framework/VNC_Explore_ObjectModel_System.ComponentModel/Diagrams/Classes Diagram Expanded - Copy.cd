@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Array">
+    <Position X="3.5" Y="1.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.CharEnumerator">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.ContextBoundObject" HideInheritanceLine="true">
+    <Position X="6.5" Y="3.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.DBNull">
+    <Position X="6.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.LocalDataStoreSlot">
+    <Position X="9.75" Y="1" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.OperatingSystem">
+    <Position X="10" Y="2.5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Random">
+    <Position X="14" Y="2.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.StringComparer">
+    <Position X="10.25" Y="6.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.TimeZone">
+    <Position X="14" Y="5.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.WeakReference">
+    <Position X="17.25" Y="7.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,333 @@
+﻿@model IEnumerable<EaseEFDAL.Models.OPHDR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OPSEQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPDESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORKCENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAXBATCH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATAREC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PFDCYC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PFDSETUP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REALCYC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REALSETUP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACOSTRATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACYCTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASETUPTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MATRECNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MACHRECNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISMETRIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MISCFLAG1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PCNNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MISCFLAG2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERDEF1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERDEF2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERDEF3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOOLCOSTRUN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOOLCOSTSU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NSL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROCESSFLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BALANCEFLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALTFLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COSTKEY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RULEID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATIONTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Engineer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleasedFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InUseFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRITOPTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRITOP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESSNVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpRev)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckOut_Engineer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpRelDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPARE1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPARE2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPARE3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHAREDOPID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicRunTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicSetupTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KVICODE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPSEQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPDESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORKCENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAXBATCH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATAREC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PFDCYC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PFDSETUP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REALCYC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REALSETUP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACOSTRATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACYCTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASETUPTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MATRECNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MACHRECNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectiveFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISMETRIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MISCFLAG1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PCNNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MISCFLAG2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERDEF1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERDEF2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERDEF3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOOLCOSTRUN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOOLCOSTSU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NSL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROCESSFLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BALANCEFLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALTFLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COSTKEY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RULEID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATIONTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engineer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleasedFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InUseFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRITOPTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRITOP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESSNVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpRev)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckOut_Engineer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpRelDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectiveTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPARE1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPARE2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPARE3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHAREDOPID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicRunTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicSetupTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KVICODE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

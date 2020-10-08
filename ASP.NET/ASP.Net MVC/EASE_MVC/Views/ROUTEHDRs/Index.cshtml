@@ -1,0 +1,234 @@
+﻿@model IEnumerable<EaseEFDAL.Models.ROUTEHDR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOTSIZE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AUTHREL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RELDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER0)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MATCOST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXPUNIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXPLOT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCOST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCOST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHANGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TCOST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOOLCOSTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PARTDESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SETUPHRS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RUNHRS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MASTERPART)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TAKTTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLANTID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PARTREV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOCKPLAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContinousFlow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHLevel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOTSIZE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AUTHREL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RELDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER0)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MATCOST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPUNIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPLOT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCOST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCOST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHANGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TCOST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOOLCOSTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PARTDESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SETUPHRS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RUNHRS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MASTERPART)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TAKTTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLANTID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PARTREV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOCKPLAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContinousFlow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHLevel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID}) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

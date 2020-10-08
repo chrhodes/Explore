@@ -1,0 +1,14 @@
+﻿@model List<System.Diagnostics.Process>
+
+@{
+    ViewBag.Title = "Process";
+}
+
+<h2>Process List</h2>
+@{ 
+    foreach (var process in this.Model)
+    {
+        <li>@Html.DisplayFor(modelItem => process.ProcessName)</li>
+    }
+}
+

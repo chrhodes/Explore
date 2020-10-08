@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- EAC iDev -->
+<AppConfigData>
+  <Cat>Bonzai</Cat>
+  <Dog>Xena</Dog>
+  <Urls>
+    <Url EnvCode="PROD"    Description="Production Data">http://LPDCM01:8080/dms/tws</Url>
+    <Url EnvCode="STAG1"   Description="Staging Data">http://LSDCM02:8080/dms/tws</Url>
+    <Url EnvCode="STAG2"   Description="Staging Data2">http://LSDCM01V:8080/dms/tws</Url>
+    <Url EnvCode="STAG3"   Description="Staging Data3">http://LSDCM02V:8070/dms/tws</Url>
+    <Url EnvCode="TEST2"   Description="Static Data">http://LSDCM01V:8070/dms/tws</Url>
+    <Url EnvCode="TEST1"   Description="Current Build">http://LIFEDCM401:8030/dms/tws</Url>
+    <Url EnvCode="TEST4"   Description="QA Data Changes">http://LIFEDCM401:8010/dms/tws</Url>
+    <Url EnvCode="TEST5"   Description="QA Code Changes">http://LIFEDCM401:8020/dms/tws</Url>
+    <Url EnvCode="DEV1"    Description="DEV1">http://LIFEDCM601:8230/dms/tws</Url>
+    <Url EnvCode="DEV1-UI" Description="DEV 1 UI">http://LIFEDCM601:8230/dms/dms.jsp</Url>
+    <Url EnvCode="DEV2"    Description="DEV2">http://LIFEDCM601:8240/dms/tws</Url>
+  </Urls>
+  <DatabaseOneConnection>server=172.20.136.138,1430;user id=mcreai;pwd=!Pacific!;database=MCRRequests</DatabaseOneConnection>
+  <NorthWindDBConnection>Data Source=LDSQLI02v\sql2k5pdev01;Initial Catalog=Northwind;uid=eac_sqluser;pwd=!Pacific!;</NorthWindDBConnection>
+  <!--<NorthWindDBConnection>Data Source=PERSEPHONE\;Initial Catalog=Northwind;Integrated Security=True</NorthWindDBConnection>-->
+
+  <DefaultViews>
+    <DefaultView PageName="Application Welcome" ListName="Calendar">
+      <View>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="EventDate" />
+          </OrderBy>
+          <Where>
+            <And>
+              <Eq>
+                <FieldRef Name="AppName" />
+                <Value Type="Text">zDefaultApp</Value>
+              </Eq>
+              <Geq>
+                <FieldRef Name="EndDt" />
+                <Value Type="DateTime">
+                  <Today />
+                </Value>
+              </Geq>
+            </And>
+          </Where>
+        </Query>
+        <ViewFields >
+          <FieldRef Name="LinkTitle" />
+          <FieldRef Name="StartDt" />
+          <FieldRef Name="EndDt" />
+          <FieldRef Name="AssignedTo" />
+          <FieldRef Name="EventType1" />
+          <FieldRef Name="Environment" />
+        </ViewFields>
+        <Aggregations Value="Off"  />
+        <RowLimit Paged="TRUE" >10</RowLimit>
+      </View>
+    </DefaultView>
+    <DefaultView PageName="Application Welcome" ListName="Contacts">
+      <View>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ContactLookUp" />
+          </OrderBy>
+          <Where>
+            <Eq>
+              <FieldRef Name="Context_x0020__x0028_Page_x0029_" />
+              <Value Type="Text">zDefaultPage</Value>
+            </Eq>
+          </Where>
+        </Query>
+        <ViewFields >
+          <FieldRef Name="ContactLookUp" />
+          <FieldRef Name="ContactRoleLookup" />
+        </ViewFields>
+        <Aggregations Value="Off"  />
+        <RowLimit Paged="TRUE" >10</RowLimit>
+      </View>
+    </DefaultView>
+  </DefaultViews>
+</AppConfigData>
+<!-- EAC iTest -->
+
+<!-- EAC Staging -->
+
+<!-- EAC Production -->
+
+

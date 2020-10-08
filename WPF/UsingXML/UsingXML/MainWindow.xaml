@@ -1,0 +1,76 @@
+﻿<Window x:Class="UsingXML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="800">
+    <Window.Resources>
+        <!--<XmlDataProvider x:Key="sourceXML" Source="sourceData.xml" XPath="Sensors/Sensor"/>-->
+        <!--<XmlDataProvider x:Key="sourceXML" Source="/sourceData.xml" XPath="Sensors/Sensor"/>-->
+        <XmlDataProvider x:Key="sourceXML" Source="/SubFolder/sourceData2.xml" XPath="Sensors/Sensor"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource sourceXML}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--<ComboBox Name="cbStuff" Grid.RowSpan="1" Grid.ColumnSpan="2" ItemsSource="{StaticResource sourceXML}"/>-->
+        
+        <!-- Use the DataContext -->
+        <ComboBox Name="cbStuff0" 
+                  Grid.Row="0" Grid.Column="0" 
+                  ItemsSource="{Binding }" />
+        <!-- Use the constructor of the Binding class -->
+        <ComboBox Name="cbStuff1" 
+                  Grid.Row="0" Grid.Column="1" 
+                  ItemsSource="{Binding sourceXML}" 
+                  DisplayMemberPath="Name"/>
+        <!-- Use the property of the Binding class -->
+        <ComboBox Name="cbStuff2" 
+                  Grid.Row="0" Grid.Column="2" 
+                  ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                  DisplayMemberPath="Manufacturer"/>
+        <ComboBox Name="cbStuff3" 
+                  Grid.Row="0" Grid.Column="3" 
+                  ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                  DisplayMemberPath="Quantity"/>
+        <ComboBox Name="cbStuff4" 
+                  Grid.Row="0" Grid.Column="4" 
+                  ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                  DisplayMemberPath="@Name"/>
+        <ComboBox Name="cbStuff5" 
+                  Grid.Row="0" Grid.Column="5" 
+                  ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                  DisplayMemberPath="."/>
+
+
+        <ListBox Name="lbStuff0"
+                 Grid.Row="1" Grid.Column="0" 
+                 ItemsSource="{Binding }" />
+        <ListBox Name="lbStuff1" 
+                 Grid.Row="1" Grid.Column="1" 
+                 ItemsSource="{Binding sourceXML}" DisplayMemberPath="Name" />
+        <ListBox Name="lbStuff2" 
+                 Grid.Row="1" Grid.Column="2" 
+                 ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                 DisplayMemberPath="Manufacturer" />
+        <ListBox Name="lbStuff3" 
+                 Grid.Row="1" Grid.Column="3" 
+                 ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                 DisplayMemberPath="Quantity" />
+        <ListBox Name="lbStuff4" 
+                 Grid.Row="1" Grid.Column="4" 
+                 ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                 DisplayMemberPath="@Name" />
+        <ListBox Name="lbStuff5" 
+                 Grid.Row="1" Grid.Column="5" 
+                 ItemsSource="{Binding Source={StaticResource sourceXML}}" 
+                 DisplayMemberPath="" />        
+    </Grid>
+</Window>

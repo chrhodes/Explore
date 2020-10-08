@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBC7E04D-C789-45BD-92AD-2ABFEAA374DC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VNCExplore_LearnPrism_BrianLagunas</RootNamespace>
+    <AssemblyName>VNCExplore_LearnPrism_BrianLagunas</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Mvvm.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="VNC.Core">
+      <HintPath>..\..\..\..\Common\Prism6.3\Debug\VNC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VNC.Logging">
+      <HintPath>..\..\..\..\Common\VNC.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common.cs" />
+    <Compile Include="ErrorNumbers.cs" />
+    <Page Include="Views\CustomPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ShellService.cs" />
+    <Compile Include="ViewModels\IMainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\CustomPopupView.xaml.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Resource Include="XamlCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="commonservicelocator">
+      <Version>2.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework.SqlServerCompact">
+      <Version>6.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>3.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SqlServer.Compact">
+      <Version>4.0.8876.1</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Unity">
+      <Version>6.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\ModuleA\ModuleA.csproj">
+      <Project>{3D9A8549-A7A8-4DF9-829E-AEAE7ECACACA}</Project>
+      <Name>ModuleA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleMVVMView1st\ModuleMVVM_V1.csproj">
+      <Project>{A2404EC3-1F6B-4D4F-8E24-9119D8CBDE20}</Project>
+      <Name>ModuleMVVM_V1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleMVVMViewModel1st\ModuleMVVM_VM1.csproj">
+      <Project>{FEA74CF7-4543-4DB6-86AE-6608E923DAF0}</Project>
+      <Name>ModuleMVVM_VM1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleMVVM_V1_ViewInjection\ModuleMVVM_V1_ViewInjection.csproj">
+      <Project>{2fdb81a8-13f7-4c34-8644-836d49b8b7fc}</Project>
+      <Name>ModuleMVVM_V1_ViewInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleMVVM_VM1_ViewInjection\ModuleMVVM_VM1_ViewInjection.csproj">
+      <Project>{09c4001a-7d86-4db0-a0f8-3139fa88400d}</Project>
+      <Name>ModuleMVVM_VM1_ViewInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModulePeopleCompositeCommand\ModuleCommunicationPeopleCompositeCommand.csproj">
+      <Project>{a0166329-790a-4c28-9d3a-f68a9dc30604}</Project>
+      <Name>ModuleCommunicationPeopleCompositeCommand</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModulePeopleDelegateCommand\ModuleCommunicationPeopleDelegateCommand.csproj">
+      <Project>{3c63d2a4-6280-47c5-b9b5-d42f7f2a6cd9}</Project>
+      <Name>ModuleCommunicationPeopleDelegateCommand</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModulePeopleEventAggregation\ModuleCommunicationPeopleEventAggregation.csproj">
+      <Project>{766c2c26-a92b-45d6-822e-c0fc37109e3e}</Project>
+      <Name>ModuleCommunicationPeopleEventAggregation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModulePeopleRegionContext\ModuleCommunicationPeopleRegionContext.csproj">
+      <Project>{39232c63-1e44-422a-9a8b-4a8726aaadd2}</Project>
+      <Name>ModuleCommunicationPeopleRegionContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModulePeopleSharedService\ModuleCommunicationPeopleSharedService.csproj">
+      <Project>{37869990-73f7-4447-8c38-eda47a06d9db}</Project>
+      <Name>ModuleCommunicationPeopleSharedService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleShellsDialogService\ModuleShellsDialogService.csproj">
+      <Project>{4e4e9c8a-1281-4fb8-bc48-e99fc475af31}</Project>
+      <Name>ModuleShellsDialogService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleShellsDuplicateRegionsException\ModuleShellsDuplicateRegionsException.csproj">
+      <Project>{63102644-d308-4ba5-982e-506e12bc450f}</Project>
+      <Name>ModuleShellsDuplicateRegionsException</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleShellsMultipleShells\ModuleShellsMultipleShells.csproj">
+      <Project>{76115621-78af-429b-af57-9778b87afe85}</Project>
+      <Name>ModuleShellsMultipleShells</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleShellsScopedRegions\ModuleShellsScopedRegions.csproj">
+      <Project>{a49266fe-3ed6-40de-bc82-b837aad49e1e}</Project>
+      <Name>ModuleShellsScopedRegions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleShellsViewComposition\ModuleShellsViewComposition.csproj">
+      <Project>{d069c877-6f4c-42ff-a311-d46ebf32cd7e}</Project>
+      <Name>ModuleShellsViewComposition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleSimpleView\ModuleSimpleView.csproj">
+      <Project>{9BF41B1B-558B-496A-9CE2-6D34199F6297}</Project>
+      <Name>ModuleSimpleView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleStateBasedNavigation\ModuleStateBasedNavigation.csproj">
+      <Project>{B9B7C304-B100-4CB1-A489-E87E8B3D34D1}</Project>
+      <Name>ModuleStateBasedNavigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleStatusBar\ModuleStatusBar.csproj">
+      <Project>{B6734621-322A-4D04-8886-7C724577B408}</Project>
+      <Name>ModuleStatusBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleToolBar\ModuleToolBar.csproj">
+      <Project>{A8003C7C-BDB7-4CE8-A934-0755EA19E9E1}</Project>
+      <Name>ModuleToolBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationABasicRegionNavigation\ModuleViewBasedNavigationABasicRegionNavigation.csproj">
+      <Project>{026d4598-162d-4ebc-bad0-57dece078af9}</Project>
+      <Name>ModuleViewBasedNavigationABasicRegionNavigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationAConfirmCancel\ModuleViewBasedNavigationAConfirmCancel.csproj">
+      <Project>{d253220d-0c7c-42db-93c8-3ad06ccc01f5}</Project>
+      <Name>ModuleViewBasedNavigationAConfirmCancel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationAExistingViews\ModuleViewBasedNavigationAExistingViews.csproj">
+      <Project>{eb74f387-a962-4595-a051-c4933e8b4bd5}</Project>
+      <Name>ModuleViewBasedNavigationAExistingViews</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationANavigationJournal\ModuleViewBasedNavigationANavigationJournal.csproj">
+      <Project>{aa7316ea-0b41-4c65-a0d0-72afea261269}</Project>
+      <Name>ModuleViewBasedNavigationANavigationJournal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationANavigationParticipation\ModuleViewBasedNavigationANavigationParticipation.csproj">
+      <Project>{62910631-72bd-4453-9885-8068f919f502}</Project>
+      <Name>ModuleViewBasedNavigationANavigationParticipation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationAPassingParameters\ModuleViewBasedNavigationAPassingParameters.csproj">
+      <Project>{7d5f5fd4-1106-4be9-b7fe-1be70f8aff7d}</Project>
+      <Name>ModuleViewBasedNavigationAPassingParameters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationA\ModuleViewBasedNavigationA.csproj">
+      <Project>{0b79451f-23fc-4143-885e-e264539626c8}</Project>
+      <Name>ModuleViewBasedNavigationA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationBBasicRegionNavigation\ModuleViewBasedNavigationBBasicRegionNavigation.csproj">
+      <Project>{9117d0de-2488-4ab6-9f6e-a999d684d966}</Project>
+      <Name>ModuleViewBasedNavigationBBasicRegionNavigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationBConfirmCancel\ModuleViewBasedNavigationBConfirmCancel.csproj">
+      <Project>{574b7423-42f7-4d53-b977-a6c1fb412b4e}</Project>
+      <Name>ModuleViewBasedNavigationBConfirmCancel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationBExistingViews\ModuleViewBasedNavigationBExistingViews.csproj">
+      <Project>{c8730463-56bb-4e1d-8e77-4f3dd48d0a1b}</Project>
+      <Name>ModuleViewBasedNavigationBExistingViews</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationBNavigationJournal\ModuleViewBasedNavigationBNavigationJournal.csproj">
+      <Project>{c9f53e04-c82e-4539-8c09-3a58ed946551}</Project>
+      <Name>ModuleViewBasedNavigationBNavigationJournal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationBNavigationParticipation\ModuleViewBasedNavigationBNavigationParticipation.csproj">
+      <Project>{57fee177-75b0-4eff-9720-7b72b81cc937}</Project>
+      <Name>ModuleViewBasedNavigationBNavigationParticipation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationBPassingParameters\ModuleViewBasedNavigationBPassingParameters.csproj">
+      <Project>{c127ec22-494d-41e8-a566-05528a0676df}</Project>
+      <Name>ModuleViewBasedNavigationBPassingParameters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ModuleViewBasedNavigationB\ModuleViewBasedNavigationB.csproj">
+      <Project>{5072f261-1419-4936-b62f-bf75316db84b}</Project>
+      <Name>ModuleViewBasedNavigationB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\PrismDemo.Services.PersonService\PersonDemo.Services.PersonService.csproj">
+      <Project>{a4214904-9716-44ec-a0cc-33de4cef7fd8}</Project>
+      <Name>PersonDemo.Services.PersonService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\PrismDemo.Services\PrismDemo.Services.csproj">
+      <Project>{e06e56bc-45a7-4f1e-8e85-65f523e410d6}</Project>
+      <Name>PrismDemo.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VNCExplore_LearnPrism_BrianLagunas.Infrastructure\VNCExplore_LearnPrism_BrianLagunas.Infrastructure.csproj">
+      <Project>{4b1b862b-aa00-48a1-b806-424689173863}</Project>
+      <Name>VNCExplore_LearnPrism_BrianLagunas.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

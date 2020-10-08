@@ -1,0 +1,196 @@
+﻿/* Borders */
+
+.body_Borders {
+    background-color:#FFFFFF;
+}
+
+.box_Border1, .box_Border2, .box_Border3, .box_Border4, .box_BorderRadius, .box_BorderStyles {
+    border: 2px black solid;
+    margin: 5px;
+}
+
+.box_Border1_Header, .box_Border2_Header, .box_Border3_Header, .box_Border4_Header {
+    border: 2px red solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+.box_Border1_Content, .box_Border2_Content, .box_Border3_Content, .box_Border4_Content {
+    border: 2px #0000FF solid;
+    margin: 20px;
+    padding: 20px;
+}
+
+.box_Border1 {
+
+}
+
+.box_Border1_Header {
+
+}
+
+.box_Border1_Content {
+
+}
+
+.box_Border2 {
+
+}
+
+.box_Border2_Header {
+
+}
+
+.box_Border2_Content {
+
+}
+
+.box_Border3 {
+
+}
+
+..box_Border3_Header {
+
+}
+
+.box_Border3_Content {
+
+}
+
+.box_Border4 {
+    border-color: red;
+    border-width:50px;
+    border-style:solid;
+    background-image: url(/Images//50x50-Border.png);
+    background-repeat: repeat;
+}
+
+.box_Border4_Header {
+    border-color: red;
+    border-width:50px;
+    border-style:solid;
+    border-image: url(/Images/50x50-Border.png) 10 fill;
+
+}
+
+.box_Border4_Content {
+    border-color: red;
+    border-width:50px;
+    border-style:dotted;
+    border-image: url(/Images/50x50-Border.png) 10 round;
+}
+
+.box_Border5 {
+    border-color: gray;
+    /*border-width:50px;*/
+    border-style:solid;
+    border-image: url(/Images/50x50-Border.png) 20 repeat;
+}
+
+.box_Border5_Header {
+    border-color: gray;
+    border-width:100px;
+    border-style:solid;
+    border-image: url(/Images/50x50-Border.png) 10 repeat;
+    border-image-repeat: repeat;
+}
+
+.box_Border5_Content {
+    border-color: gray;
+    border-width:50px;
+    border-style:dotted;
+    border-image: url(/Images/50x50-Border.png) 10 repeat;
+}
+.box_BorderStyles {
+    border: 5px blue solid;
+    padding:10px;
+}
+
+.box_BorderStyles_None {
+    border-color:inherit;
+    border-style:none;
+}
+
+.box_BorderStyles_Hidden {
+    border-color:inherit;
+    border-style:hidden;
+}
+
+.box_BorderStyles_Dotted {
+    border-color:inherit;
+    border-style:dotted;
+}
+
+.box_BorderStyles_Dashed {
+    border-color:inherit;
+    border-style:dashed;
+}
+
+.box_BorderStyles_Solid {
+    border-color:inherit;
+    border-style:solid;
+}
+
+.box_BorderStyles_Double {
+    border-style:double;
+}
+
+.box_BorderStyles_Groove {
+    border: inherit;
+    border-style:groove;
+}
+
+.box_BorderStyles_Ridge {
+    border: inherit;
+    border-style:ridge;
+}
+
+.box_BorderStyles_Inset {
+    margin:inherit;
+    border: inherit;
+    border-style:inset;
+}
+
+.box_BorderStyles_Outset {
+    margin:inherit;
+    border: inherit;
+    border-style:outset;
+}
+/* Explore Border Radius */
+
+.box_BorderRadius{
+    border: 5px green solid;
+    padding:10px;
+}
+
+.box_BorderRadius1{
+    border-radius: 10px;
+}
+
+.box_BorderRadius2{
+    border-radius: 20px;
+}
+
+.box_BorderRadius3{
+    border-radius: 10px 20px;
+}
+
+.box_BorderRadius4{
+    border-radius: 20px 10px;
+}
+
+.box_BorderRadius5{
+    border-radius: 20px / 10px;
+}
+
+.box_BorderRadius6{
+    border-radius: 10px / 20px;
+}
+
+.box_BorderRadius7{
+    border-radius: 10px 20px 30px 40px;
+}
+
+.box_BorderRadius8{
+    border-radius: 40px 30px 20px 10px;
+}

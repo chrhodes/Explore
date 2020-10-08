@@ -1,0 +1,19 @@
+﻿@model Models.Instructor
+
+<fieldset>
+    <legend>Instructor</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">TwitterHandle</div>
+    <div class="display-field">@Model.TwitterHandle</div>
+
+    <div class="display-label">HtmlDescription</div>
+    <div class="display-field">@Html.Raw(Model.HtmlDescription)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

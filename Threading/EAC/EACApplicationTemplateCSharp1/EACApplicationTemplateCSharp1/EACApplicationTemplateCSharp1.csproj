@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B610E9C-C16A-4007-B45C-430B1EDEB7E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EACApplicationTemplateCSharp1</RootNamespace>
+    <AssemblyName>EACApplicationTemplateCSharp1</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG;TRACE_AE;TRACE_BASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssemblyHelper">
+      <HintPath>M:\Technology Office\EAC\IncludedDLLs\AssemblyHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="PacificLife.Life.PLLog, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2ac78edf2dcdecc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PLLog\bin\Release\PacificLife.Life.PLLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PLBaseForm, Version=1.3.3022.15271, Culture=neutral, PublicKeyToken=a0f43415e804bc67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>M:\Technology Office\EAC\IncludedDLLs\PLBaseForm.dll</HintPath>
+    </Reference>
+    <Reference Include="PLEnterprise, Version=2.1.3022.15680, Culture=neutral, PublicKeyToken=a0f43415e804bc67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>M:\Technology Office\EAC\IncludedDLLs\PLEnterprise.dll</HintPath>
+    </Reference>
+    <Reference Include="PLEnterprise.XmlSerializers, Version=2.1.3022.15680, Culture=neutral, PublicKeyToken=a0f43415e804bc67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>M:\Technology Office\EAC\IncludedDLLs\PLEnterprise.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ApplicationDataSet.cs">
+      <DependentUpon>ApplicationDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ApplicationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucStarterScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucStarterScreen.Designer.cs">
+      <DependentUpon>ucStarterScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\IApplicationEvents.cs" />
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMainSS2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMainSS2.Designer.cs">
+      <DependentUpon>ucApplicationMainSS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMainSS1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMainSS1.Designer.cs">
+      <DependentUpon>ucApplicationMainSS1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ucScreenBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ucScreenBase.Designer.cs">
+      <DependentUpon>ucScreenBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ScreenSwapEventArgs.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface WPF\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\frmDebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\frmDebugWindow.Designer.cs">
+      <DependentUpon>frmDebugWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ApplicationEventHandler.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Data\ConfigData.cs" />
+    <Compile Include="Exceptions\CustomExceptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMain.Designer.cs">
+      <DependentUpon>ucApplicationMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ucBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ucBase.Designer.cs">
+      <DependentUpon>ucBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucStarterScreenWPF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\Samples-AllCanBeDeleted\ucStarterScreenWPF.Designer.cs">
+      <DependentUpon>ucStarterScreenWPF.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMeFirst.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Info.bmp" />
+    <Content Include="Test Data\DataTableDummyData.xml" />
+    <Content Include="Test Data\TestWindowConsoleParameter.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="User Interface\Samples-AllCanBeDeleted\ucStarterScreen.resx">
+      <DependentUpon>ucStarterScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMainSS2.resx">
+      <DependentUpon>ucApplicationMainSS2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMainSS1.resx">
+      <DependentUpon>ucApplicationMainSS1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\frmDebugWindow.resx">
+      <DependentUpon>frmDebugWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Samples-AllCanBeDeleted\ucApplicationMain.resx">
+      <DependentUpon>ucApplicationMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ucScreenBase.resx">
+      <DependentUpon>ucScreenBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Samples-AllCanBeDeleted\ucStarterScreenWPF.resx">
+      <DependentUpon>ucStarterScreenWPF.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\ApplicationDataSet.xsc">
+      <DependentUpon>ApplicationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\ApplicationDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ApplicationDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\ApplicationDataSet.xss">
+      <DependentUpon>ApplicationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="User Interface WPF\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

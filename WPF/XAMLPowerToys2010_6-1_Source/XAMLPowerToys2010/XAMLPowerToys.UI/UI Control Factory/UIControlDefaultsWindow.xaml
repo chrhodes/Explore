@@ -1,0 +1,170 @@
+﻿<Window 
+    x:Class="UIControlDefaultsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:XAMLPowerToys.UI"
+    ShowInTaskbar="True"
+    Title="UI Control Default Settings" Height="550" Width="650">
+    <Window.Resources>
+
+        <local:RequiredEntryValidationRule x:Key="requiredEntryValidationRule" />
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Platform Controls" Margin="5" FontSize="12" />
+            <ListBox x:Name="lbControls" Background="AliceBlue" Width="Auto">
+                <ListBox.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Margin="0,5,0,0" Padding="2,0,0,0" FontWeight="Bold" Background="AntiqueWhite" Text="{Binding Path=Name}"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListBox.GroupStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=ControlRole}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="NoWrap" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <Border x:Name="bdrContainer" DataContext="{Binding ElementName=lbControls, Path=SelectedItem}" Grid.Column="1" BorderBrush="LightGray" BorderThickness="1" Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="U I Platform"  />
+                <Label Grid.Row="1" Content="Control Role" />
+                <Label Grid.Row="2" Content="Control Type" />
+
+                <TextBlock Grid.Column="1" Text="{Binding Path=UIPlatform}" VerticalAlignment="Center"  />
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=ControlRole}"  VerticalAlignment="Center" Margin="0,0,3,0" />
+                <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" >
+                    <TextBox.Text>
+                        <Binding Path="ControlType" Mode="TwoWay" TargetNullValue="" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
+                            <Binding.ValidationRules>
+                                <local:RequiredEntryValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <TextBox.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <StackPanel.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </StackPanel.Resources>
+                                <TextBlock Text="Enter control type that you want created when this control role is created."/>
+                                <TextBlock Text="This feature enables you to have a control other than the platform default be created."/>
+                                <TextBlock Text="Example For WPF TextBox"/>
+                                <TextBlock Text="Default:  TextBox" FontWeight="Bold"/>
+                                <TextBlock Text="Custom:  local:CustomTextBox" FontWeight="Bold"/>
+                            </StackPanel>
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+                <CheckBox Margin="0,3.5" Content="Include Notify On Validation Error" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" x:Name="chkIncludeNotifyOnValidationError" IsChecked="{Binding Path=IncludeNotifyOnValidationError, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                <CheckBox Margin="0,3.5" Content="Include Validates On Data Errors" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" x:Name="chkIncludeValidatesOnDataErrors" IsChecked="{Binding Path=IncludeValidatesOnDataErrors, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                <CheckBox Margin="0,3.5" Content="Include Validates On Exceptions" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" x:Name="chkIncludeValidatesOnExceptions" IsChecked="{Binding Path=IncludeValidatesOnExceptions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                <CheckBox Margin="0,3.5" Content="Generate x:Name for Control" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" x:Name="chkGenerateControlName" IsChecked="{Binding Path=GenerateControlName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                <CheckBox Margin="0,3.5" Content="Include TargetNullValue when source is Nullable (Applies to WPF/SL4 TextBox)" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" x:Name="chkIncludeTargetNullValueForNullableBindings" IsChecked="{Binding Path=IncludeTargetNullValueForNullableBindings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                
+                <StackPanel Grid.ColumnSpan="2" Grid.Row="9" Margin="0,10,0,0">
+                    <TextBlock FontWeight="Bold"  Text="Additional Control Properties To Render" HorizontalAlignment="Center" />
+                    <ListView x:Name="lvProperties" ItemsSource="{Binding Path=ControlProperties}" Width="480" MaxWidth="480">
+                        <ListView.Resources>
+                            <Style x:Key="headerStyle" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="Background" Value="WhiteSmoke"/>
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="False">
+                                <GridViewColumn Header="Property" Width="200" HeaderContainerStyle="{StaticResource headerStyle}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Width="200">
+                                                <TextBox.Text>
+                                                    <Binding Path="ProperyName" Mode="TwoWay" TargetNullValue="" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
+                                                        <Binding.ValidationRules>
+                                                            <local:RequiredEntryValidationRule/>
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox.Text>
+                                            </TextBox>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Value" Width="200" HeaderContainerStyle="{StaticResource headerStyle}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Width="200">
+                                                <TextBox.Text>
+                                                    <Binding Path="PropertyValue" Mode="TwoWay" TargetNullValue="" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
+                                                        <Binding.ValidationRules>
+                                                            <local:RequiredEntryValidationRule/>
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox.Text>
+                                            </TextBox>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Width="70" Header="Delete" HeaderContainerStyle="{StaticResource headerStyle}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="50" >
+                                                <Button Click="btnDeleteUIProperty_Click" Content="-" FontWeight="Bold" FontSize="16" Padding="3,0,3,0" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Click to delete this control property." />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Click="btnAddNewUIProperty_Click" HorizontalAlignment="Right" Content="+" Padding="3,0,3,0" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" ToolTip="Click to add a new control property." />
+                </StackPanel>
+
+                <Grid Grid.ColumnSpan="2" Margin="0,15,0,10" Grid.Row="10" Grid.IsSharedSizeScope="True" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="OK" Padding="3,0,3,0" Margin="3" Height="23" Click="btnOK_Click" />
+                    <Button Content="Cancel" Padding="3,0,3,0" Grid.Column="1" Margin="3"  Height="23" Click="btnCancel_Click" />
+                </Grid>
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</Window>

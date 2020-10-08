@@ -1,0 +1,39 @@
+﻿@using Models
+
+@model IEnumerable<Instructor>
+@{
+    ViewBag.Title = "Instructor Index Page";   
+}
+
+@*@section header {
+    <h3>This is a custom header from Index</h3>
+
+}*@
+
+<div>
+    @ViewBag.Message
+    @foreach (var instructor in Model)
+    { 
+        @Html.Partial("_Instructor", instructor)
+    }
+    <br />
+    <hr />
+    @{
+        var name = "Scott";
+        name = name.ToLower();
+
+        if (name.StartsWith("S"))
+        { 
+        <text>Your name starts with S!</text>
+        }
+        else
+        { 
+        <text>Your name doesn't start with S.</text>
+        }           
+    }@@OdeToCode
+    @for (int i = 0; i < 10; i++)
+    { 
+        <div>@i</div>
+    }
+    <img src="@(name).jpg" />
+</div>
