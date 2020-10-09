@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemManagement", "SystemManagement\SystemManagement.csproj", "{F200275C-B2CD-4372-9405-A0E80938D1F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSystemManagement", "TestSystemManagement\TestSystemManagement.csproj", "{0D8AA3B8-EEE2-47CE-9427-410C9B42ADFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSystemManagementWebService", "TestSystemManagementWebService\TestSystemManagementWebService.csproj", "{0C18941D-C7A1-4556-B425-2689306AA34A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://infinityrhodes.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SystemManagement\\SystemManagement.csproj
+		SccProjectName1 = SystemManagement
+		SccLocalPath1 = SystemManagement
+		SccProjectUniqueName2 = TestSystemManagement\\TestSystemManagement.csproj
+		SccProjectName2 = TestSystemManagement
+		SccLocalPath2 = TestSystemManagement
+		SccProjectUniqueName3 = TestSystemManagementWebService\\TestSystemManagementWebService.csproj
+		SccProjectName3 = TestSystemManagementWebService
+		SccLocalPath3 = TestSystemManagementWebService
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F200275C-B2CD-4372-9405-A0E80938D1F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F200275C-B2CD-4372-9405-A0E80938D1F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F200275C-B2CD-4372-9405-A0E80938D1F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F200275C-B2CD-4372-9405-A0E80938D1F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8AA3B8-EEE2-47CE-9427-410C9B42ADFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8AA3B8-EEE2-47CE-9427-410C9B42ADFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8AA3B8-EEE2-47CE-9427-410C9B42ADFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8AA3B8-EEE2-47CE-9427-410C9B42ADFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C18941D-C7A1-4556-B425-2689306AA34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C18941D-C7A1-4556-B425-2689306AA34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C18941D-C7A1-4556-B425-2689306AA34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C18941D-C7A1-4556-B425-2689306AA34A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
