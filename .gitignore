@@ -3,6 +3,7 @@
 Patterns/
 
 # Ignore Zip files
+
 .zip
 
 ## Ignore Visual Studio temporary files, build results, and

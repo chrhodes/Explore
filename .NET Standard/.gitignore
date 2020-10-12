@@ -2,5 +2,5 @@
 
 # Ignore Pluralsight Training Folders
 
-*.zip
 dotnet-standard-getting-started/
+
