@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MFConsoleApplication1">
+</Property><Property Name="Solution File" Value="C:\TFS\VNC\Embedded Systems\MicroFramework\Fezphidgets\MFConsoleApplication1.sln">
+</Property><Property Name="Date" Value="Saturday, October 01, 2011">
+</Property><Property Name="Time" Value="9:19 AM">
+</Property></Properties><Event ErrorLevel="0" Project="MFConsoleApplication1" Source="MFConsoleApplication1\MFConsoleApplication1.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MFConsoleApplication1" Source="MFConsoleApplication1\MFConsoleApplication1.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FEZPhidgets" Source="FEZPhidgets\FEZPhidgets.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FEZPhidgets" Source="FEZPhidgets\FEZPhidgets.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FEZPhidgetsEvents" Source="FEZPhidgetsEvents\FEZPhidgetsEvents.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FEZPhidgetsEvents" Source="FEZPhidgetsEvents\FEZPhidgetsEvents.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MFConsoleApplication1.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MFConsoleApplication1.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MFConsoleApplication1" Source="MFConsoleApplication1\MFConsoleApplication1.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FEZPhidgets" Source="FEZPhidgets\FEZPhidgets.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FEZPhidgetsEvents" Source="FEZPhidgetsEvents\FEZPhidgetsEvents.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconPack", "IconPack\IconPack.csproj", "{92E382A2-74B6-4342-B9D9-BE6843F2CE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconPackDemo", "IconPackDemo\IconPackDemo.csproj", "{BC931965-648C-4FAD-BD79-8F6B35D4C28A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92E382A2-74B6-4342-B9D9-BE6843F2CE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E382A2-74B6-4342-B9D9-BE6843F2CE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E382A2-74B6-4342-B9D9-BE6843F2CE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E382A2-74B6-4342-B9D9-BE6843F2CE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC931965-648C-4FAD-BD79-8F6B35D4C28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC931965-648C-4FAD-BD79-8F6B35D4C28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC931965-648C-4FAD-BD79-8F6B35D4C28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC931965-648C-4FAD-BD79-8F6B35D4C28A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
