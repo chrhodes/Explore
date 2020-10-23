@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.MulticastDelegate">
+    <Position X="3.5" Y="6" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Delegate Name="System.UnhandledExceptionEventHandler">
+    <Position X="6.75" Y="3.75" Width="2.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Action&lt;T&gt;">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.AppDomainInitializer">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.AssemblyLoadEventHandler">
+    <Position X="0.5" Y="4" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.AsyncCallback">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Comparison&lt;T&gt;">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.ConsoleCancelEventHandler">
+    <Position X="0.5" Y="7.5" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Converter&lt;TInput, TOutput&gt;">
+    <Position X="2.75" Y="1.25" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.CrossAppDomainDelegate">
+    <Position X="3" Y="2.25" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.EventHandler">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.EventHandler&lt;TEventArgs&gt;">
+    <Position X="3" Y="4.5" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Predicate&lt;T&gt;">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.ResolveEventHandler">
+    <Position X="5.5" Y="2.25" Width="2" />
+    <TypeIdentifier />
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

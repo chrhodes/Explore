@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Enum Name="System.Reflection.Emit.AssemblyBuilderAccess">
+    <Position X="0.5" Y="0.75" Width="2" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Reflection.Emit.FlowControl">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Reflection.Emit.OpCodeType">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Reflection.Emit.OperandType">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Reflection.Emit.PackingSize">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Reflection.Emit.PEFileKinds">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Reflection.Emit.StackBehaviour">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

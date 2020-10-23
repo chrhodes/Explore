@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC_Explore_ObjectModel_System.Timers", "VNC_Explore_ObjectModel_System.Timers.csproj", "{ED264499-0540-4370-AF6C-14D229DF8263}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED264499-0540-4370-AF6C-14D229DF8263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED264499-0540-4370-AF6C-14D229DF8263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED264499-0540-4370-AF6C-14D229DF8263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED264499-0540-4370-AF6C-14D229DF8263}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D1EBBDB-598B-46DB-86CE-0AB7698A0099}
+	EndGlobalSection
+EndGlobal

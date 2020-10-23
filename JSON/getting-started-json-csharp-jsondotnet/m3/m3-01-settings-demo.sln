@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m3-01-settings-demo", "m3-01-settings-demo\m3-01-settings-demo.csproj", "{489B3EB8-35E0-4747-9733-DE3530CDFC02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSamples", "..\Common\JsonSamples\JsonSamples.csproj", "{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{489B3EB8-35E0-4747-9733-DE3530CDFC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489B3EB8-35E0-4747-9733-DE3530CDFC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489B3EB8-35E0-4747-9733-DE3530CDFC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489B3EB8-35E0-4747-9733-DE3530CDFC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8987ECFC-C6B7-4C73-AD4A-BAAEE1803C46}
+	EndGlobalSection
+EndGlobal

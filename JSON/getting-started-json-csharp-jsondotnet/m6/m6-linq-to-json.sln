@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6-01-create-json-linq-demo", "m6-01-create-json-linq-demo\m6-01-create-json-linq-demo.csproj", "{1C1408A7-16A5-401B-8D85-A252988B949A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6-02-parse-json-demo", "m6-02-parse-json-demo\m6-02-parse-json-demo.csproj", "{03FFEDED-334D-4E47-8BAA-61E2A2121C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6-03-query-json-linq", "m6-03-query-json-linq\m6-03-query-json-linq.csproj", "{72896817-7258-4A7E-9714-3A6BD11FFFF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6-04-select-token-demo", "m6-04-select-token-demo\m6-04-select-token-demo.csproj", "{76A570C0-1C38-4B4F-A724-8DC5FA254928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6-05-annotations-demo", "m6-05-annotations-demo\m6-05-annotations-demo.csproj", "{47A3EEB2-4E8F-401E-9989-C685E02A226F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSamples", "..\Common\JsonSamples\JsonSamples.csproj", "{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C1408A7-16A5-401B-8D85-A252988B949A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1408A7-16A5-401B-8D85-A252988B949A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1408A7-16A5-401B-8D85-A252988B949A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1408A7-16A5-401B-8D85-A252988B949A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FFEDED-334D-4E47-8BAA-61E2A2121C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FFEDED-334D-4E47-8BAA-61E2A2121C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FFEDED-334D-4E47-8BAA-61E2A2121C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FFEDED-334D-4E47-8BAA-61E2A2121C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72896817-7258-4A7E-9714-3A6BD11FFFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72896817-7258-4A7E-9714-3A6BD11FFFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72896817-7258-4A7E-9714-3A6BD11FFFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72896817-7258-4A7E-9714-3A6BD11FFFF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A570C0-1C38-4B4F-A724-8DC5FA254928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A570C0-1C38-4B4F-A724-8DC5FA254928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A570C0-1C38-4B4F-A724-8DC5FA254928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A570C0-1C38-4B4F-A724-8DC5FA254928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47A3EEB2-4E8F-401E-9989-C685E02A226F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A3EEB2-4E8F-401E-9989-C685E02A226F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A3EEB2-4E8F-401E-9989-C685E02A226F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A3EEB2-4E8F-401E-9989-C685E02A226F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53ACBC68-0631-4498-8494-F3E2D5832C69}
+	EndGlobalSection
+EndGlobal

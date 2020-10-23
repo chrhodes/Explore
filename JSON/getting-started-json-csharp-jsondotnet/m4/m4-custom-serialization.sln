@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m4-01-conditional-serialization-demo", "m4-01-conditional-serialization-demo\m4-01-conditional-serialization-demo.csproj", "{D942458F-FEE8-4DAF-BE14-7D513933A230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m4-02-custom-jsonconverter-demo", "m4-02-custom-jsonconverter-demo\m4-02-custom-jsonconverter-demo.csproj", "{493C0A30-0F41-441C-AD29-3760A863261B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m4-03-callbacks-demo", "m4-03-callbacks-demo\m4-03-callbacks-demo.csproj", "{3016ED2B-DCF6-49A5-869B-176554113932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m4-04-tracewriter", "m4-04-tracewriter\m4-04-tracewriter.csproj", "{CF3DEAEB-4B1E-493D-ABB7-578435E388E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSamples", "..\Common\JsonSamples\JsonSamples.csproj", "{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D942458F-FEE8-4DAF-BE14-7D513933A230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D942458F-FEE8-4DAF-BE14-7D513933A230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D942458F-FEE8-4DAF-BE14-7D513933A230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D942458F-FEE8-4DAF-BE14-7D513933A230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{493C0A30-0F41-441C-AD29-3760A863261B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493C0A30-0F41-441C-AD29-3760A863261B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493C0A30-0F41-441C-AD29-3760A863261B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493C0A30-0F41-441C-AD29-3760A863261B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3016ED2B-DCF6-49A5-869B-176554113932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3016ED2B-DCF6-49A5-869B-176554113932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3016ED2B-DCF6-49A5-869B-176554113932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3016ED2B-DCF6-49A5-869B-176554113932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF3DEAEB-4B1E-493D-ABB7-578435E388E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF3DEAEB-4B1E-493D-ABB7-578435E388E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF3DEAEB-4B1E-493D-ABB7-578435E388E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF3DEAEB-4B1E-493D-ABB7-578435E388E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509DFFAF-B43E-4FDA-ABCE-5BACC9F35A18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4B0364E-1FB6-4047-9D59-E8F1A1BE49A5}
+	EndGlobalSection
+EndGlobal

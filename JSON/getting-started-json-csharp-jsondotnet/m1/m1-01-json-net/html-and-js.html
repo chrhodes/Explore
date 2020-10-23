@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JSON and Javascript Demo</title>
+    <script>
+
+        var author = {
+            name: 'Xavier Morera',
+            courses: [
+                'Solr',
+                'Spark'
+            ],
+            since: '2014-01-14T00:00:00',
+            happy: true,
+            issues: null,
+            car: {
+                model: 'Land Rover Series III',
+                year: 1976
+            },
+            authorRelationship: 1
+        };
+
+        function loadJSON() {
+
+            /* Get variables from document */
+            var authorName = document.getElementById("authorName");
+            var authorCourses = document.getElementById("authorCourses");
+            var authorSince = document.getElementById("authorSince");
+            var authorHappy = document.getElementById("authorHappy");
+            var authorIssues = document.getElementById("authorIssues");
+            var authorCar = document.getElementById("authorCar");
+
+            authorName.innerHTML = author.name;
+            for (var course of author.courses) {
+                authorCourses.innerHTML += "<li>" + course + "</li>";
+            }
+            authorSince.innerHTML = new Date(author.since);
+            authorHappy.innerHTML = author.happy ? "Yes, I am happy!" : "No, I am not happy!";
+            if (author.issues == null) {
+                authorIssues.innerHTML = "None";
+            }
+            authorCar.innerHTML = author.car.model + " " + author.car.year.toString();
+        }
+
+    </script>
+</head>
+<!--<body background="images/ps_gray.jpg" style="color:white;">
+    <img src="images/ps_logo.jpg" width="400" />-->
+<body width="400" >
+<h2>Author Information from Javascript:</h2>
+
+<h3>Name</h3>
+<div id="authorName">String</div>
+
+<h3>List of courses</h3>
+<ul>
+    <li id="authorCourses"></li>
+</ul>
+
+<h3>Author since</h3>
+<div id="authorSince">Date</div>
+
+<h3>Is the Author happy?</h3>
+<div id="authorHappy">Bool</div>
+
+<h3>Reported Issues</h3>
+<ul>
+    <li id="authorIssues"></li>
+</ul>
+<h3>Car</h3>
+<div id="authorCar">Object</div>
+
+<br />
+
+<div><input type="button" value="Load Author Info" onclick="loadJSON()" /></div>
+
+    </body>
+</html>

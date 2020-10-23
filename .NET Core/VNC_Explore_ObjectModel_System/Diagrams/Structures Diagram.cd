@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Enum">
+    <Position X="8.25" Y="1.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="System.ArgIterator">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.ArraySegment&lt;T&gt;">
+    <Position X="0.5" Y="4.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.ConsoleKeyInfo">
+    <Position X="0.75" Y="10.25" Width="1.75" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.DateTime">
+    <Position X="3" Y="1.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.DateTimeOffset">
+    <Position X="5.75" Y="1.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.Guid">
+    <Position X="10.5" Y="1" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.IntPtr">
+    <Position X="10.5" Y="5.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.ModuleHandle">
+    <Position X="10.25" Y="10.75" Width="3.25" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.RuntimeArgumentHandle">
+    <Position X="13.75" Y="1.5" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.RuntimeFieldHandle">
+    <Position X="13.75" Y="3" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.RuntimeMethodHandle">
+    <Position X="13.75" Y="5.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.RuntimeTypeHandle">
+    <Position X="14" Y="8.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.TimeSpan">
+    <Position X="16" Y="0.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.TypedReference">
+    <Position X="18.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.UIntPtr">
+    <Position X="18.25" Y="3" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="System.Void">
+    <Position X="18.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

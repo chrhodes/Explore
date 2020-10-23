@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Collections.Generic.Comparer&lt;T&gt;">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;">
+    <Position X="3" Y="2" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.Enumerator">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Struct>
+      <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.KeyCollection">
+        <NestedTypes>
+          <Struct Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.KeyCollection.Enumerator" Collapsed="true">
+            <TypeIdentifier />
+            <Lollipop Position="0.2" />
+          </Struct>
+        </NestedTypes>
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.ValueCollection">
+        <NestedTypes>
+          <Struct Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;.ValueCollection.Enumerator" Collapsed="true">
+            <TypeIdentifier />
+            <Lollipop Position="0.2" />
+          </Struct>
+        </NestedTypes>
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Collections.Generic.EqualityComparer&lt;T&gt;">
+    <Position X="7" Y="1" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Collections.Generic.HashSet&lt;T&gt;">
+    <Position X="9.25" Y="1.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="System.Collections.Generic.HashSet&lt;T&gt;.Enumerator">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

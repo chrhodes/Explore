@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.ActivationContext">
+    <Position X="0.5" Y="0.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="System.ActivationContext.ContextForm" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Activator">
+    <Position X="0.5" Y="5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.AppDomain" HideInheritanceLine="true">
+    <Position X="3.25" Y="0.75" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.AppDomainManager" HideInheritanceLine="true">
+    <Position X="6.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.AppDomainSetup">
+    <Position X="6.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.ApplicationId">
+    <Position X="6.5" Y="11.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.ApplicationIdentity">
+    <Position X="9.25" Y="0.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Array">
+    <Position X="9.25" Y="4" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.AssemblyLoadEventArgs" HideInheritanceLine="true">
+    <Position X="11.75" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Attribute">
+    <Position X="11.75" Y="6.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.BitConverter">
+    <Position X="11.75" Y="9.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Buffer">
+    <Position X="14" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.CharEnumerator">
+    <Position X="14" Y="7" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Console">
+    <Position X="14" Y="9.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.ContextBoundObject" HideInheritanceLine="true">
+    <Position X="16.5" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Convert">
+    <Position X="16.5" Y="5.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.DBNull">
+    <Position X="16.5" Y="12" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Delegate">
+    <Position X="19" Y="4.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Environment">
+    <Position X="19" Y="9.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="System.Environment.SpecialFolder" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Enum Name="System.Environment.SpecialFolderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.EventArgs">
+    <Position X="21.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Exception" HideInheritanceLine="true">
+    <Position X="21.25" Y="6.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.FileStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="10.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.FtpStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="12.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.GenericUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="13.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.GopherStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="15.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.HttpStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="16.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.LdapStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="18.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.LocalDataStoreSlot">
+    <Position X="23.75" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.MarshalByRefObject">
+    <Position X="23.75" Y="5.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Math">
+    <Position X="23.75" Y="8" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.NetPipeStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="19.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.NetTcpStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="21.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.NewsStyleUriParser" HideInheritanceLine="true">
+    <Position X="21.25" Y="22.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Nullable">
+    <Position X="23.75" Y="15" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object">
+    <Position X="23.75" Y="17.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.OperatingSystem">
+    <Position X="26.25" Y="4.25" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Random">
+    <Position X="26.25" Y="7.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.StringComparer">
+    <Position X="26.25" Y="10.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.TimeZone">
+    <Position X="28.25" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Type">
+    <Position X="30.5" Y="4.25" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Uri">
+    <Position X="33.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.UriBuilder">
+    <Position X="36.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.UriParser">
+    <Position X="36.25" Y="8.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.UriTypeConverter">
+    <Position X="36.25" Y="12" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.ValueType">
+    <Position X="36.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Version">
+    <Position X="36.25" Y="17.5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.WeakReference">
+    <Position X="38.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

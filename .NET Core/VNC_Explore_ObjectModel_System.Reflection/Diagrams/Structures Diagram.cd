@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="System.Reflection.CustomAttributeNamedArgument">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.CustomAttributeTypedArgument">
+    <Position X="0.5" Y="4" Width="3" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.InterfaceMapping">
+    <Position X="0.5" Y="7" Width="3" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.ParameterModifier">
+    <Position X="0.5" Y="9" Width="3" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.EventToken">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.FieldToken">
+    <Position X="4.5" Y="3.25" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.Label">
+    <Position X="4.5" Y="6" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.MethodToken">
+    <Position X="4.5" Y="8" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.OpCode">
+    <Position X="7.25" Y="1" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.ParameterToken">
+    <Position X="7.25" Y="5" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.PropertyToken">
+    <Position X="7.25" Y="8" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.SignatureToken">
+    <Position X="9.75" Y="2.5" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.StringToken">
+    <Position X="9.75" Y="5.25" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="System.Reflection.Emit.TypeToken">
+    <Position X="9.75" Y="7.75" Width="2" />
+    <TypeIdentifier />
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
