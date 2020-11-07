@@ -9,6 +9,7 @@
     <Grid>
         <StackPanel>
             <Button Click="GetProjects_Click">GetProjects</Button>
+            <Button Click="GetProcessList_Click">Get Process List</Button>
             <Button Click="SampleREST_Click">SampleREST</Button>
             <Button Click="PersonalAccessToken_Click">PersonalAccessToken</Button>
             <Button Click="MicrosoftAccount_Click">MicrosoftAccount</Button>

@@ -36,9 +36,12 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
 		static string _callResult;
-        private static string _collectionUri = @"https://dev.azure.com/BD-STS-PROD";
+        private static string _BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
+        private static string _BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
         private static string _teamProjectName = "TFS";
-        private static string _personalaccesstoken = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
+        private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
+
+        private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
 
         public MainWindow()
         {
@@ -51,6 +54,13 @@ namespace WpfApp1
             GetProjects();
 			result.Text = _callResult;
 		}
+
+        private void GetProcessList_Click(object sender, RoutedEventArgs e)
+        {
+            result.Text = "";
+            GetProcessList();
+            result.Text = _callResult;
+        }
 
         private void SampleREST_Click(object sender, RoutedEventArgs e)
         {
@@ -87,19 +97,56 @@ namespace WpfApp1
             result.Text = _callResult;
         }
 
+        public static async void GetProcessList()
+        {
+            var _personalaccesstoken = _PAT_BD_STS_QA2;
+            var _collectionUri = _BD_STS_QA2;
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                    string base64PAT = Convert.ToBase64String(
+                            System.Text.ASCIIEncoding.ASCII.GetBytes(
+                                string.Format("{0}:{1}", "", _personalaccesstoken)));
+
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64PAT);
+
+                    using (HttpResponseMessage response = await client.GetAsync($"{_collectionUri}/_apis/work/processes?api-version=6.0-preview.2"))
+                    {
+                        response.EnsureSuccessStatusCode();
+                        string responseBody = await response.Content.ReadAsStringAsync();
+                        Debug.WriteLine(responseBody);
+                        _callResult = responseBody;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+
         public static async void GetProjects()
 		{
-			try
+            var _personalaccesstoken = _PAT_BD_STS_QA2;
+            var _collectionUri = _BD_STS_QA2;
+
+            try
 			{
 				using (HttpClient client = new HttpClient())
 				{
 					client.DefaultRequestHeaders.Accept.Add(
 						new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-					client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
-						Convert.ToBase64String(
-							System.Text.ASCIIEncoding.ASCII.GetBytes(
-								string.Format("{0}:{1}", "", _personalaccesstoken))));
+                    string base64PAT = Convert.ToBase64String(
+                            System.Text.ASCIIEncoding.ASCII.GetBytes(
+                                string.Format("{0}:{1}", "", _personalaccesstoken)));
+
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64PAT);
 
 					using (HttpResponseMessage response = await client.GetAsync($"{_collectionUri}/_apis/projects"))
 					{
@@ -122,6 +169,8 @@ namespace WpfApp1
         public static void SampleREST()
         {
             StringBuilder sb = new StringBuilder();
+            var _personalaccesstoken = _PAT_BD_STS_QA2;
+            var _collectionUri = _BD_STS_QA2;
 
             // Connection object could be created once per application and we will use it to get httpclient objects. 
             // Httpclients have been reused between callers and threads.
@@ -202,6 +251,9 @@ namespace WpfApp1
 
         public static void PersonalAccessTokenRestSample()
         {
+            var _personalaccesstoken = _PAT_BD_STS_QA2;
+            var _collectionUri = _BD_STS_QA2;
+
             // Create instance of VssConnection using Personal Access Token
             VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssBasicCredential(string.Empty, _personalaccesstoken));
             _callResult = connection.ServerId.ToString();
@@ -209,6 +261,8 @@ namespace WpfApp1
 
         public static void MicrosoftAccountRestSample()
         {
+            var _collectionUri = _BD_STS_QA2;
+
             // Create instance of VssConnection using Visual Studio sign-in prompt
             VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssClientCredentials());
             _callResult = connection.ServerId.ToString();
