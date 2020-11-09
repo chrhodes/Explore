@@ -30,22 +30,138 @@ using Microsoft.VisualStudio.Services.WebApi;
 
 namespace WpfApp1
 {
+    public class CollectionDetails
+    {
+        public string Uri;
+        public string PAT;
+    }
+
+    public static class AvailableCollectionsData
+    {
+        private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
+
+        private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
+
+        private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
+
+        public static Dictionary<string, CollectionDetails> GetCollections()
+        {
+            Dictionary<string, CollectionDetails> choices = new Dictionary<string, CollectionDetails>
+            {
+                { "BD_STS_PROD",
+                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-PROD", PAT=_PAT_BD_STS_PROD } },
+                { "BD_STS_QA2",
+                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_BD_STS_QA2 } },
+                { "VNC-Development",
+                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_VNC_Development } }
+            };
+
+            return choices;
+        }
+    }
+
+    public class AvailableCollectionsData2 : Dictionary<string, CollectionDetails>
+    {
+        private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
+
+        private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
+
+        private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
+
+        AvailableCollectionsData2()
+        {
+            this.Add("BD_STS_PROD2",
+                    new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-PROD", PAT = _PAT_BD_STS_PROD });
+
+            this.Add("BD_STS_QA22",
+                    new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-QA2", PAT = _PAT_BD_STS_QA2 });
+
+            this.Add("VNC-Development2",
+                    new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-QA2", PAT = _PAT_VNC_Development });
+        }
+    }
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
 		static string _callResult;
-        private static string _BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
-        private static string _BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
+        private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
+        private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
+        private static string _URI_VNC_Development = @"https://dev.azure.com/VNC-Development";
+
         private static string _teamProjectName = "TFS";
+
         private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
 
         private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
 
+        private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
+
+        public  Dictionary<string, CollectionDetails> AvailableCollections;
+
+
+
+        public string[] Fruits = { "Apple", "Orange", "Pear"};
+
+
+        public System.Collections.ObjectModel.ObservableCollection<string> Fruits2 { get; set; } 
+            = new System.Collections.ObjectModel.ObservableCollection<string>() { "Apple2", "Orange2", "Pear2" };
+
+        string _selectedFruit2;
+        public string SelectedFruit2
+        {
+            get
+            {
+                return _selectedFruit2;
+            }
+            set
+            {
+                _selectedFruit2 = value;
+                //OnPropertyChanged();
+            }
+        }
+
+        //string _selectedItem;
+        //public string SelectedItem
+        //{
+        //    get
+        //    {
+        //        return _selectedItem;
+        //    }
+        //    set
+        //    {
+        //        _selectedItem = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        public string SelectedCollection { get; set; }
+
         public MainWindow()
         {
+            InitializeView();
             InitializeComponent();
+
+        }
+
+        private void InitializeView()
+        {
+            LoadCollections();
+        }
+
+        private void LoadCollections()
+        {
+            AvailableCollections = new Dictionary<string, CollectionDetails>
+            {
+                { "BD_STS_PROD", 
+                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-PROD", PAT=_PAT_BD_STS_PROD } },
+                { "BD_STS_QA2", 
+                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_BD_STS_QA2 } },
+                { "VNC-Development", 
+                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_VNC_Development } }
+            };
         }
 
         private void GetProjects_Click(object sender, RoutedEventArgs e)
@@ -58,7 +174,7 @@ namespace WpfApp1
         private void GetProcessList_Click(object sender, RoutedEventArgs e)
         {
             result.Text = "";
-            GetProcessList();
+            //GetProcessList(_VNC_Development, _PAT_VNC_Development);
             result.Text = _callResult;
         }
 
@@ -97,10 +213,10 @@ namespace WpfApp1
             result.Text = _callResult;
         }
 
-        public static async void GetProcessList()
+        public static async void GetProcessList(string collectionUri)
         {
             var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _BD_STS_QA2;
+            var _collectionUri = _URI_BD_STS_QA2;
 
             try
             {
@@ -133,7 +249,7 @@ namespace WpfApp1
         public static async void GetProjects()
 		{
             var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _BD_STS_QA2;
+            var _collectionUri = _URI_BD_STS_QA2;
 
             try
 			{
@@ -170,7 +286,7 @@ namespace WpfApp1
         {
             StringBuilder sb = new StringBuilder();
             var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _BD_STS_QA2;
+            var _collectionUri = _URI_BD_STS_QA2;
 
             // Connection object could be created once per application and we will use it to get httpclient objects. 
             // Httpclients have been reused between callers and threads.
@@ -252,7 +368,7 @@ namespace WpfApp1
         public static void PersonalAccessTokenRestSample()
         {
             var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _BD_STS_QA2;
+            var _collectionUri = _URI_BD_STS_QA2;
 
             // Create instance of VssConnection using Personal Access Token
             VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssBasicCredential(string.Empty, _personalaccesstoken));
@@ -261,7 +377,7 @@ namespace WpfApp1
 
         public static void MicrosoftAccountRestSample()
         {
-            var _collectionUri = _BD_STS_QA2;
+            var _collectionUri = _URI_BD_STS_QA2;
 
             // Create instance of VssConnection using Visual Studio sign-in prompt
             VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssClientCredentials());
@@ -279,7 +395,6 @@ namespace WpfApp1
             // Create instance of VssConnection using OAuth Access token
             //VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssOAuthAccessTokenCredential(accessToken));
         }
-
 
     }
 }

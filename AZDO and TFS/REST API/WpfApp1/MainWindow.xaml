@@ -6,8 +6,59 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="oAvailableCollections" ObjectType="{x:Type local:AvailableCollectionsData}" MethodName="GetCollections"/>
+        <local:AvailableCollectionsData2 x:Key="oAvailableCollections2" />
+    </Window.Resources>
     <Grid>
         <StackPanel>
+            <ComboBox
+                ItemsSource="{Binding AvailableCollections}" DisplayMemberPath="Value.Uri" >
+                <!--DisplayMemberPath="Value.Uri"
+                SelectedValuePath="Value.Uri"
+                SelectedValue="{Binding SelectedCollection}"-->
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{Binding Fruits}" >
+                
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{Binding Fruits2}" >
+
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{Binding Source={StaticResource oAvailableCollections}}" >
+
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{Binding Source={StaticResource oAvailableCollections2}}" >
+
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{StaticResource oAvailableCollections2}" >
+
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{StaticResource oAvailableCollections2}" SelectedValuePath="Key" DisplayMemberPath="Value">
+
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{StaticResource oAvailableCollections2}" SelectedValuePath="Key" DisplayMemberPath="Key">
+
+            </ComboBox>
+
+            <ComboBox
+                ItemsSource="{StaticResource oAvailableCollections2}" SelectedValuePath="Key" DisplayMemberPath="Key" SelectedValue="{Binding ColllectionDetails.Uri}">
+
+            </ComboBox>
+
             <Button Click="GetProjects_Click">GetProjects</Button>
             <Button Click="GetProcessList_Click">Get Process List</Button>
             <Button Click="SampleREST_Click">SampleREST</Button>
