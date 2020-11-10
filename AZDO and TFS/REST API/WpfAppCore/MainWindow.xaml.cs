@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
@@ -28,14 +31,8 @@ using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.OAuth;
 using Microsoft.VisualStudio.Services.WebApi;
 
-namespace WpfApp1
+namespace WpfAppCore
 {
-    public class CollectionDetails
-    {
-        public string Uri;
-        public string PAT;
-    }
-
     public static class AvailableCollectionsData
     {
         private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
@@ -53,7 +50,7 @@ namespace WpfApp1
                 { "BD_STS_QA2",
                     new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_BD_STS_QA2 } },
                 { "VNC-Development",
-                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_VNC_Development } }
+                    new CollectionDetails { Uri=@"https://dev.azure.com/VNC-Development", PAT=_PAT_VNC_Development } }
             };
 
             return choices;
@@ -68,7 +65,7 @@ namespace WpfApp1
 
         private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
 
-        AvailableCollectionsData2()
+        public AvailableCollectionsData2()
         {
             this.Add("BD_STS_PROD2",
                     new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-PROD", PAT = _PAT_BD_STS_PROD });
@@ -77,16 +74,15 @@ namespace WpfApp1
                     new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-QA2", PAT = _PAT_BD_STS_QA2 });
 
             this.Add("VNC-Development2",
-                    new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-QA2", PAT = _PAT_VNC_Development });
+                    new CollectionDetails { Uri = @"https://dev.azure.com/VNC-Development", PAT = _PAT_VNC_Development });
         }
     }
 
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
-		static string _callResult;
+
+        private string[] _fruitsP = { "AppleP", "OrangeP", "PearP" };
+        static string _callResult;
         private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
         private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
         private static string _URI_VNC_Development = @"https://dev.azure.com/VNC-Development";
@@ -99,12 +95,71 @@ namespace WpfApp1
 
         private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
 
-        public  Dictionary<string, CollectionDetails> AvailableCollections;
+        //public Dictionary<string, CollectionDetails> AvailableCollections;
+
+        private Dictionary<string, CollectionDetails> _availableCollections;
+        public Dictionary<string, CollectionDetails> AvailableCollections
+        {
+            get => _availableCollections;
+            set => _availableCollections = value;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+        private CollectionDetails _SelectedCollection;
+
+        public CollectionDetails SelectedCollection
+        {
+            get => _SelectedCollection;
+            set
+            {
+                if (_SelectedCollection == value)
+                    return;
+                _SelectedCollection = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedCollection)));
+            }
+        }
+
+        private void OnSelectedCollectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //var foo = CB1;
+            //var foo1 = CB1.SelectedItem;
+            //// NB. This only works if declare SelectedValuePath in ComboBox
+            //var foo2 = CB1.SelectedValue;
+
+            //var foo3 = foo2 as CollectionDetails;
+            //var foo4 = (CollectionDetails)foo2;
+
+            ////var foo1k = foo1.Key;
+            ////var foo1v = foo1.Value;
+            ////var foo2k = foo2.Key;
+            ////var foo2v = foo2.Value;
 
 
+            //SelectedCollection = foo3;
 
-        public string[] Fruits = { "Apple", "Orange", "Pear"};
+            //var p = SelectedCollection.PAT;
+            //var u = SelectedCollection.Uri;
 
+            //SelectedCollection = foo4;
+
+            //var p1 = SelectedCollection.PAT;
+            //var u1 = SelectedCollection.Uri;
+
+
+            SelectedCollection = CB1.SelectedValue as CollectionDetails;
+            
+            //var p = SelectedCollection.PAT;
+            //var u = SelectedCollection.Uri;
+        }
+
+        public string[] Fruits = { "Apple", "Orange", "Pear" };
+        
+        public string[] FruitsP
+        {
+            get => _fruitsP;
+            set => _fruitsP = value;
+        }
 
         public System.Collections.ObjectModel.ObservableCollection<string> Fruits2 { get; set; } 
             = new System.Collections.ObjectModel.ObservableCollection<string>() { "Apple2", "Orange2", "Pear2" };
@@ -137,18 +192,19 @@ namespace WpfApp1
         //    }
         //}
 
-        public string SelectedCollection { get; set; }
-
         public MainWindow()
         {
-            InitializeView();
             InitializeComponent();
-
+            InitializeView();
+            DataContext = this;
         }
 
         private void InitializeView()
         {
             LoadCollections();
+            //SelectedCollection = new CollectionDetails();
+            ////var foo = AvailableCollections.First().Key;
+            //CB1.SelectedItem = AvailableCollections.First();
         }
 
         private void LoadCollections()
@@ -160,7 +216,7 @@ namespace WpfApp1
                 { "BD_STS_QA2", 
                     new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_BD_STS_QA2 } },
                 { "VNC-Development", 
-                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_VNC_Development } }
+                    new CollectionDetails { Uri=@"https://dev.azure.com/VNC-Development", PAT=_PAT_VNC_Development } }
             };
         }
 
@@ -395,6 +451,7 @@ namespace WpfApp1
             // Create instance of VssConnection using OAuth Access token
             //VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssOAuthAccessTokenCredential(accessToken));
         }
+
 
     }
 }

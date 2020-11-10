@@ -8,8 +8,25 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <Button Click="Button_Click">GO</Button>
-            <TextBlock TextWrapping="Wrap" x:Name="result" />
+            <Label Content="CB1 {Binding AvailableCollections)" />
+            <ComboBox x:Name="CB1"
+                ItemsSource="{Binding AvailableCollections}"
+                      DisplayMemberPath="Key"
+                      SelectedValuePath="Value"
+                      SelectionChanged="OnSelectedCollectionChanged">
+            </ComboBox>
+            <TextBox x:Name="TB1" Text="{Binding SelectedCollection.Uri }" />
+            <TextBox x:Name="TB2" Text="{Binding SelectedCollection.PAT }" />
+
+            <Button Click="GetProjects_Click">GetProjects</Button>
+            <Button Click="GetProcessList_Click">Get Process List</Button>
+            <Button Click="SampleREST_Click">SampleREST</Button>
+            <Button Click="PersonalAccessToken_Click">PersonalAccessToken</Button>
+            <Button Click="MicrosoftAccount_Click">MicrosoftAccount</Button>
+            <Button Click="OAuth_Click">OAuth</Button>
+            <Button Click="AzureActiveDirectory_Click">AzureActiveDirectory</Button>
+
+            <TextBlock TextWrapping="Wrap" Name="result" />
         </StackPanel>
     </Grid>
 </Window>
