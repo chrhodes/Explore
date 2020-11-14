@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Windows.Controls.DataTemplateSelector">
+    <Position X="6.25" Y="0.75" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.HierarchicalDataTemplate">
+    <Position X="11.25" Y="0.75" Width="3.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.ContentPresenter">
+    <Position X="1.25" Y="10" Width="9" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.ItemsPresenter">
+    <Position X="7.75" Y="6" Width="6.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.ScrollContentPresenter">
+    <Position X="2.25" Y="1" Width="3.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Controls.Border">
+    <Position X="11.75" Y="9" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Decorator">
+    <Position X="12.75" Y="15" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Windows.Controls.Border">
+    <Position X="11" Y="6.5" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Decorator">
+    <Position X="10.5" Y="15.75" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Windows.Themes.ButtonChrome">
+    <Position X="2.25" Y="6.5" Width="3.5" />
+    <InheritanceLine Type="System.Windows.Controls.Decorator" ManuallyRouted="true">
+      <Path>
+        <Point X="12" Y="15.75" />
+        <Point X="12" Y="14.016" />
+        <Point X="4" Y="14.016" />
+        <Point X="4" Y="11.136" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Windows.Themes.ClassicBorderDecorator">
+    <Position X="6.25" Y="6.5" Width="3.5" />
+    <InheritanceLine Type="System.Windows.Controls.Decorator" ManuallyRouted="true">
+      <Path>
+        <Point X="12" Y="15.75" />
+        <Point X="12" Y="13.939" />
+        <Point X="8" Y="13.939" />
+        <Point X="8" Y="10.559" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.InkPresenter">
+    <Position X="14.5" Y="6.5" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Viewbox">
+    <Position X="17.5" Y="12.25" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Primitives.BulletDecorator">
+    <Position X="13.5" Y="12.5" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Documents.AdornerDecorator">
+    <Position X="1.75" Y="13.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Documents.AdornerLayer">
+    <Position X="5.5" Y="11.75" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.ScrollViewer">
+    <Position X="3" Y="19.25" Width="7" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Primitives.ScrollBar">
+    <Position X="10.25" Y="19.25" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Primitives.StatusBar">
+    <Position X="15.5" Y="19.5" Width="5.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Primitives.RangeBase">
+    <Position X="12" Y="28.75" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.Slider">
+    <Position X="16.5" Y="25.75" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.ProgressBar">
+    <Position X="14.25" Y="27" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

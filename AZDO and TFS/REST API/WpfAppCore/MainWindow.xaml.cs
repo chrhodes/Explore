@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -31,58 +32,13 @@ using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.OAuth;
 using Microsoft.VisualStudio.Services.WebApi;
 
+using Newtonsoft.Json.Linq;
+
 namespace WpfAppCore
 {
-    public static class AvailableCollectionsData
-    {
-        private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
-
-        private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
-
-        private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
-
-        public static Dictionary<string, CollectionDetails> GetCollections()
-        {
-            Dictionary<string, CollectionDetails> choices = new Dictionary<string, CollectionDetails>
-            {
-                { "BD_STS_PROD",
-                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-PROD", PAT=_PAT_BD_STS_PROD } },
-                { "BD_STS_QA2",
-                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_BD_STS_QA2 } },
-                { "VNC-Development",
-                    new CollectionDetails { Uri=@"https://dev.azure.com/VNC-Development", PAT=_PAT_VNC_Development } }
-            };
-
-            return choices;
-        }
-    }
-
-    public class AvailableCollectionsData2 : Dictionary<string, CollectionDetails>
-    {
-        private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
-
-        private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
-
-        private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
-
-        public AvailableCollectionsData2()
-        {
-            this.Add("BD_STS_PROD2",
-                    new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-PROD", PAT = _PAT_BD_STS_PROD });
-
-            this.Add("BD_STS_QA22",
-                    new CollectionDetails { Uri = @"https://dev.azure.com/BD-STS-QA2", PAT = _PAT_BD_STS_QA2 });
-
-            this.Add("VNC-Development2",
-                    new CollectionDetails { Uri = @"https://dev.azure.com/VNC-Development", PAT = _PAT_VNC_Development });
-        }
-    }
-
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
-        private string[] _fruitsP = { "AppleP", "OrangeP", "PearP" };
-        static string _callResult;
         private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
         private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
         private static string _URI_VNC_Development = @"https://dev.azure.com/VNC-Development";
@@ -91,24 +47,37 @@ namespace WpfAppCore
 
         private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
 
-        private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
+        //private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
+        private static string _PAT_BD_STS_QA2 = "3mesoqd2xxsgxvx6fqsdc7h2fhswo2ohpa2t6aennimb3x7wr6vq";
 
         private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
 
-        //public Dictionary<string, CollectionDetails> AvailableCollections;
-
-        private Dictionary<string, CollectionDetails> _availableCollections;
-        public Dictionary<string, CollectionDetails> AvailableCollections
-        {
-            get => _availableCollections;
-            set => _availableCollections = value;
-        }
-
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private CollectionDetails _SelectedCollection;
+        private string _callResult;
 
-        public CollectionDetails SelectedCollection
+        public string CallResult
+        {
+            get => _callResult;
+            set
+            {
+                if (_callResult == value)
+                    return;
+                _callResult = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CallResult)));
+            }
+        }
+
+        public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeaders { get; set; }
+            = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
+
+
+        public ObservableCollection<AvailableCollection> AvailableCollections { get; set; }
+            = new ObservableCollection<AvailableCollection>();
+
+        private AvailableCollection _SelectedCollection;
+
+        public AvailableCollection SelectedCollection
         {
             get => _SelectedCollection;
             set
@@ -120,83 +89,13 @@ namespace WpfAppCore
             }
         }
 
-        private void OnSelectedCollectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //var foo = CB1;
-            //var foo1 = CB1.SelectedItem;
-            //// NB. This only works if declare SelectedValuePath in ComboBox
-            //var foo2 = CB1.SelectedValue;
-
-            //var foo3 = foo2 as CollectionDetails;
-            //var foo4 = (CollectionDetails)foo2;
-
-            ////var foo1k = foo1.Key;
-            ////var foo1v = foo1.Value;
-            ////var foo2k = foo2.Key;
-            ////var foo2v = foo2.Value;
-
-
-            //SelectedCollection = foo3;
-
-            //var p = SelectedCollection.PAT;
-            //var u = SelectedCollection.Uri;
-
-            //SelectedCollection = foo4;
-
-            //var p1 = SelectedCollection.PAT;
-            //var u1 = SelectedCollection.Uri;
-
-
-            SelectedCollection = CB1.SelectedValue as CollectionDetails;
-            
-            //var p = SelectedCollection.PAT;
-            //var u = SelectedCollection.Uri;
-        }
-
-        public string[] Fruits = { "Apple", "Orange", "Pear" };
-        
-        public string[] FruitsP
-        {
-            get => _fruitsP;
-            set => _fruitsP = value;
-        }
-
-        public System.Collections.ObjectModel.ObservableCollection<string> Fruits2 { get; set; } 
-            = new System.Collections.ObjectModel.ObservableCollection<string>() { "Apple2", "Orange2", "Pear2" };
-
-        string _selectedFruit2;
-        public string SelectedFruit2
-        {
-            get
-            {
-                return _selectedFruit2;
-            }
-            set
-            {
-                _selectedFruit2 = value;
-                //OnPropertyChanged();
-            }
-        }
-
-        //string _selectedItem;
-        //public string SelectedItem
-        //{
-        //    get
-        //    {
-        //        return _selectedItem;
-        //    }
-        //    set
-        //    {
-        //        _selectedItem = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
         public MainWindow()
         {
             InitializeComponent();
+
             InitializeView();
             DataContext = this;
+
         }
 
         private void InitializeView()
@@ -205,94 +104,135 @@ namespace WpfAppCore
             //SelectedCollection = new CollectionDetails();
             ////var foo = AvailableCollections.First().Key;
             //CB1.SelectedItem = AvailableCollections.First();
+            //ResponseHeaders.CollectionChanged += ResponseHeaders_CollectionChanged;
         }
+
+        //private void ResponseHeaders_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        //{
+        //    var foo = sender;
+        //}
 
         private void LoadCollections()
         {
-            AvailableCollections = new Dictionary<string, CollectionDetails>
-            {
-                { "BD_STS_PROD", 
-                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-PROD", PAT=_PAT_BD_STS_PROD } },
-                { "BD_STS_QA2", 
-                    new CollectionDetails { Uri=@"https://dev.azure.com/BD-STS-QA2", PAT=_PAT_BD_STS_QA2 } },
-                { "VNC-Development", 
-                    new CollectionDetails { Uri=@"https://dev.azure.com/VNC-Development", PAT=_PAT_VNC_Development } }
-            };
+            AvailableCollections.Add(
+                new AvailableCollection { 
+                        Name="BD_STS_PROD", 
+                        Details= new CollectionDetails { 
+                            Uri = @"https://dev.azure.com/BD-STS-PROD", 
+                            PAT = _PAT_BD_STS_PROD
+                        }
+                });
+
+            AvailableCollections.Add(
+                new AvailableCollection
+                {
+                    Name = "BD_STS_QA2",
+                    Details = new CollectionDetails
+                    {
+                        Uri = @"https://dev.azure.com/BD-STS-QA2",
+                        PAT = _PAT_BD_STS_QA2
+                    }
+                });
+
+            AvailableCollections.Add(
+                new AvailableCollection
+                {
+                    Name = "VNC-Development",
+                    Details = new CollectionDetails
+                    {
+                        Uri = @"https://dev.azure.com/VNC-Development",
+                        PAT = _PAT_VNC_Development
+                    }
+                });
         }
 
-        private void GetProjects_Click(object sender, RoutedEventArgs e)
+        private async void GetProjects_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            GetProjects();
-			result.Text = _callResult;
+            CallResult = "";
+            CallResult = await GetProjects(SelectedCollection.Details);
 		}
 
-        private void GetProcessList_Click(object sender, RoutedEventArgs e)
+        private async void GetProcessList_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            //GetProcessList(_VNC_Development, _PAT_VNC_Development);
-            result.Text = _callResult;
+            CallResult = "";
+            CallResult = await GetProcessList(SelectedCollection.Details);
         }
 
-        private void SampleREST_Click(object sender, RoutedEventArgs e)
+        private async void SampleREST_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            SampleREST();
-            result.Text = _callResult;
+            CallResult = "";
+            CallResult = await SampleREST(SelectedCollection.Details);
         }
 
-        private void PersonalAccessToken_Click(object sender, RoutedEventArgs e)
+        private async void PersonalAccessToken_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            PersonalAccessTokenRestSample();
-            result.Text = _callResult;
+            CallResult = "";
+            CallResult = await PersonalAccessTokenRestSample(SelectedCollection.Details);
         }
 
-        private void MicrosoftAccount_Click(object sender, RoutedEventArgs e)
+        private async void MicrosoftAccount_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            MicrosoftAccountRestSample();
-            result.Text = _callResult;
+            CallResult = "";
+            CallResult = await MicrosoftAccountRestSample(SelectedCollection.Details);
         }
 
-        private void OAuth_Click(object sender, RoutedEventArgs e)
+        private async void OAuth_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            OAuthSample();
-            result.Text = _callResult;
+            CallResult = "";
+            CallResult = await OAuthSample(SelectedCollection.Details);
         }
 
-        private void AzureActiveDirectory_Click(object sender, RoutedEventArgs e)
+        private async void AzureActiveDirectory_Click(object sender, RoutedEventArgs e)
         {
-            result.Text = "";
-            AADRestSample();
-            result.Text = _callResult;
+            CallResult = "";
+            CallResult = await AADRestSample(SelectedCollection.Details);
         }
 
-        public static async void GetProcessList(string collectionUri)
+        public async Task<string> GetProcessList(CollectionDetails collection)
         {
-            var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _URI_BD_STS_QA2;
+            string jsonResult = default;
 
             try
             {
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Add(
-                        new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                        new MediaTypeWithQualityHeaderValue("application/json"));
 
                     string base64PAT = Convert.ToBase64String(
-                            System.Text.ASCIIEncoding.ASCII.GetBytes(
-                                string.Format("{0}:{1}", "", _personalaccesstoken)));
+                            ASCIIEncoding.ASCII.GetBytes(
+                                string.Format("{0}:{1}", "", collection.PAT)));
 
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64PAT);
+                    client.DefaultRequestHeaders.Authorization 
+                        = new AuthenticationHeaderValue("Basic", base64PAT);
 
-                    using (HttpResponseMessage response = await client.GetAsync($"{_collectionUri}/_apis/work/processes?api-version=6.0-preview.2"))
+                    ResponseHeaders.Clear();
+
+                    using (HttpResponseMessage response 
+                        = await client.GetAsync($"{collection.Uri}/_apis/work/processes?api-version=6.0-preview.2"))
                     {
+                        var headers = response.Headers;
+
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+
+
+                        //foreach (var item in headersList)
+                        //{
+                        //    ResponseHeaders.Add(item);
+                        //}
+
+                        ResponseHeaders.AddRange(headers);
+
+                        // This does not fire any event.
+                        //ResponseHeaders = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>(headersList);
+
                         response.EnsureSuccessStatusCode();
                         string responseBody = await response.Content.ReadAsStringAsync();
-                        Debug.WriteLine(responseBody);
-                        _callResult = responseBody;
+
+                        jsonResult = responseBody;
                     }
                 }
             }
@@ -300,46 +240,165 @@ namespace WpfAppCore
             {
                 Debug.WriteLine(ex.ToString());
             }
+
+            return jsonResult;
         }
 
-        public static async void GetProjects()
+        public async Task<string> GetProjects(CollectionDetails collection)
 		{
-            var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _URI_BD_STS_QA2;
+            string jsonResult = default;
+            StringBuilder sb = new StringBuilder();
 
             try
-			{
-				using (HttpClient client = new HttpClient())
-				{
-					client.DefaultRequestHeaders.Accept.Add(
-						new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
 
                     string base64PAT = Convert.ToBase64String(
-                            System.Text.ASCIIEncoding.ASCII.GetBytes(
-                                string.Format("{0}:{1}", "", _personalaccesstoken)));
+                            ASCIIEncoding.ASCII.GetBytes(
+                                string.Format("{0}:{1}", "", collection.PAT)));
 
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64PAT);
 
-					using (HttpResponseMessage response = await client.GetAsync($"{_collectionUri}/_apis/projects"))
-					{
-						response.EnsureSuccessStatusCode();
-						string responseBody = await response.Content.ReadAsStringAsync();
-						Debug.WriteLine(responseBody);
-						_callResult = responseBody;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.ToString());
-			}
-		}
+                    ResponseHeaders.Clear();
+
+                    using (HttpResponseMessage response = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4"))
+                    {
+                        ResponseHeaders.AddRange(response.Headers);
+                        //var headers = response.Headers;
+
+                        //var headersList = response.Headers.ToList();
+
+                        //foreach (var item in headersList)
+                        //{
+                        //    ResponseHeaders.Add(item);
+                        //}
+
+                        response.EnsureSuccessStatusCode();
+                        string outJson = await response.Content.ReadAsStringAsync();
+                        sb.Append(outJson);
+
+                        JObject o = JObject.Parse(outJson);
+
+                        foreach (var p in o)
+                        {
+                            var foo = p.Key;
+
+                            if (foo == "count")
+                            {
+                                Debug.WriteLine(p.Value);
+                            }
+
+                            if (foo == "value")
+                            {
+                                foreach (var t in p.Value)
+                                {
+                                    Debug.WriteLine(t.ToString());
+                                }
+
+                            }
+                            var bar = p.Value;
+                        }
+
+                        //dynamic jsonArray = JArray.Parse(outJson);
+
+                        //dynamic json = JValue.Parse(outJson);
+
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        while (hasContinuationToken)
+                        {
+                            string continueToken = continuationHeaders.First();
+
+                            using (HttpResponseMessage response2 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken}"))
+                            {
+                                ResponseHeaders.AddRange(response2.Headers);
+
+                                response2.EnsureSuccessStatusCode();
+                                string outJson2 = await response2.Content.ReadAsStringAsync();
+                                sb.Append(outJson2);
+
+
+
+                                hasContinuationToken = response2.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+                            }
+                        }
+
+                        //response.EnsureSuccessStatusCode();
+                        //string responseBody = await response.Content.ReadAsStringAsync();
+
+                        //if (hasContinuationToken)
+                        //{
+                        //    string continueToken1 = continuationHeaders.First();
+
+                        //    HttpResponseMessage response2 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken1}");
+
+                        //    response2.EnsureSuccessStatusCode();
+                        //    string responseBody2 = await response2.Content.ReadAsStringAsync();
+
+                        //    var headers2 = response2.Headers;
+
+                        //    IEnumerable<string> continuationHeaders2 = default;
+
+                        //    bool hasContinuationToken2 = response2.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders2);
+
+                        //    if (hasContinuationToken2)
+                        //    {
+                        //        string continueToken2 = continuationHeaders2.First();
+
+                        //        HttpResponseMessage response3 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken2}");
+
+                        //        response3.EnsureSuccessStatusCode();
+                        //        string responseBody3 = await response3.Content.ReadAsStringAsync();
+
+                        //        var headers3 = response3.Headers;
+
+                        //        IEnumerable<string> continuationHeaders3 = default;
+
+                        //        bool hasContinuationToken3 = response3.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders3);
+
+                        //        if (hasContinuationToken3)
+                        //        {
+                        //            string continueToken3 = continuationHeaders2.First();
+
+                        //            HttpResponseMessage response4 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken3}");
+
+                        //            var headers4 = response4.Headers;
+
+                        //            IEnumerable<string> continuationHeaders4 = default;
+
+                        //            bool hasContinuationToken4 = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders4);
+                        //        }
+                        //    }
+                        //}
+
+                        //jsonResult = responseBody;
+                        jsonResult = sb.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            return jsonResult;
+        }
 
     /// <summary>
-    /// This sample creates a new work item query for New Bugs, stores it under 'MyQueries', runs the query, and then sends the results to the console.
+    /// This sample 
+    /// creates a new work item query for New Bugs,
+    /// stores it under 'MyQueries',
+    /// runs the query, 
+    /// and then sends the results to the console.
     /// </summary>
-        public static void SampleREST()
+        public async Task<string> SampleREST(CollectionDetails collection)
         {
+            string jsonResult = default;
             StringBuilder sb = new StringBuilder();
             var _personalaccesstoken = _PAT_BD_STS_QA2;
             var _collectionUri = _URI_BD_STS_QA2;
@@ -417,41 +476,61 @@ namespace WpfAppCore
                 }
             }
 
-            _callResult = sb.ToString();
-
+            //_callResult = sb.ToString();
+            jsonResult = sb.ToString();
+            return jsonResult;
         }
 
-        public static void PersonalAccessTokenRestSample()
+        public async Task<string> PersonalAccessTokenRestSample(CollectionDetails collection)
         {
-            var _personalaccesstoken = _PAT_BD_STS_QA2;
-            var _collectionUri = _URI_BD_STS_QA2;
+            string jsonResult = default;
 
             // Create instance of VssConnection using Personal Access Token
-            VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssBasicCredential(string.Empty, _personalaccesstoken));
-            _callResult = connection.ServerId.ToString();
+            VssConnection connection = new VssConnection(
+                new Uri(collection.Uri), 
+                new VssBasicCredential(string.Empty, collection.PAT));
+            //_callResult = connection.ServerId.ToString();
+            
+            return jsonResult;
         }
 
-        public static void MicrosoftAccountRestSample()
+        public async Task<string> MicrosoftAccountRestSample(CollectionDetails collection)
         {
-            var _collectionUri = _URI_BD_STS_QA2;
+            string jsonResult = default;
 
             // Create instance of VssConnection using Visual Studio sign-in prompt
-            VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssClientCredentials());
-            _callResult = connection.ServerId.ToString();
+            VssConnection connection = new VssConnection(
+                new Uri(collection.Uri), 
+                new VssClientCredentials());
+            //_callResult = connection.ServerId.ToString();
+            return jsonResult;
         }
 
-        public static void AADRestSample()
+        public async Task<string> AADRestSample(CollectionDetails collection)
         {
+            string jsonResult = default;
+            string userName = default;
+            string password = default;
+
             // Create instance of VssConnection using Azure AD Credentials for Azure AD backed account
-            //VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssAadCredential(userName, password));
+            VssConnection connection = new VssConnection(
+                new Uri(collection.Uri), 
+                new VssAadCredential(userName, password));
+            
+            return jsonResult;
         }
 
-        public static void OAuthSample()
+        public async Task<string> OAuthSample(CollectionDetails collection)
         {
-            // Create instance of VssConnection using OAuth Access token
-            //VssConnection connection = new VssConnection(new Uri(_collectionUri), new VssOAuthAccessTokenCredential(accessToken));
-        }
+            string jsonResult = default;
 
+            // Create instance of VssConnection using OAuth Access token
+            VssConnection connection = new VssConnection(
+                new Uri(collection.Uri), 
+                new VssOAuthAccessTokenCredential(collection.PAT));
+            
+            return jsonResult;
+        }
 
     }
 }

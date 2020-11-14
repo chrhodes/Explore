@@ -1,71 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="System.Transactions.CommittableTransaction">
-    <Position X="0.5" Y="4.5" Width="2.25" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.IO.Stream">
+    <Position X="0.5" Y="2" Width="6" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="System.Transactions.DependentTransaction">
-    <Position X="3" Y="4.5" Width="2" />
+  <Class Name="System.IO.Directory">
+    <Position X="6.75" Y="1.75" Width="7" />
     <TypeIdentifier />
   </Class>
-  <Class Name="System.Transactions.DistributedTransactionPermission">
-    <Position X="1" Y="0.75" Width="2.5" />
-    <TypeIdentifier />
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="System.Transactions.Enlistment">
-    <Position X="2.25" Y="12" Width="1.5" />
+  <Class Name="System.IO.File">
+    <Position X="14.25" Y="1.75" Width="8" />
     <TypeIdentifier />
   </Class>
-  <Class Name="System.Transactions.PreparingEnlistment">
-    <Position X="0.5" Y="9.25" Width="2" />
+  <Class Name="System.IO.Path">
+    <Position X="16.75" Y="14" Width="4.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="System.Transactions.SinglePhaseEnlistment">
-    <Position X="2.75" Y="9.25" Width="2" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.SubordinateTransaction">
-    <Position X="5.5" Y="4.5" Width="2" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.Transaction">
-    <Position X="5.5" Y="7.25" Width="2" />
+  <Class Name="System.IO.FileSystemInfo">
+    <Position X="5" Y="27.25" Width="4.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="System.Transactions.TransactionEventArgs">
-    <Position X="8.5" Y="5.25" Width="1.75" />
+  <Class Name="System.IO.DirectoryInfo">
+    <Position X="0.5" Y="16.75" Width="6.75" />
     <TypeIdentifier />
   </Class>
-  <Class Name="System.Transactions.TransactionInformation">
-    <Position X="8.5" Y="9.25" Width="2" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.TransactionInterop">
-    <Position X="4" Y="0.75" Width="3.5" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.TransactionManager">
-    <Position X="7.75" Y="0.75" Width="2.5" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.TransactionScope">
-    <Position X="8.5" Y="7.5" Width="2" />
+  <Class Name="System.IO.DriveInfo">
+    <Position X="1.25" Y="12" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="System.Transactions.Configuration.DefaultSettingsSection">
-    <Position X="4.75" Y="12.25" Width="2.75" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.Configuration.MachineSettingsSection">
-    <Position X="8" Y="12.25" Width="2.25" />
-    <TypeIdentifier />
-  </Class>
-  <Class Name="System.Transactions.Configuration.TransactionsSectionGroup">
-    <Position X="5.25" Y="14.75" Width="2" />
+  <Class Name="System.IO.FileInfo">
+    <Position X="8" Y="16.75" Width="6.75" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />

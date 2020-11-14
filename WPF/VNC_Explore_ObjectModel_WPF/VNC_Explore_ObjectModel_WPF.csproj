@@ -35,8 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -87,10 +90,23 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Diagrams\Base Classes.cd" />
-    <None Include="Diagrams\ClassDiagram1.cd" />
-    <None Include="Diagrams\ClassDiagram2.cd" />
-    <None Include="Diagrams\ClassDiagram3.cd" />
-    <None Include="Diagrams\DevExpress Core.cd" />
+    <None Include="Diagrams\System.Windows - FrameworkElement.cd" />
+    <None Include="Diagrams\System.Windows - ContentElement.cd" />
+    <None Include="Diagrams\System.Windows.Controls - Item Types.cd" />
+    <None Include="Diagrams\System.Windows.Controls - Decorators.cd" />
+    <None Include="Diagrams\System.Windows.Controls - ItemsControl Controls.cd" />
+    <None Include="Diagrams\System.Windows.Controls.cd" />
+    <None Include="Diagrams\System.Windows - DataTemplate.cd" />
+    <None Include="Diagrams\System.Windows.Controls 2.cd" />
+    <None Include="Diagrams\System.Windows.Controls - Panel.cd" />
+    <None Include="Diagrams\System.Windows.Data - Binding.cd" />
+    <None Include="Diagrams\System.Windows.Data - Collapsed.cd" />
+    <None Include="Diagrams\System.WIndows.Data - Collection.cd" />
+    <None Include="Diagrams\System.Windows.Data - Enumerations.cd" />
+    <None Include="Diagrams\System.Windows.Data.Markup - Extensions.cd" />
+    <None Include="Diagrams\System.Windows.Markup - Interfaces.cd" />
+    <None Include="Diagrams\System.Windows.Markup.cd" />
+    <None Include="Diagrams\System.Windows.Shapes.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

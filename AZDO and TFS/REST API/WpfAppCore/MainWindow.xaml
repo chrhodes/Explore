@@ -7,68 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <ObjectDataProvider x:Key="oAvailableCollections" 
-                            ObjectType="{x:Type local:AvailableCollectionsData}" 
-                            MethodName="GetCollections"/>
-        <local:AvailableCollectionsData2 x:Key="oAvailableCollections2" />
+
     </Window.Resources>
     <Grid>
         <StackPanel>
-            <Label Content="CB1 {Binding AvailableCollections)" />
-            <ComboBox x:Name="CB1"
+            <Label Content="CB1OC {Binding AvailableCollectionsOC)" />
+            <ComboBox x:Name="CB1OC"
                 ItemsSource="{Binding AvailableCollections}"
-                      DisplayMemberPath="Key"
-                      SelectedValuePath="Value"
-                      SelectionChanged="OnSelectedCollectionChanged">
-
-                <!--DisplayMemberPath="Value.Uri" >-->
-                <!--DisplayMemberPath="Value.Uri"
-                SelectedValuePath="Value.Uri"
-                SelectedValue="{Binding SelectedCollection}"-->
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="Details"
+                      SelectedItem="{Binding SelectedCollection, Mode=TwoWay}">
             </ComboBox>
-            <TextBox x:Name="TB1" Text="{Binding SelectedCollection.Uri }" />
-            <TextBox x:Name="TB2" Text="{Binding SelectedCollection.PAT }" />
-            <!--Cannot Do this as no binding to Member Variables.  Must be Property-->
-            <Label Content="CB2 {Binding Fruits}" />
-            <ComboBox x:Name="CB2"
-                ItemsSource="{Binding Fruits}" >
-            </ComboBox>
-            
-            <!--This works because FruitsP is a Property-->
-            <Label Content="CB3 {Binding FruitsP}" />
-            <ComboBox x:Name="CB3"
-                ItemsSource="{Binding FruitsP}" >
-            </ComboBox>
-            
-            <Label Content="CB4 {Binding Source={StaticResource oAvailableCollections}}"/>
-            <ComboBox x:Name="CB4"
-                ItemsSource="{Binding Source={StaticResource oAvailableCollections}}" DisplayMemberPath="Key" >
-            </ComboBox>
-
-            <Label Content="CB5 {Binding Source={StaticResource oAvailableCollections2}}" />
-            <ComboBox  x:Name="CB5"
-                ItemsSource="{Binding Source={StaticResource oAvailableCollections2}}" DisplayMemberPath="Key" >
-            </ComboBox>
-
-            <Label Content="CB6 {StaticResource oAvailableCollections2}" />
-            <ComboBox x:Name="CB6"
-                ItemsSource="{StaticResource oAvailableCollections2}" DisplayMemberPath="Key"  >
-            </ComboBox>
-            
-            <Label Content="CB7 {StaticResource oAvailableCollections2}" />
-            <ComboBox x:Name="CB7"
-                ItemsSource="{StaticResource oAvailableCollections2}" SelectedValuePath="Key" DisplayMemberPath="Value">
-            </ComboBox>
-            
-            <Label Content="CB8 {StaticResource oAvailableCollections2}" />
-            <ComboBox x:Name="CB8"
-                ItemsSource="{StaticResource oAvailableCollections2}" SelectedValuePath="Key" DisplayMemberPath="Key">
-            </ComboBox>
-            
-            <Label Content="CB9 {StaticResource oAvailableCollections2}" />
-            <ComboBox x:Name="CB9"
-                ItemsSource="{StaticResource oAvailableCollections2}" SelectedValuePath="Key" DisplayMemberPath="Key" SelectedValue="{Binding ColllectionDetails.Uri}">
-            </ComboBox>
+            <TextBox x:Name="TB1OC" Text="{Binding SelectedCollection.Details.Uri }" />
+            <TextBox x:Name="TB2OC" Text="{Binding SelectedCollection.Details.PAT }" />
 
             <Button Click="GetProjects_Click">GetProjects</Button>
             <Button Click="GetProcessList_Click">Get Process List</Button>
@@ -78,7 +29,87 @@
             <Button Click="OAuth_Click">OAuth</Button>
             <Button Click="AzureActiveDirectory_Click">AzureActiveDirectory</Button>
 
-            <TextBlock TextWrapping="Wrap" Name="result" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--<ScrollViewer MaxHeight="500">
+                    <TextBlock Text="{Binding CallResult}" 
+                           TextWrapping="Wrap" Width="Auto" />
+                </ScrollViewer>-->
+
+                <TextBox Text="{Binding CallResult}" 
+                         VerticalAlignment="Top"
+                         Grid.Column="0"
+                         MaxHeight="500"
+                         ScrollViewer.CanContentScroll="True"
+                         TextWrapping="Wrap"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+                <DataGrid ItemsSource="{Binding ResponseHeaders}" Grid.Column="1" AutoGenerateColumns="False"
+                                                    ScrollViewer.CanContentScroll="True"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Key">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Key}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTemplateColumn Header="Value">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding Value}" Margin="0,0,5,0" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>                        
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+                <DataGrid ItemsSource="{Binding ResponseHeaders}" Grid.Column="2" AutoGenerateColumns="False" 
+                          ScrollViewer.CanContentScroll="True"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Key">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Key}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Value">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding Value}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" Margin="0,0,5,0" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Vertical" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+            </Grid>
+
         </StackPanel>
     </Grid>
 </Window>
