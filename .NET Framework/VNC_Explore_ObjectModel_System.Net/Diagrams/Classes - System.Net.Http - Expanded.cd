@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Net.Http.ByteArrayContent">
+    <Position X="3.25" Y="34.5" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.DelegatingHandler">
+    <Position X="3" Y="21" Width="7" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.FormUrlEncodedContent">
+    <Position X="7.75" Y="31.5" Width="5.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.HttpClient">
+    <Position X="1.25" Y="0.5" Width="9.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.HttpClientHandler">
+    <Position X="10.25" Y="21" Width="8.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.HttpContent">
+    <Position X="8.75" Y="40.75" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.HttpMessageHandler">
+    <Position X="3.75" Y="28.5" Width="7" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.HttpMessageInvoker">
+    <Position X="2.5" Y="10" Width="7" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.HttpMethod">
+    <Position X="12.5" Y="1.5" Width="3.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.HttpRequestException">
+    <Position X="21.25" Y="3.5" Width="3.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.HttpRequestMessage">
+    <Position X="17" Y="1" Width="4" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.HttpResponseMessage">
+    <Position X="17.25" Y="5" Width="3.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.MessageProcessingHandler">
+    <Position X="3.25" Y="17.75" Width="7" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.MultipartContent">
+    <Position X="13.25" Y="37.25" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.MultipartFormDataContent">
+    <Position X="13.5" Y="34.5" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.StreamContent">
+    <Position X="8.5" Y="34.5" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.StringContent">
+    <Position X="3" Y="31.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.WebRequestHandler">
+    <Position X="11.25" Y="17" Width="5.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Net.DownloadDataCompletedEventArgs">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.DownloadProgressChangedEventArgs">
+    <Position X="3.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.DownloadStringCompletedEventArgs">
+    <Position X="7.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.OpenReadCompletedEventArgs">
+    <Position X="0.5" Y="2.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.OpenWriteCompletedEventArgs">
+    <Position X="3.5" Y="2.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.UploadDataCompletedEventArgs">
+    <Position X="0.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.UploadFileCompletedEventArgs">
+    <Position X="3.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.UploadProgressChangedEventArgs">
+    <Position X="6.25" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.UploadStringCompletedEventArgs">
+    <Position X="0.75" Y="6.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.UploadValuesCompletedEventArgs">
+    <Position X="4" Y="6.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -39,6 +39,7 @@ namespace WpfAppCore
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
+        private string _response;
         private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
         private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
         private static string _URI_VNC_Development = @"https://dev.azure.com/VNC-Development";
@@ -67,7 +68,19 @@ namespace WpfAppCore
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CallResult)));
             }
         }
-
+    
+        public string Response
+        {
+            get => _response;
+            set
+            {
+                if (_response == value)
+                    return;
+                _response = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Response)));
+            }
+        }
+        
         public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeaders { get; set; }
             = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
 
@@ -211,23 +224,21 @@ namespace WpfAppCore
                     using (HttpResponseMessage response 
                         = await client.GetAsync($"{collection.Uri}/_apis/work/processes?api-version=6.0-preview.2"))
                     {
-                        var headers = response.Headers;
+                        Response = response.ToString();
 
-                        IEnumerable<string> continuationHeaders = default;
-
-                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
-
-
+                        // This does not fire any event.
+                        //ResponseHeaders = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>(headersList);
 
                         //foreach (var item in headersList)
                         //{
                         //    ResponseHeaders.Add(item);
                         //}
 
-                        ResponseHeaders.AddRange(headers);
+                        ResponseHeaders.AddRange(response.Headers);
 
-                        // This does not fire any event.
-                        //ResponseHeaders = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>(headersList);
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
 
                         response.EnsureSuccessStatusCode();
                         string responseBody = await response.Content.ReadAsStringAsync();
@@ -266,15 +277,9 @@ namespace WpfAppCore
 
                     using (HttpResponseMessage response = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4"))
                     {
+                        Response = response.ToString();
+
                         ResponseHeaders.AddRange(response.Headers);
-                        //var headers = response.Headers;
-
-                        //var headersList = response.Headers.ToList();
-
-                        //foreach (var item in headersList)
-                        //{
-                        //    ResponseHeaders.Add(item);
-                        //}
 
                         response.EnsureSuccessStatusCode();
                         string outJson = await response.Content.ReadAsStringAsync();

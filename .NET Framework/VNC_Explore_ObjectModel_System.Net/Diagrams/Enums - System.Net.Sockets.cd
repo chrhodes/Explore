@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Enum Name="System.Net.Sockets.AddressFamily">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.IOControlCode">
+    <Position X="2.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.ProtocolFamily">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.ProtocolType">
+    <Position X="7.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SelectMode">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketAsyncOperation">
+    <Position X="0.5" Y="9" Width="2" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketError">
+    <Position X="0.5" Y="12" Width="2.25" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketFlags">
+    <Position X="3.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketInformationOptions">
+    <Position X="2.5" Y="8" Width="2.25" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketOptionLevel">
+    <Position X="6.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketOptionName">
+    <Position X="5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketShutdown">
+    <Position X="7.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.SocketType">
+    <Position X="8" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.TransmitFileOptions">
+    <Position X="3" Y="13.5" Width="2" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.Sockets.IPProtectionLevel">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

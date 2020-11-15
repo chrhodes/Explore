@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Newtonsoft.Json.Linq.Extensions">
+    <Position X="0.5" Y="0.75" Width="5.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JArray">
+    <Position X="1.25" Y="6.5" Width="7.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JConstructor">
+    <Position X="0.5" Y="20" Width="8" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JContainer">
+    <Position X="15.5" Y="31.5" Width="4.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JObject">
+    <Position X="9.5" Y="15.5" Width="7.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JProperty">
+    <Position X="10.25" Y="8.5" Width="7.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JPropertyDescriptor">
+    <Position X="11.75" Y="0.75" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JRaw">
+    <Position X="1.25" Y="25.5" Width="6.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JsonLoadSettings">
+    <Position X="17.5" Y="3.75" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JsonMergeSettings">
+    <Position X="17" Y="0.75" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JToken">
+    <Position X="6.75" Y="40" Width="8" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JTokenEqualityComparer">
+    <Position X="24.25" Y="12.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JTokenReader">
+    <Position X="23" Y="9.25" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JTokenWriter">
+    <Position X="22.25" Y="19.75" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Linq.JValue">
+    <Position X="1.25" Y="29.25" Width="7" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Newtonsoft.Json.Linq.JEnumerable&lt;T&gt;">
+    <Position X="21.75" Y="15.5" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Interface Name="Newtonsoft.Json.Linq.IJEnumerable&lt;T&gt;">
+    <Position X="23" Y="6.75" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

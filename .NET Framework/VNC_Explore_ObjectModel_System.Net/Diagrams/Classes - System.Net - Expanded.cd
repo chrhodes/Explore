@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Net.AuthenticationManager">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Authorization">
+    <Position X="2.5" Y="0.75" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Cookie">
+    <Position X="7.25" Y="0.75" Width="4" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.CookieCollection">
+    <Position X="6" Y="6.5" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.CookieContainer">
+    <Position X="0.5" Y="8.5" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.CredentialCache">
+    <Position X="12" Y="1" Width="5.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Dns">
+    <Position X="17" Y="0.5" Width="7" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.DnsEndPoint">
+    <Position X="6.75" Y="12.25" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.DnsPermission">
+    <Position X="11.5" Y="6.25" Width="3.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.EndPoint">
+    <Position X="8.5" Y="17" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.EndpointPermission">
+    <Position X="16" Y="8.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.FileWebRequest">
+    <Position X="2.25" Y="52.75" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.FileWebResponse">
+    <Position X="2.75" Y="78" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.FtpWebRequest">
+    <Position X="8.25" Y="52.75" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.FtpWebResponse">
+    <Position X="9.5" Y="77.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.GlobalProxySelection">
+    <Position X="0.5" Y="13.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.HttpListener">
+    <Position X="0.5" Y="16.75" Width="5.25" />
+    <NestedTypes>
+      <Delegate Name="System.Net.HttpListener.ExtendedProtectionSelector" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.HttpListenerBasicIdentity">
+    <Position X="7.5" Y="20" Width="4" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.HttpListenerContext">
+    <Position X="28.5" Y="16" Width="10.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.HttpListenerPrefixCollection">
+    <Position X="14" Y="17.25" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.HttpListenerRequest">
+    <Position X="17.5" Y="16" Width="5.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.HttpListenerResponse">
+    <Position X="23.75" Y="16.75" Width="4" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.HttpListenerTimeoutManager">
+    <Position X="6.25" Y="22.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.HttpVersion">
+    <Position X="10" Y="22.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.HttpWebRequest">
+    <Position X="13.5" Y="52.75" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.HttpWebResponse">
+    <Position X="13.25" Y="77.5" Width="5.75" />
+    <InheritanceLine Type="System.Net.WebResponse" FixedFromPoint="true">
+      <Path>
+        <Point X="10.625" Y="84.75" />
+        <Point X="10.625" Y="83.406" />
+        <Point X="16.125" Y="83.406" />
+        <Point X="16.125" Y="83.031" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.IPAddress">
+    <Position X="0.5" Y="23.25" Width="3.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.IPEndPoint">
+    <Position X="11.75" Y="12" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.IPEndPointCollection">
+    <Position X="8.25" Y="25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.IPHostEntry">
+    <Position X="4.5" Y="25.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.NetworkCredential">
+    <Position X="0.5" Y="31.5" Width="5.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.ServicePoint">
+    <Position X="2" Y="39.5" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.ServicePointManager">
+    <Position X="5.75" Y="39.25" Width="5.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.SocketAddress">
+    <Position X="11.5" Y="28" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.SocketPermission">
+    <Position X="10.25" Y="31.5" Width="6.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.TransportContext">
+    <Position X="18.5" Y="44" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.WebClient">
+    <Position X="26.5" Y="33" Width="6.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.WebHeaderCollection">
+    <Position X="12" Y="38.75" Width="6" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.WebPermission">
+    <Position X="18.5" Y="38.75" Width="4" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.WebProxy">
+    <Position X="2.25" Y="46.75" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.WebRequest">
+    <Position X="7.25" Y="67.5" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.WebRequestMethods">
+    <Position X="20.75" Y="52.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="System.Net.WebRequestMethods.File">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="System.Net.WebRequestMethods.Ftp">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="System.Net.WebRequestMethods.Http">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.WebResponse">
+    <Position X="7.75" Y="84.75" Width="5.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.WebUtility">
+    <Position X="11.25" Y="48.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

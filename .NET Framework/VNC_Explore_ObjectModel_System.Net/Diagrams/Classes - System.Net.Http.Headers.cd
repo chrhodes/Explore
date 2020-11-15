@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Net.Http.Headers.AuthenticationHeaderValue">
+    <Position X="0.5" Y="0.75" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.CacheControlHeaderValue" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.ContentDispositionHeaderValue">
+    <Position X="5.5" Y="0.5" Width="5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.ContentRangeHeaderValue">
+    <Position X="11" Y="0.5" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.EntityTagHeaderValue" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.HttpContentHeaders">
+    <Position X="12.75" Y="5.25" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.Headers.HttpHeaders">
+    <Position X="15.75" Y="12" Width="5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.HttpHeaderValueCollection&lt;T&gt;" Collapsed="true">
+    <Position X="6.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.HttpRequestHeaders">
+    <Position X="17.75" Y="4.25" Width="5.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.Headers.HttpResponseHeaders">
+    <Position X="23.75" Y="4.5" Width="5.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.Http.Headers.MediaTypeHeaderValue" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.NameValueHeaderValue" Collapsed="true">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.NameValueWithParametersHeaderValue" Collapsed="true">
+    <Position X="0.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.ProductHeaderValue" Collapsed="true">
+    <Position X="3.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.ProductInfoHeaderValue" Collapsed="true">
+    <Position X="5.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.RangeConditionHeaderValue" Collapsed="true">
+    <Position X="3.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.RangeHeaderValue" Collapsed="true">
+    <Position X="5" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.RangeItemHeaderValue" Collapsed="true">
+    <Position X="7.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.RetryConditionHeaderValue" Collapsed="true">
+    <Position X="8" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.StringWithQualityHeaderValue" Collapsed="true">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.TransferCodingHeaderValue">
+    <Position X="2.5" Y="17" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.TransferCodingWithQualityHeaderValue">
+    <Position X="1.5" Y="14.5" Width="5.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.ViaHeaderValue">
+    <Position X="6.5" Y="13" Width="6" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.Http.Headers.WarningHeaderValue">
+    <Position X="7" Y="16" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

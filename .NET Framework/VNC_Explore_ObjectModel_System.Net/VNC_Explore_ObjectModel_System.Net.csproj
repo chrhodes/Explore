@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>VNC_Explore_ObjectModel_System.Net</RootNamespace>
     <AssemblyName>VNC_Explore_ObjectModel_System.Net</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,10 +32,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -41,14 +47,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Diagrams\Attributes Diagram.cd" />
-    <None Include="Diagrams\Classes Diagram Expanded.cd" />
-    <None Include="Diagrams\Classes Digram Collapsed.cd" />
-    <None Include="Diagrams\Delegates Digram.cd" />
-    <None Include="Diagrams\Enums Diagramcd.cd" />
+    <None Include="app.config" />
+    <None Include="Diagrams\Classes - Attributes - System.Net.cd" />
+    <None Include="Diagrams\Classes - EventArgs - System.Net.cd" />
+    <None Include="Diagrams\Classes - Exception - System.Net.cd" />
+    <None Include="Diagrams\Classes - System.Net - Expanded.cd" />
+    <None Include="Diagrams\Classes - System.Net.cd" />
+    <None Include="Diagrams\Classes - System.Net.Http - Expanded.cd" />
+    <None Include="Diagrams\Classes - System.Net.Http.cd" />
+    <None Include="Diagrams\Classes - System.Net.Http.Headers.cd" />
+    <None Include="Diagrams\System.Net-Delegates.cd" />
+    <None Include="Diagrams\Enums - System.Net.cd" />
     <None Include="Diagrams\Exceptions Diagram.cd" />
-    <None Include="Diagrams\Interfaces Diagram.cd" />
+    <None Include="Diagrams\Interfaces - System.Net.cd" />
     <None Include="Diagrams\Structures Diagram.cd" />
+    <None Include="Diagrams\Enums - System.Net.Cache.cd" />
+    <None Include="Diagrams\Enums - System.Net.Configuration.cd" />
+    <None Include="Diagrams\Enums - System.Net.Http.cd" />
+    <None Include="Diagrams\Enums - System.Net.Mime.cd" />
+    <None Include="Diagrams\System.Net.NetworkInformation.cd" />
+    <None Include="Diagrams\Enums - System.Net.PeerToPeer.cd" />
+    <None Include="Diagrams\Enums - System.Net.PeerToPeer.Collaboration.cd" />
+    <None Include="Diagrams\Enums - System.Net.Security.cd" />
+    <None Include="Diagrams\Enums - System.Net.Sockets.cd" />
+    <None Include="Diagrams\Enums - System.Net.Mail.cd" />
+    <None Include="Diagrams\Enums - System.Net.WebSockets.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Net.CookieException">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.HttpListenerException">
+    <Position X="3.5" Y="0.5" Width="6" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Net.ProtocolViolationException">
+    <Position X="0.5" Y="3" Width="6.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Net.WebException">
+    <Position X="0.5" Y="5.25" Width="7" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Newtonsoft.Json.Converters.BinaryConverter">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.BsonObjectIdConverter">
+    <Position X="0.5" Y="3" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.CustomCreationConverter&lt;T&gt;">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.DataSetConverter">
+    <Position X="2.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.DataTableConverter">
+    <Position X="3" Y="2.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.DateTimeConverterBase">
+    <Position X="4.25" Y="8.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.DiscriminatedUnionConverter">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.EntityKeyMemberConverter">
+    <Position X="8.25" Y="2.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.ExpandoObjectConverter">
+    <Position X="5.5" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.IsoDateTimeConverter">
+    <Position X="7" Y="5.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.JavaScriptDateTimeConverter">
+    <Position X="5.25" Y="5.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.KeyValuePairConverter">
+    <Position X="9.75" Y="0.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.RegexConverter">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.StringEnumConverter">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.UnixDateTimeConverter">
+    <Position X="3" Y="5.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.VersionConverter">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Newtonsoft.Json.Converters.XmlNodeConverter">
+    <Position X="8.5" Y="8" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

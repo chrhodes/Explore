@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Enum Name="System.Net.AuthenticationSchemes">
+    <Position X="0.5" Y="1.25" Width="2.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.DecompressionMethods">
+    <Position X="0.5" Y="3.5" Width="2" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.FtpStatusCode">
+    <Position X="0.5" Y="8.75" Width="2.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.HttpRequestHeader">
+    <Position X="2.75" Y="1.25" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.HttpResponseHeader">
+    <Position X="4.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.HttpStatusCode">
+    <Position X="6.5" Y="1" Width="2.25" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.NetworkAccess">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.SecurityProtocolType">
+    <Position X="9" Y="2.25" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.TransportType">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="System.Net.WebExceptionStatus">
+    <Position X="8.75" Y="6" Width="2.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

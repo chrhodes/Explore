@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Net.HttpListener">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="System.Net.HttpListener.ExtendedProtectionSelector">
+        <TypeIdentifier />
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Delegate Name="System.Net.AuthenticationSchemeSelector" Collapsed="true">
+    <Position X="0.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.BindIPEndPoint" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.DownloadDataCompletedEventHandler" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.DownloadProgressChangedEventHandler" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.DownloadStringCompletedEventHandler" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.HttpContinueDelegate" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.OpenReadCompletedEventHandler" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.OpenWriteCompletedEventHandler" Collapsed="true">
+    <Position X="2.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.UploadDataCompletedEventHandler" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.UploadFileCompletedEventHandler" Collapsed="true">
+    <Position X="4.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.UploadProgressChangedEventHandler" Collapsed="true">
+    <Position X="5.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.UploadStringCompletedEventHandler" Collapsed="true">
+    <Position X="3.25" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="System.Net.UploadValuesCompletedEventHandler" Collapsed="true">
+    <Position X="5.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -30,6 +30,10 @@
             <Button Click="AzureActiveDirectory_Click">AzureActiveDirectory</Button>
 
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="500" />
                     <ColumnDefinition Width="*" />
@@ -41,17 +45,28 @@
                            TextWrapping="Wrap" Width="Auto" />
                 </ScrollViewer>-->
 
+                <TextBox Text="{Binding Response}" 
+                         VerticalAlignment="Top"
+                         Grid.Row="0" Grid.Column="0"
+                         MaxHeight="500"
+                         ScrollViewer.CanContentScroll="True"
+                         TextWrapping="Wrap"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                
                 <TextBox Text="{Binding CallResult}" 
                          VerticalAlignment="Top"
-                         Grid.Column="0"
+                         Grid.Row="1" Grid.Column="0"
                          MaxHeight="500"
                          ScrollViewer.CanContentScroll="True"
                          TextWrapping="Wrap"
                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
-                <DataGrid ItemsSource="{Binding ResponseHeaders}" Grid.Column="1" AutoGenerateColumns="False"
-                                                    ScrollViewer.CanContentScroll="True"
+                <!--<DataGrid ItemsSource="{Binding ResponseHeaders}" 
+                          Grid.Column="1" Grid.RowSpan="2"
+                          AutoGenerateColumns="False"
+                          ScrollViewer.CanContentScroll="True"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <DataGrid.Columns>
@@ -71,10 +86,11 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>                        
                     </DataGrid.Columns>
-                </DataGrid>
+                </DataGrid>-->
 
-
-                <DataGrid ItemsSource="{Binding ResponseHeaders}" Grid.Column="2" AutoGenerateColumns="False" 
+                <DataGrid ItemsSource="{Binding ResponseHeaders}"
+                          Grid.Column="2" Grid.RowSpan="2"
+                          AutoGenerateColumns="False" 
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Auto">
