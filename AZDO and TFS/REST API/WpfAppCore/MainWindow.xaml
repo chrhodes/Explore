@@ -53,6 +53,19 @@
                          TextWrapping="Wrap"
                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                    <!--<TextBlock Text="{Binding Response}" />-->
+                    <TextBlock Text="{Binding Response.Content}" />
+                    <TextBlock Text="{Binding Response.IsSuccessStatusCode}" />
+                    <TextBlock Text="{Binding Response.ReasonPhrase}" />
+                    <TextBlock Text="{Binding Response.StatusCode}" />
+                    <TextBlock Text="{Binding Response.Version}" />
+                    <TextBlock Text="{Binding Response.Headers}" />
+                    <TextBlock Text="{Binding Response.RequestMessage.Method}" />
+                    <TextBlock Text="{Binding Response.RequestMessage.RequestUri}" />
+                    <TextBlock Text="{Binding Response.RequestMessage.Version}" />
+                </StackPanel>
                 
                 <TextBox Text="{Binding CallResult}" 
                          VerticalAlignment="Top"

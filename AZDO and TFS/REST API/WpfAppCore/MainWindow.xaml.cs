@@ -39,7 +39,7 @@ namespace WpfAppCore
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
-        private string _response;
+
         private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
         private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
         private static string _URI_VNC_Development = @"https://dev.azure.com/VNC-Development";
@@ -68,8 +68,22 @@ namespace WpfAppCore
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CallResult)));
             }
         }
-    
-        public string Response
+
+        //private string _response;
+        //public string Response
+        //{
+        //    get => _response;
+        //    set
+        //    {
+        //        if (_response == value)
+        //            return;
+        //        _response = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Response)));
+        //    }
+        //}
+
+        private HttpResponseMessage _response;
+        public HttpResponseMessage Response
         {
             get => _response;
             set
@@ -80,7 +94,7 @@ namespace WpfAppCore
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Response)));
             }
         }
-        
+
         public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeaders { get; set; }
             = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
 
@@ -224,7 +238,8 @@ namespace WpfAppCore
                     using (HttpResponseMessage response 
                         = await client.GetAsync($"{collection.Uri}/_apis/work/processes?api-version=6.0-preview.2"))
                     {
-                        Response = response.ToString();
+                        //Response = response.ToString();
+                        Response = response;
 
                         // This does not fire any event.
                         //ResponseHeaders = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>(headersList);
@@ -277,7 +292,8 @@ namespace WpfAppCore
 
                     using (HttpResponseMessage response = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4"))
                     {
-                        Response = response.ToString();
+                        //Response = response.ToString();
+                        Response = response;
 
                         ResponseHeaders.AddRange(response.Headers);
 
