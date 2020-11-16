@@ -45,7 +45,10 @@
                            TextWrapping="Wrap" Width="Auto" />
                 </ScrollViewer>-->
 
-                <TextBox Text="{Binding Response}" 
+                <!--<TextBlock Text="{Binding Response}"
+                           Grid.Row="0" Grid.Column="0"/>-->
+                <TextBox Text="{Binding Response,Mode=OneWay}" 
+                         
                          VerticalAlignment="Top"
                          Grid.Row="0" Grid.Column="0"
                          MaxHeight="500"
@@ -55,7 +58,7 @@
                          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
-                    <!--<TextBlock Text="{Binding Response}" />-->
+                    <TextBlock Text="{Binding Response}" />
                     <TextBlock Text="{Binding Response.Content}" />
                     <TextBlock Text="{Binding Response.IsSuccessStatusCode}" />
                     <TextBlock Text="{Binding Response.ReasonPhrase}" />
