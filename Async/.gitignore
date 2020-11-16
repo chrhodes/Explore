@@ -1,0 +1,7 @@
+# Ignore folders until ready to commit
+
+# Ignore Pluralsight Training Folders
+
+async-programming/
+getting-started-with-asynchronous-programming-dotnetX/
+
