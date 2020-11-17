@@ -32,7 +32,10 @@ using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.OAuth;
 using Microsoft.VisualStudio.Services.WebApi;
 
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
+using WpfAppCore.Domain;
 
 namespace WpfAppCore
 {
@@ -51,7 +54,8 @@ namespace WpfAppCore
         //private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
         private static string _PAT_BD_STS_QA2 = "3mesoqd2xxsgxvx6fqsdc7h2fhswo2ohpa2t6aennimb3x7wr6vq";
 
-        private static string _PAT_VNC_Development = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
+        private static string _PAT_VNC_DevelopmentLimited = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
+        private static string _PAT_VNC_Development = "nioxcaauiyoxqaovxlcnbyodj6uvbvikm543gvuudxcekbjx5xsa";
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
@@ -82,6 +86,20 @@ namespace WpfAppCore
         //    }
         //}
 
+        private string _requestUri;
+
+        public string RequestUri
+        {
+            get => _requestUri;
+            set
+            {
+                if (_requestUri == value)
+                    return;
+                _requestUri = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RequestUri)));
+            }
+        }
+
         private HttpResponseMessage _response;
         public HttpResponseMessage Response
         {
@@ -95,9 +113,57 @@ namespace WpfAppCore
             }
         }
 
+        public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> RequestHeaders { get; set; }
+            = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
+
         public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeaders { get; set; }
             = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
 
+
+        public ObservableCollection<RequestResponseInfo> RequestResponseExchange { get; set; }
+            = new ObservableCollection<RequestResponseInfo>();
+
+        public class RequestResponseInfo
+        {
+            private string _uri;
+            
+            public string Uri
+            {
+                get => _uri;
+                set => _uri = value;
+            }
+            
+
+            public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> RequestHeadersX { get; set; }
+                = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
+
+            //public HttpResponseMessage Response;
+
+            private HttpResponseMessage _Response;
+
+            public HttpResponseMessage Response
+            {
+                get => _Response;
+                set => _Response = value;
+            }
+
+            public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeadersX { get; set; }
+                = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
+
+        }
+
+        private ObservableCollection<Project> _projects;
+        public ObservableCollection<Project> Projects
+        {
+            get => _projects;
+            set
+            {
+                if (_projects == value)
+                    return;
+                _projects = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Projects)));
+            }
+        }
 
         public ObservableCollection<AvailableCollection> AvailableCollections { get; set; }
             = new ObservableCollection<AvailableCollection>();
@@ -116,13 +182,41 @@ namespace WpfAppCore
             }
         }
 
+        private string _selectedProject;
+
+        public string SelectedProject
+        {
+            get => _selectedProject;
+            set
+            {
+                if (_selectedProject == value)
+                    return;
+                _selectedProject = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProject)));
+            }
+        }
+
+        private Project _selectedProjectGrid;
+
+        public Project SelectedProjectGrid
+        {
+            get => _selectedProjectGrid;
+            set
+            {
+                if (_selectedProjectGrid == value)
+                    return;
+                _selectedProjectGrid = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProjectGrid)));
+            }
+        }
+        
+
         public MainWindow()
         {
             InitializeComponent();
 
             InitializeView();
             DataContext = this;
-
         }
 
         private void InitializeView()
@@ -169,6 +263,17 @@ namespace WpfAppCore
                     {
                         Uri = @"https://dev.azure.com/VNC-Development",
                         PAT = _PAT_VNC_Development
+                    }
+                });
+
+            AvailableCollections.Add(
+                new AvailableCollection
+                {
+                    Name = "VNC-Development Limited",
+                    Details = new CollectionDetails
+                    {
+                        Uri = @"https://dev.azure.com/VNC-Development",
+                        PAT = _PAT_VNC_DevelopmentLimited
                     }
                 });
         }
@@ -233,10 +338,13 @@ namespace WpfAppCore
                     client.DefaultRequestHeaders.Authorization 
                         = new AuthenticationHeaderValue("Basic", base64PAT);
 
+                    RequestHeaders.Clear();
                     ResponseHeaders.Clear();
 
+                    RequestUri = $"{collection.Uri}/_apis/work/processes?api-version=6.0-preview.2";
+
                     using (HttpResponseMessage response 
-                        = await client.GetAsync($"{collection.Uri}/_apis/work/processes?api-version=6.0-preview.2"))
+                        = await client.GetAsync(RequestUri))
                     {
                         //Response = response.ToString();
                         Response = response;
@@ -288,40 +396,64 @@ namespace WpfAppCore
 
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64PAT);
 
+                    RequestResponseExchange.Clear();
+
+                    RequestResponseInfo exchange = new RequestResponseInfo();
+
+                    RequestHeaders.Clear();
+
                     ResponseHeaders.Clear();
 
-                    using (HttpResponseMessage response = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4"))
-                    {
-                        //Response = response.ToString();
-                        Response = response;
+                    RequestUri = $"{collection.Uri}/_apis/projects?api-version=6.1-preview.4";
+                    RequestHeaders.AddRange(client.DefaultRequestHeaders);
 
+                    exchange.Uri = RequestUri;
+                    exchange.RequestHeadersX.AddRange(client.DefaultRequestHeaders);
+
+                    using (HttpResponseMessage response = await client.GetAsync(RequestUri))
+                    {
+                        Response = response;
                         ResponseHeaders.AddRange(response.Headers);
 
+                        exchange.Response = response;
+                        exchange.ResponseHeadersX.AddRange(response.Headers);
+
+                        RequestResponseExchange.Add(exchange);
+
                         response.EnsureSuccessStatusCode();
+
                         string outJson = await response.Content.ReadAsStringAsync();
                         sb.Append(outJson);
 
                         JObject o = JObject.Parse(outJson);
 
-                        foreach (var p in o)
-                        {
-                            var foo = p.Key;
+                        Rootobject projects = JsonConvert.DeserializeObject<Rootobject>(outJson);
+                        var projectsarray = projects.value;
 
-                            if (foo == "count")
-                            {
-                                Debug.WriteLine(p.Value);
-                            }
+                        ProjectsRoot projects2 = JsonConvert.DeserializeObject<ProjectsRoot>(outJson);
+                        var projectsarray2 = projects2.value;
 
-                            if (foo == "value")
-                            {
-                                foreach (var t in p.Value)
-                                {
-                                    Debug.WriteLine(t.ToString());
-                                }
+                        Projects = new ObservableCollection<Project>(projectsarray2);
 
-                            }
-                            var bar = p.Value;
-                        }
+                        //foreach (var p in o)
+                        //{
+                        //    var foo = p.Key;
+
+                        //    if (foo == "count")
+                        //    {
+                        //        Debug.WriteLine(p.Value);
+                        //    }
+
+                        //    if (foo == "value")
+                        //    {
+                        //        foreach (var t in p.Value)
+                        //        {
+                        //            Debug.WriteLine(t.ToString());
+                        //        }
+
+                        //    }
+                        //    var bar = p.Value;
+                        //}
 
                         //dynamic jsonArray = JArray.Parse(outJson);
 
@@ -333,71 +465,42 @@ namespace WpfAppCore
 
                         while (hasContinuationToken)
                         {
+                            RequestResponseInfo exchange2 = new RequestResponseInfo();
+                       
                             string continueToken = continuationHeaders.First();
 
-                            using (HttpResponseMessage response2 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken}"))
+                            string requestUri2 = $"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken}";
+
+                            exchange2.Uri = requestUri2;
+                            exchange2.RequestHeadersX.AddRange(client.DefaultRequestHeaders);
+
+                            using (HttpResponseMessage response2 = await client.GetAsync(requestUri2))
                             {
                                 ResponseHeaders.AddRange(response2.Headers);
+
+                                exchange2.Response = response2;
+                                exchange2.ResponseHeadersX.AddRange(response2.Headers);
+
+                                RequestResponseExchange.Add(exchange2);
 
                                 response2.EnsureSuccessStatusCode();
                                 string outJson2 = await response2.Content.ReadAsStringAsync();
                                 sb.Append(outJson2);
 
+                                JObject oC = JObject.Parse(outJson2);
 
+                                Rootobject projectsC = JsonConvert.DeserializeObject<Rootobject>(outJson2);
+                                var projectsarrayC = projectsC.value;
+
+                                ProjectsRoot projects2C = JsonConvert.DeserializeObject<ProjectsRoot>(outJson2);
+                                var projectsarray2C = projects2C.value;
+
+                                Projects.AddRange(projectsarray2C);
 
                                 hasContinuationToken = response2.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
                             }
                         }
 
-                        //response.EnsureSuccessStatusCode();
-                        //string responseBody = await response.Content.ReadAsStringAsync();
-
-                        //if (hasContinuationToken)
-                        //{
-                        //    string continueToken1 = continuationHeaders.First();
-
-                        //    HttpResponseMessage response2 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken1}");
-
-                        //    response2.EnsureSuccessStatusCode();
-                        //    string responseBody2 = await response2.Content.ReadAsStringAsync();
-
-                        //    var headers2 = response2.Headers;
-
-                        //    IEnumerable<string> continuationHeaders2 = default;
-
-                        //    bool hasContinuationToken2 = response2.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders2);
-
-                        //    if (hasContinuationToken2)
-                        //    {
-                        //        string continueToken2 = continuationHeaders2.First();
-
-                        //        HttpResponseMessage response3 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken2}");
-
-                        //        response3.EnsureSuccessStatusCode();
-                        //        string responseBody3 = await response3.Content.ReadAsStringAsync();
-
-                        //        var headers3 = response3.Headers;
-
-                        //        IEnumerable<string> continuationHeaders3 = default;
-
-                        //        bool hasContinuationToken3 = response3.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders3);
-
-                        //        if (hasContinuationToken3)
-                        //        {
-                        //            string continueToken3 = continuationHeaders2.First();
-
-                        //            HttpResponseMessage response4 = await client.GetAsync($"{collection.Uri}/_apis/projects?api-version=6.1-preview.4&continuationToken={continueToken3}");
-
-                        //            var headers4 = response4.Headers;
-
-                        //            IEnumerable<string> continuationHeaders4 = default;
-
-                        //            bool hasContinuationToken4 = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders4);
-                        //        }
-                        //    }
-                        //}
-
-                        //jsonResult = responseBody;
                         jsonResult = sb.ToString();
                     }
                 }
