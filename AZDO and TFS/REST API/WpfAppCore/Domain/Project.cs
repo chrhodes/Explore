@@ -36,6 +36,7 @@ namespace WpfAppCore.Domain
         public string description { get; set; }
     }
 
+    // This is what was created from PasteSpecial
 
     public class Rootobject
     {
@@ -54,6 +55,5 @@ namespace WpfAppCore.Domain
         public DateTime lastUpdateTime { get; set; }
         public string description { get; set; }
     }
-
 
 }
