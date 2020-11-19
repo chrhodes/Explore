@@ -1,25 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 // https://www.nuget.org/packages/Microsoft.TeamFoundationServer.Client/
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
@@ -42,7 +31,7 @@ namespace WpfAppCore
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
-
+        private object _propertyName;
         private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
         private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
         private static string _URI_VNC_Development = @"https://dev.azure.com/VNC-Development";
@@ -113,12 +102,11 @@ namespace WpfAppCore
             }
         }
 
-        public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> RequestHeaders { get; set; }
-            = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
+        //public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> RequestHeaders { get; set; }
+        //    = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
 
-        public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeaders { get; set; }
-            = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
-
+        //public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeaders { get; set; }
+        //    = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
 
         private int _requestResponseExchangeCount;
 
@@ -134,287 +122,274 @@ namespace WpfAppCore
             }
         }
 
-
         public ObservableCollection<RequestResponseInfo> RequestResponseExchange { get; set; }
             = new ObservableCollection<RequestResponseInfo>();
 
-        public class RequestResponseInfo
-        {
-            private string _uri;
-
-            public string Uri
-            {
-                get => _uri;
-                set => _uri = value;
-            }
-
-            public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> RequestHeadersX { get; set; }
-                = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
-
-            //public HttpResponseMessage Response;
-
-            private HttpResponseMessage _Response;
-
-            public HttpResponseMessage Response
-            {
-                get => _Response;
-                set => _Response = value;
-            }
-
-            private Int32 _ResponseStatusCode;
-
-            public Int32 ResponseStatusCode
-            {
-                get => _ResponseStatusCode;
-                set => _ResponseStatusCode = value;
-            }
-
-            public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseHeadersX { get; set; }
-                = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
-
-            public ObservableCollection<KeyValuePair<string, IEnumerable<string>>> ResponseContentHeaders { get; set; }
-                = new ObservableCollection<KeyValuePair<string, IEnumerable<string>>>();
-        }
-
-
-
         #region Lists
 
-        private int _listsCount;
-        public int ListsCount
-        {
-            get => _listsCount;
-            set
-            {
-                if (_listsCount == value)
-                    return;
-                _listsCount = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListsCount)));
-            }
-        }
+        public RESTResult<Domain.List> Lists { get; set; } = new RESTResult<Domain.List>();
 
-        private ObservableCollection<Domain.List> _lists;
-        public ObservableCollection<Domain.List> Lists
-        {
-            get => _lists;
-            set
-            {
-                if (_lists == value)
-                    return;
-                _lists = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lists)));
-            }
-        }
+        //private int _listsCount;
+        //public int ListsCount
+        //{
+        //    get => _listsCount;
+        //    set
+        //    {
+        //        if (_listsCount == value)
+        //            return;
+        //        _listsCount = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListsCount)));
+        //    }
+        //}
 
-        private Domain.Process _selectedListGrid;
+        //private ObservableCollection<Domain.List> _lists;
+        //public ObservableCollection<Domain.List> Lists
+        //{
+        //    get => _lists;
+        //    set
+        //    {
+        //        if (_lists == value)
+        //            return;
+        //        _lists = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lists)));
+        //    }
+        //}
 
-        public Domain.Process SelectedListGrid
-        {
-            get => _selectedListGrid;
-            set
-            {
-                if (_selectedListGrid == value)
-                    return;
-                _selectedListGrid = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedListGrid)));
-            }
-        }
+        //private Domain.Process _selectedListGrid;
+
+        //public Domain.Process SelectedListGrid
+        //{
+        //    get => _selectedListGrid;
+        //    set
+        //    {
+        //        if (_selectedListGrid == value)
+        //            return;
+        //        _selectedListGrid = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedListGrid)));
+        //    }
+        //}
 
         #endregion
 
         #region Processes
 
-        private int _ProcessCount;
+        public RESTResult<Domain.Process> Processes { get; set; } = new RESTResult<Domain.Process>();
 
-        public int ProcessCount
-        {
-            get => _ProcessCount;
-            set
-            {
-                if (_ProcessCount == value)
-                    return;
-                _ProcessCount = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ProcessCount)));
-            }
-        }
+        //private int _ProcessCount;
 
-        private ObservableCollection<Domain.Process> _processes;
-        public ObservableCollection<Domain.Process> Processes
-        {
-            get => _processes;
-            set
-            {
-                if (_processes == value)
-                    return;
-                _processes = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Processes)));
-            }
-        }
+        //public int ProcessCount
+        //{
+        //    get => _ProcessCount;
+        //    set
+        //    {
+        //        if (_ProcessCount == value)
+        //            return;
+        //        _ProcessCount = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ProcessCount)));
+        //    }
+        //}
 
-        private Domain.Process _selectedProcessGrid;
+        //private ObservableCollection<Domain.Process> _processes;
+        //public ObservableCollection<Domain.Process> Processes
+        //{
+        //    get => _processes;
+        //    set
+        //    {
+        //        if (_processes == value)
+        //            return;
+        //        _processes = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Processes)));
+        //    }
+        //}
 
-        public Domain.Process SelectedProcessGrid
-        {
-            get => _selectedProcessGrid;
-            set
-            {
-                if (_selectedProcessGrid == value)
-                    return;
-                _selectedProcessGrid = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProcessGrid)));
-            }
-        }
+        //private Domain.Process _selectedProcessGrid;
+
+        //public Domain.Process SelectedProcessGrid
+        //{
+        //    get => _selectedProcessGrid;
+        //    set
+        //    {
+        //        if (_selectedProcessGrid == value)
+        //            return;
+        //        _selectedProcessGrid = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProcessGrid)));
+        //    }
+        //}
 
         #endregion
 
         #region Projects
 
-        private int _ProjectsCount;
+        public RESTResult<Domain.Project> Projects { get; set; } = new RESTResult<Domain.Project>();
 
-        public int ProjectsCount
-        {
-            get => _ProjectsCount;
-            set
-            {
-                if (_ProjectsCount == value)
-                    return;
-                _ProjectsCount = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ProjectsCount)));
-            }
-        }
+        //private int _ProjectsCount;
 
-        private ObservableCollection<Project> _projects;
-        public ObservableCollection<Project> Projects
-        {
-            get => _projects;
-            set
-            {
-                if (_projects == value)
-                    return;
-                _projects = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Projects)));
-            }
-        }
+        //public int ProjectsCount
+        //{
+        //    get => _ProjectsCount;
+        //    set
+        //    {
+        //        if (_ProjectsCount == value)
+        //            return;
+        //        _ProjectsCount = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ProjectsCount)));
+        //    }
+        //}
 
-        private Project _selectedProjectGrid;
+        //private ObservableCollection<Project> _projects;
+        //public ObservableCollection<Project> Projects
+        //{
+        //    get => _projects;
+        //    set
+        //    {
+        //        if (_projects == value)
+        //            return;
+        //        _projects = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Projects)));
+        //    }
+        //}
 
-        public Project SelectedProjectGrid
-        {
-            get => _selectedProjectGrid;
-            set
-            {
-                if (_selectedProjectGrid == value)
-                    return;
-                _selectedProjectGrid = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProjectGrid)));
-            }
-        }
+        //private Project _selectedProjectGrid;
 
-        private string _selectedProject;
+        //public Project SelectedProjectGrid
+        //{
+        //    get => _selectedProjectGrid;
+        //    set
+        //    {
+        //        if (_selectedProjectGrid == value)
+        //            return;
+        //        _selectedProjectGrid = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProjectGrid)));
+        //    }
+        //}
 
-        public string SelectedProject
-        {
-            get => _selectedProject;
-            set
-            {
-                if (_selectedProject == value)
-                    return;
-                _selectedProject = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProject)));
-            }
-        }
+        //private string _selectedProject;
+
+        //public string SelectedProject
+        //{
+        //    get => _selectedProject;
+        //    set
+        //    {
+        //        if (_selectedProject == value)
+        //            return;
+        //        _selectedProject = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProject)));
+        //    }
+        //}
 
         #endregion
 
         #region Teams
 
-        private int _teamsCount;
-        public int TeamsCount
-        {
-            get => _teamsCount;
-            set
-            {
-                if (_teamsCount == value)
-                    return;
-                _teamsCount = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TeamsCount)));
-            }
-        }
+        public RESTResult<Domain.Team> Teams { get; set; } = new RESTResult<Domain.Team>();
 
-        private ObservableCollection<Domain.Team> _teams;
-        public ObservableCollection<Domain.Team> Teams
-        {
-            get => _teams;
-            set
-            {
-                if (_teams == value)
-                    return;
-                _teams = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Teams)));
-            }
-        }
+        //private int _teamsCount;
+        //public int TeamsCount
+        //{
+        //    get => _teamsCount;
+        //    set
+        //    {
+        //        if (_teamsCount == value)
+        //            return;
+        //        _teamsCount = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TeamsCount)));
+        //    }
+        //}
 
-        private Domain.Team _selectedTeamGrid;
+        //private ObservableCollection<Domain.Team> _teams;
+        //public ObservableCollection<Domain.Team> Teams
+        //{
+        //    get => _teams;
+        //    set
+        //    {
+        //        if (_teams == value)
+        //            return;
+        //        _teams = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Teams)));
+        //    }
+        //}
 
-        public Domain.Team SelectedTeamGrid
-        {
-            get => _selectedTeamGrid;
-            set
-            {
-                if (_selectedTeamGrid == value)
-                    return;
-                _selectedTeamGrid = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedTeamGrid)));
-            }
-        }
+        //private Domain.Team _selectedTeamGrid;
+
+        //public Domain.Team SelectedTeamGrid
+        //{
+        //    get => _selectedTeamGrid;
+        //    set
+        //    {
+        //        if (_selectedTeamGrid == value)
+        //            return;
+        //        _selectedTeamGrid = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedTeamGrid)));
+        //    }
+        //}
 
         #endregion
 
         #region WorkItemTypes
 
-        private int _workItemTypesCount;
-        public int WorkItemTypesCount
-        {
-            get => _workItemTypesCount;
-            set
-            {
-                if (_workItemTypesCount == value)
-                    return;
-                _workItemTypesCount = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkItemTypesCount)));
-            }
-        }
+        // If don't initialize here (see GetWorkItemTypes for another place to initialize)
+        // Would need to implement PCN so Bindings work.  Guess could also do in code so Controls know about things.
 
-        private ObservableCollection<Domain.WorkItemType> _workItemTypes;
-        public ObservableCollection<Domain.WorkItemType> WorkItemTypes
-        {
-            get => _workItemTypes;
-            set
-            {
-                if (_workItemTypes == value)
-                    return;
-                _workItemTypes = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkItemTypes)));
-            }
-        }
+        public RESTResult<Domain.WorkItemType> WorkItemTypes { get; set; } = new RESTResult<Domain.WorkItemType>();
+        public RESTResult<Domain.State> States { get; set; } = new RESTResult<Domain.State>();
+        public RESTResult<Domain.Field> Fields { get; set; } = new RESTResult<Domain.Field>();
 
-        private Domain.WorkItemType _selectedWorkItemTypeGrid;
 
-        public Domain.WorkItemType SelectedWorkItemTypeGrid
-        {
-            get => _selectedWorkItemTypeGrid;
-            set
-            {
-                if (_selectedWorkItemTypeGrid == value)
-                    return;
-                _selectedWorkItemTypeGrid = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedWorkItemTypeGrid)));
-            }
-        }
+        //private RestResult<Domain.WorkItemType> _workItemTypes2;// = new RestResult<Domain.WorkItemType>();
+
+        //public RestResult<Domain.WorkItemType> WorkItemTypes2
+        //{
+        //    get =>  _workItemTypes2;
+        //    set
+        //    {
+        //        if (_workItemTypes2 == value)
+        //            return;
+        //        _workItemTypes2 = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkItemTypes2)));
+        //    }
+        //}
+
+        //private int _workItemTypesCount;
+        //public int WorkItemTypesCount
+        //{
+        //    get => _workItemTypesCount;
+        //    set
+        //    {
+        //        if (_workItemTypesCount == value)
+        //            return;
+        //        _workItemTypesCount = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkItemTypesCount)));
+        //    }
+        //}
+
+        //private ObservableCollection<Domain.WorkItemType> _workItemTypes;
+        //public ObservableCollection<Domain.WorkItemType> WorkItemTypes
+        //{
+        //    get => _workItemTypes;
+        //    set
+        //    {
+        //        if (_workItemTypes == value)
+        //            return;
+        //        _workItemTypes = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkItemTypes)));
+        //    }
+        //}
+
+        //private Domain.WorkItemType _selectedWorkItemTypeGrid;
+
+        //public Domain.WorkItemType SelectedWorkItemTypeGrid
+        //{
+        //    get => _selectedWorkItemTypeGrid;
+        //    set
+        //    {
+        //        if (_selectedWorkItemTypeGrid == value)
+        //            return;
+        //        _selectedWorkItemTypeGrid = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedWorkItemTypeGrid)));
+        //    }
+        //}
 
         #endregion
-
-
 
         public ObservableCollection<AvailableCollection> AvailableCollections { get; set; }
             = new ObservableCollection<AvailableCollection>();
@@ -509,7 +484,8 @@ namespace WpfAppCore
         private async void GetProject_Click(object sender, RoutedEventArgs e)
         {
             CallResult = "";
-            CallResult = await GetProject(SelectedCollection.Details, SelectedProjectGrid);
+            //CallResult = await GetProject(SelectedCollection.Details, SelectedProjectGrid);
+            CallResult = await GetProject(SelectedCollection.Details, Projects.SelectedItem);
         }
 
         private async void GetProcesses_Click(object sender, RoutedEventArgs e)
@@ -521,7 +497,7 @@ namespace WpfAppCore
         private async void GetProcess_Click(object sender, RoutedEventArgs e)
         {
             CallResult = "";
-            CallResult = await GetProcess(SelectedCollection.Details, SelectedProcessGrid);
+            CallResult = await GetProcess(SelectedCollection.Details, Processes.SelectedItem);
         }
 
         private async void SampleREST_Click(object sender, RoutedEventArgs e)
@@ -573,10 +549,6 @@ namespace WpfAppCore
                     {
                         RecordExchangeResponse(response, exchange);
 
-                        IEnumerable<string> continuationHeaders = default;
-
-                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
-
                         response.EnsureSuccessStatusCode();
 
                         string outJson = await response.Content.ReadAsStringAsync();
@@ -585,14 +557,19 @@ namespace WpfAppCore
                         JObject o = JObject.Parse(outJson);
 
                         ProcessesRoot resultRoot = JsonConvert.DeserializeObject<ProcessesRoot>(outJson);
-                        Processes = new ObservableCollection<WpfAppCore.Domain.Process>(resultRoot.value);
-                        ProcessCount = Processes.Count();
+                        //Processes = new ObservableCollection<WpfAppCore.Domain.Process>(resultRoot.value);
+                        //ProcessCount = Processes.Count();
 
+                        Processes.ResultItems = new ObservableCollection<Domain.Process>(resultRoot.value);
                         jsonResult = outJson;
+
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        Processes.Count = Processes.ResultItems.Count();
                     }
                 }
-
-                //RequestResponseExchangeCount = RequestResponseExchange.Count();
             }
             catch (Exception ex)
             {
@@ -633,10 +610,6 @@ namespace WpfAppCore
 
                         JObject o = JObject.Parse(outJson);
 
-                        ProcessesRoot resultRoot = JsonConvert.DeserializeObject<ProcessesRoot>(outJson);
-                        Processes = new ObservableCollection<WpfAppCore.Domain.Process>(resultRoot.value);
-                        ProcessCount = Processes.Count();
-
                         jsonResult = outJson;
                     }
                 }
@@ -647,42 +620,8 @@ namespace WpfAppCore
             }
 
             RequestResponseExchangeCount = RequestResponseExchange.Count();
+
             return jsonResult;
-        }
-
-        private RequestResponseInfo InitializeExchange(HttpClient client, string requestUri)
-        {
-            RequestResponseExchange.Clear();
-            RequestResponseInfo exchange = new RequestResponseInfo();
-            RequestHeaders.Clear();
-            ResponseHeaders.Clear();
-
-            RequestHeaders.AddRange(client.DefaultRequestHeaders);
-
-            exchange.Uri = requestUri;
-            exchange.RequestHeadersX.AddRange(client.DefaultRequestHeaders);
-
-            return exchange;
-        }
-
-        private void RecordExchangeResponse(HttpResponseMessage response, RequestResponseInfo exchange)
-        {
-            Response = response;
-
-            var statusCode = response.StatusCode;
-            //var statusCodeT = response.StatusCode.GetType();
-            //var statusCodeTC = response.StatusCode.GetTypeCode();
-            var statusCode2 = (int)response.StatusCode;
-
-            ResponseHeaders.AddRange(response.Headers);
-
-            exchange.Response = response;
-            exchange.ResponseStatusCode = statusCode2;
-
-            exchange.ResponseContentHeaders.AddRange(response.Content.Headers);
-            exchange.ResponseHeadersX.AddRange(response.Headers);
-
-            RequestResponseExchange.Add(exchange);
         }
 
         public async Task<string> GetProjects(CollectionDetails collection)
@@ -710,7 +649,9 @@ namespace WpfAppCore
                         sb.Append(outJson);
 
                         ProjectsRoot resultRoot = JsonConvert.DeserializeObject<ProjectsRoot>(outJson);
-                        Projects = new ObservableCollection<Project>(resultRoot.value);
+
+                        //Projects = new ObservableCollection<Project>(resultRoot.value);
+                        Projects.ResultItems = new ObservableCollection<Project>(resultRoot.value);
 
                         //JObject o = JObject.Parse(outJson);
                         //foreach (var p in o)
@@ -754,7 +695,7 @@ namespace WpfAppCore
 
                             using (HttpResponseMessage response2 = await client.GetAsync(requestUri2))
                             {
-                                ResponseHeaders.AddRange(response2.Headers);
+                                //ResponseHeaders.AddRange(response2.Headers);
 
                                 exchange2.Response = response2;
                                 exchange2.ResponseHeadersX.AddRange(response2.Headers);
@@ -767,13 +708,14 @@ namespace WpfAppCore
 
                                 JObject oC = JObject.Parse(outJson2);
 
-                                Rootobject projectsC = JsonConvert.DeserializeObject<Rootobject>(outJson2);
-                                var projectsarrayC = projectsC.value;
+                                //Rootobject projectsC = JsonConvert.DeserializeObject<Rootobject>(outJson2);
+                                //var projectsarrayC = projectsC.value;
 
                                 ProjectsRoot projects2C = JsonConvert.DeserializeObject<ProjectsRoot>(outJson2);
-                                var projectsarray2C = projects2C.value;
+                                //var projectsarray2C = projects2C.value;
 
-                                Projects.AddRange(projectsarray2C);
+                                //Projects.AddRange(projectsarray2C);
+                                Projects.ResultItems.AddRange(projects2C.value);
 
                                 hasContinuationToken = response2.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
                             }
@@ -781,7 +723,8 @@ namespace WpfAppCore
 
                         jsonResult = sb.ToString();
 
-                        ProjectsCount = Projects.Count();
+                        //ProjectsCount = Projects.Count();
+                        Projects.Count = Projects.ResultItems.Count();
                     }
                 }
             }
@@ -858,6 +801,8 @@ namespace WpfAppCore
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64PAT);
         }
+
+        #region Misc
 
         /// <summary>
         /// This sample 
@@ -1002,6 +947,8 @@ namespace WpfAppCore
             return jsonResult;
         }
 
+        #endregion
+
         private async Task<string> GetAllTeams(CollectionDetails collection)
         {
             string jsonResult = default;
@@ -1029,7 +976,8 @@ namespace WpfAppCore
                         //JObject o = JObject.Parse(outJson);
 
                         TeamsRoot resultRoot = JsonConvert.DeserializeObject<TeamsRoot>(outJson);
-                        Teams = new ObservableCollection<Team>(resultRoot.value);
+
+                        Teams.ResultItems = new ObservableCollection<Domain.Team>(resultRoot.value);
 
                         IEnumerable<string> continuationHeaders = default;
 
@@ -1048,7 +996,7 @@ namespace WpfAppCore
 
                             using (HttpResponseMessage response2 = await client.GetAsync(requestUri2))
                             {
-                                ResponseHeaders.AddRange(response2.Headers);
+                                //ResponseHeaders.AddRange(response2.Headers);
 
                                 exchange2.Response = response2;
                                 exchange2.ResponseHeadersX.AddRange(response2.Headers);
@@ -1067,7 +1015,7 @@ namespace WpfAppCore
                                 TeamsRoot resultRootC = JsonConvert.DeserializeObject<TeamsRoot>(outJson2);
                                 var resultArray2C = resultRootC.value;
 
-                                Teams.AddRange(resultArray2C);
+                                Teams.ResultItems.AddRange(resultArray2C);
 
                                 hasContinuationToken = response2.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
                             }
@@ -1075,7 +1023,7 @@ namespace WpfAppCore
 
                         jsonResult = sb.ToString();
 
-                        TeamsCount = Teams.Count();
+                        Teams.Count = Teams.ResultItems.Count();
                     }
                 }
             }
@@ -1120,9 +1068,6 @@ namespace WpfAppCore
                     {
                         RecordExchangeResponse(response, exchange);
 
-                        IEnumerable<string> continuationHeaders = default;
-
-                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
 
                         response.EnsureSuccessStatusCode();
 
@@ -1132,11 +1077,13 @@ namespace WpfAppCore
                         JObject o = JObject.Parse(outJson);
 
                         ListsRoot resultRoot = JsonConvert.DeserializeObject<ListsRoot>(outJson);
-                        var resultArray = resultRoot.value;
+                        Lists.ResultItems = new ObservableCollection<Domain.List>(resultRoot.value);
 
-                        Lists = new ObservableCollection<Domain.List>(resultArray);
+                        IEnumerable<string> continuationHeaders = default;
 
-                        ListsCount = Lists.Count();
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        Lists.Count = Lists.ResultItems.Count();
 
                         jsonResult = outJson;
                     }
@@ -1158,18 +1105,47 @@ namespace WpfAppCore
             CallResult = await GetProcessLists(SelectedCollection.Details);
         }
 
-        private async Task<string> GetProcessList(CollectionDetails details, Domain.Process selectedProcessGrid)
+        private async Task<string> GetProcessList(CollectionDetails details, Domain.Process selectedProcess)
         {
             return "";
         }
 
         private void GetList_Click(object sender, RoutedEventArgs e)
         {
-            //CallResult = "";
-            //CallResult = await GetProcessList(SelectedCollection.Details, SelectedProcessGrid);
+            MessageBox.Show("Not Implemented Yet :(");
         }
 
-        private async Task<string> GetWorkItemTypes(CollectionDetails collection, Domain.Process selectedProcessGrid)
+
+
+
+
+        private void GetRegionMetaData_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet :(");
+        }
+
+        private void GetHealth_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet :(");
+        }
+
+
+
+        #region Work Item Tracking Process
+
+        private void GetBehaviors_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet :(");
+        }
+
+        private async void GetFields_Click(object sender, RoutedEventArgs e)
+        {
+            CallResult = "";
+            CallResult = await GetFields(SelectedCollection.Details, Processes.SelectedItem, WorkItemTypes.SelectedItem);
+        }
+
+        private async Task<string> GetFields(CollectionDetails collection,
+            Domain.Process selectedProcess, Domain.WorkItemType selectedWorkItem)
         {
             string jsonResult = default;
             StringBuilder sb = new StringBuilder();
@@ -1180,9 +1156,127 @@ namespace WpfAppCore
                 {
                     InitializeHttpClient(collection, client);
 
-                    RequestUri = $"{collection.Uri}/_apis/work/processes/{selectedProcessGrid.typeId}/workitemtypes?api-version=6.1-preview.2";
+                    RequestUri = $"{collection.Uri}/_apis/work/processes/{selectedProcess.typeId}/workitemtypes/{selectedWorkItem.referenceName}/fields?api-version=6.1-preview.2";
 
                     RequestResponseInfo exchange = InitializeExchange(client, RequestUri);
+
+                    using (HttpResponseMessage response = await client.GetAsync(RequestUri))
+                    {
+                        RecordExchangeResponse(response, exchange);
+
+                        response.EnsureSuccessStatusCode();
+
+                        string outJson = await response.Content.ReadAsStringAsync();
+                        //sb.Append(outJson);
+
+                        JObject o = JObject.Parse(outJson);
+
+                        FieldsRoot resultRoot = JsonConvert.DeserializeObject<FieldsRoot>(outJson);
+                        ////WorkItemTypes = new ObservableCollection<WpfAppCore.Domain.WorkItemType>(resultRoot.value);
+                        ////WorkItemTypesCount = WorkItemTypes.Count;
+
+                        Fields.ResultItems = new ObservableCollection<Domain.Field>(resultRoot.value);
+
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        Fields.Count = Fields.ResultItems.Count;
+
+                        //jsonResult = outJson;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            RequestResponseExchangeCount = RequestResponseExchange.Count();
+
+            return jsonResult;
+        }
+
+        private async void GetStates_Click(object sender, RoutedEventArgs e)
+        {
+            CallResult = "";
+            CallResult = await GetStates(SelectedCollection.Details, Processes.SelectedItem, WorkItemTypes.SelectedItem);
+        }
+
+        private async Task<string> GetStates(CollectionDetails collection, Domain.Process selectedProcess, Domain.WorkItemType selectedWorkItem)
+        {
+            string jsonResult = default;
+            StringBuilder sb = new StringBuilder();
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    InitializeHttpClient(collection, client);
+
+                    RequestUri = $"{collection.Uri}/_apis/work/processes/{selectedProcess.typeId}/workItemTypes/{selectedWorkItem.referenceName}/states?api-version=6.1-preview.1";
+
+                    RequestResponseInfo exchange = InitializeExchange(client, RequestUri);
+
+                    using (HttpResponseMessage response = await client.GetAsync(RequestUri))
+                    {
+                        RecordExchangeResponse(response, exchange);
+
+                        response.EnsureSuccessStatusCode();
+
+                        string outJson = await response.Content.ReadAsStringAsync();
+                        //sb.Append(outJson);
+
+                        JObject o = JObject.Parse(outJson);
+
+                        StatesRoot resultRoot = JsonConvert.DeserializeObject<StatesRoot>(outJson);
+                        ////WorkItemTypes = new ObservableCollection<WpfAppCore.Domain.WorkItemType>(resultRoot.value);
+                        ////WorkItemTypesCount = WorkItemTypes.Count;
+
+                        States.ResultItems = new ObservableCollection<Domain.State>(resultRoot.value);
+
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        States.Count = States.ResultItems.Count;
+
+                        //jsonResult = outJson;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            RequestResponseExchangeCount = RequestResponseExchange.Count();
+
+            return jsonResult;
+        }
+
+        private async void GetWorkItemTypes_Click(object sender, RoutedEventArgs e)
+        {
+            CallResult = "";
+            CallResult = await GetWorkItemTypes(SelectedCollection.Details, Processes.SelectedItem);
+        }
+
+        private async Task<string> GetWorkItemTypes(CollectionDetails collection, Domain.Process selectedProcess)
+        {
+            string jsonResult = default;
+            StringBuilder sb = new StringBuilder();
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    InitializeHttpClient(collection, client);
+
+                    RequestUri = $"{collection.Uri}/_apis/work/processes/{selectedProcess.typeId}/workitemtypes?api-version=6.1-preview.2";
+
+                    RequestResponseInfo exchange = InitializeExchange(client, RequestUri);
+
+                    //WorkItemTypes2 = new RestResult<Domain.WorkItemType>();
 
                     using (HttpResponseMessage response = await client.GetAsync(RequestUri))
                     {
@@ -1200,9 +1294,11 @@ namespace WpfAppCore
                         JObject o = JObject.Parse(outJson);
 
                         WorkItemTypesRoot resultRoot = JsonConvert.DeserializeObject<WorkItemTypesRoot>(outJson);
-                        WorkItemTypes = new ObservableCollection<WpfAppCore.Domain.WorkItemType>(resultRoot.value);
+                        //WorkItemTypes = new ObservableCollection<WpfAppCore.Domain.WorkItemType>(resultRoot.value);
+                        //WorkItemTypesCount = WorkItemTypes.Count;
 
-                        //ProcessCount = Processes.Count();
+                        WorkItemTypes.ResultItems = new ObservableCollection<Domain.WorkItemType>(resultRoot.value); ;
+                        WorkItemTypes.Count = WorkItemTypes.ResultItems.Count;
 
                         //jsonResult = outJson;
                     }
@@ -1214,14 +1310,55 @@ namespace WpfAppCore
             }
 
             RequestResponseExchangeCount = RequestResponseExchange.Count();
+
             return jsonResult;
-
         }
 
-        private async void GetWorkItemTypes_Click(object sender, RoutedEventArgs e)
+        #endregion
+
+
+        private async void GetTeam_Click(object sender, RoutedEventArgs e)
         {
-            CallResult = "";
-            CallResult = await GetWorkItemTypes(SelectedCollection.Details, SelectedProcessGrid);
+            MessageBox.Show("Not Implemented Yet :(");
         }
+
+        #region Private Helpers
+
+        private RequestResponseInfo InitializeExchange(HttpClient client, string requestUri)
+        {
+            RequestResponseExchange.Clear();
+            RequestResponseInfo exchange = new RequestResponseInfo();
+            //RequestHeaders.Clear();
+            //ResponseHeaders.Clear();
+
+            //RequestHeaders.AddRange(client.DefaultRequestHeaders);
+
+            exchange.Uri = requestUri;
+            exchange.RequestHeadersX.AddRange(client.DefaultRequestHeaders);
+
+            return exchange;
+        }
+
+        private void RecordExchangeResponse(HttpResponseMessage response, RequestResponseInfo exchange)
+        {
+            Response = response;
+
+            var statusCode = response.StatusCode;
+            //var statusCodeT = response.StatusCode.GetType();
+            //var statusCodeTC = response.StatusCode.GetTypeCode();
+            var statusCode2 = (int)response.StatusCode;
+
+            //ResponseHeaders.AddRange(response.Headers);
+
+            exchange.Response = response;
+            exchange.ResponseStatusCode = statusCode2;
+
+            exchange.ResponseContentHeaders.AddRange(response.Content.Headers);
+            exchange.ResponseHeadersX.AddRange(response.Headers);
+
+            RequestResponseExchange.Add(exchange);
+        }
+
+        #endregion
     }
 }

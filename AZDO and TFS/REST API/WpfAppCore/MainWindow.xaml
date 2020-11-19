@@ -103,6 +103,8 @@
             <RowDefinition Height="Auto" /> <!-- Teams -->
             <RowDefinition Height="Auto" /> <!-- Lists -->
             <RowDefinition Height="Auto" /> <!-- WorkItemTypes -->
+            <RowDefinition Height="Auto" /> <!-- Fields -->
+            <RowDefinition Height="Auto" /> <!-- States -->
         </Grid.RowDefinitions>
         
         <!-- Commands -->
@@ -120,7 +122,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
-                <Label Content="CB1OC {Binding AvailableCollectionsOC)" />
+                <Label Content="Available Collections" />
                 <ComboBox x:Name="CB1OC"
                         ItemsSource="{Binding AvailableCollections}"
                               DisplayMemberPath="Name"
@@ -134,32 +136,52 @@
 
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Core-Process" />
+                    <Label Content="Core" />
                     <WrapPanel Width="200">
-                        <Button Click="GetProcesses_Click">Get Processes</Button>
-                        <Button Click="GetProcess_Click">Get Process</Button>
-                        <Button Click="GetLists_Click">Get Processes Lists</Button>
-                        <Button Click="GetList_Click">Get Processes List</Button>
-                        <Button Click="GetWorkItemTypes_Click">Get WorkItemTypes</Button>
+                        <Button Click="GetProcesses_Click">GET process/processes</Button>
+                        <Button Click="GetProcess_Click">GET process/{processId}</Button>
+                        <Button Click="GetProjects_Click">GET projects</Button>
+                        <Button Click="GetProject_Click">GET projects/projectId</Button>
+                        <Button Click="GetAllTeams_Click">GET teams</Button>
+                        <Button Click="GetTeams_Click">GET projects/{projectId}/teams</Button>
+                        <Button Click="GetTeam_Click">GET projects/{projectId}/teams/{teamId}</Button>
+                    </WrapPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Status" />
+                    <WrapPanel Width="200">
+                        <Button Click="GetHealth_Click">GET status/health</Button>
+                        <Button Click="GetRegionMetaData_Click">GET status/region-metadata</Button>
+                    </WrapPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Work Item Tracking" />
+                    <WrapPanel Width="200">
+
                     </WrapPanel>
                 </StackPanel>
                 
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Core-Projects" />
-                    <WrapPanel Width="200">
-                        <Button Click="GetProjects_Click">GET Projects</Button>
-                        <Button Click="GetProject_Click">GET Project</Button>
-                    </WrapPanel>
+                    <Label Content="Work Item Tracking Process" />
+                    <TextBlock Text="{Binding Processes.SelectedItem.typeId}" />
+                    <StackPanel Width="200">
+                        <Button Click="GetWorkItemTypes_Click">GET WorkItemTypes</Button>
+                        <Button Click="GetBehaviors_Click">GET Behaviors</Button>
+
+                        <Button Click="GetLists_Click">GET Processes Lists</Button>
+                        <Button Click="GetList_Click">GET Lists</Button>
+
+
+                    </StackPanel>
+                    <TextBlock Text="{Binding WorkItemTypes.SelectedItem.referenceName}" />
+                    <StackPanel>
+                        <Button Click="GetFields_Click">GET Fields</Button>
+                        <Button Click="GetStates_Click">GET States</Button>
+                    </StackPanel>
                 </StackPanel>
-                
-                <StackPanel Orientation="Vertical">
-                    <Label Content="Core-Teams" />
-                    <WrapPanel Width="200">
-                        <Button Click="GetAllTeams_Click">GET AllTeams</Button>
-                        <Button Click="GetTeams_Click">GET Project Teams</Button>
-                    </WrapPanel>
-                </StackPanel>
-                
+ 
                 <StackPanel Orientation="Vertical">
                     <Label Content="Misc" />                    
                     <WrapPanel Width="200">
@@ -177,7 +199,7 @@
         </Grid>
 
         <Expander Grid.Row="2" Header="HTTP Exchange" 
-                  FontSize="16"  Foreground="Green" IsExpanded="True" MaxHeight="500" >
+                  FontSize="16"  Foreground="Green" IsExpanded="False" MaxHeight="500" >
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                 
@@ -384,14 +406,16 @@
                 <Border  Style="{StaticResource CountBorder}">
                     <StackPanel Style="{StaticResource CountStackPanel}">
                         <Label Content="Count:" />
-                        <TextBlock Text="{Binding ProjectsCount}"
-                                   Style="{StaticResource CountTextBlock}"/>
+                        <!--<TextBlock Text="{Binding ProjectsCount}"
+                                   Style="{StaticResource CountTextBlock}"/>-->
+                        <TextBlock Text="{Binding Projects.Count}"
+                                   Style="{StaticResource CountTextBlock}"/>                        
                     </StackPanel>
                 </Border>
 
                 <DataGrid 
-                    ItemsSource="{Binding Projects}"
-                    SelectedItem="{Binding SelectedProjectGrid}"               
+                    ItemsSource="{Binding Projects.ResultItems}"
+                    SelectedItem="{Binding Projects.SelectedItem}"               
                     AutoGenerateColumns="True" 
                     CanUserAddRows="False"
                     MaxHeight="300" FontSize="11"
@@ -469,12 +493,15 @@
                                 ContentTemplate="{StaticResource ProjectTemplateStackPanel}"/>-->
 
                 <ContentControl Grid.Column="2"  FontSize="12"
-                                Content="{Binding SelectedProjectGrid}"
+                                Content="{Binding Projects.SelectedItem}"
                                 ContentTemplate="{StaticResource ProjectTemplateGrid}"/>
+                
+                <!--<ContentControl Grid.Column="2"  FontSize="12"
+                                Content="{Binding SelectedProjectGrid}"
+                                ContentTemplate="{StaticResource ProjectTemplateGrid}"/>-->
 
             </Grid>
         </Expander>
-
 
         <Expander Grid.Row="5" Header="Process" FontSize="16" Foreground="Red" IsExpanded="False">
             
@@ -483,14 +510,14 @@
                 <Border Style="{StaticResource CountBorder}">
                     <StackPanel Style="{StaticResource CountStackPanel}">
                         <Label Content="Count:" />
-                        <TextBlock Text="{Binding ProcessCount}"
+                        <TextBlock Text="{Binding Process.Count}"
                                    Style="{StaticResource CountTextBlock}"/>
                     </StackPanel>
                 </Border>
 
                 <DataGrid 
-                    ItemsSource="{Binding Processes}"
-                    SelectedItem="{Binding SelectedProcessGrid}"               
+                    ItemsSource="{Binding Processes.ResultItems}"
+                    SelectedItem="{Binding Processes.SelectedItem}"               
                     AutoGenerateColumns="True"
                     CanUserAddRows="False"
                     MaxHeight="500" FontSize="12"
@@ -538,14 +565,14 @@
                 <Border Style="{StaticResource CountBorder}">
                     <StackPanel Style="{StaticResource CountStackPanel}">
                         <Label Content="Count:" />
-                        <TextBlock Text="{Binding TeamsCount}"
+                        <TextBlock Text="{Binding Teams.Count}"
                                    Style="{StaticResource CountTextBlock}"/>
                     </StackPanel>
                 </Border>
 
                 <DataGrid 
-                    ItemsSource="{Binding Teams}"
-                    SelectedItem="{Binding SelectedTeamGrid}"               
+                    ItemsSource="{Binding Teams.ResultItems}"
+                    SelectedItem="{Binding Teams.SelectedItem}"               
                     AutoGenerateColumns="True"
                     CanUserAddRows="False"
                     MaxHeight="500" FontSize="12"
@@ -586,7 +613,6 @@
 
         </Expander>
 
-
         <Expander Grid.Row="7" Header="Lists" FontSize="16" Foreground="Red" IsExpanded="False">
 
             <StackPanel>
@@ -594,14 +620,14 @@
                 <Border Style="{StaticResource CountBorder}">
                     <StackPanel Style="{StaticResource CountStackPanel}">
                         <Label Content="Count:" />
-                        <TextBlock Text="{Binding ListsCount}"
+                        <TextBlock Text="{Binding Lists.Count}"
                                    Style="{StaticResource CountTextBlock}"/>
                     </StackPanel>
                 </Border>
 
                 <DataGrid 
-                    ItemsSource="{Binding Lists}"
-                    SelectedItem="{Binding SelectedListGrid}"               
+                    ItemsSource="{Binding Lists.ResultItems}"
+                    SelectedItem="{Binding Lists.Selected}"               
                     AutoGenerateColumns="True"
                     CanUserAddRows="False"
                     MaxHeight="500" FontSize="12"
@@ -649,49 +675,118 @@
                 <Border Style="{StaticResource CountBorder}">
                     <StackPanel Style="{StaticResource CountStackPanel}">
                         <Label Content="Count:" />
-                        <TextBlock Text="{Binding WorkItemTypesCount}"
+                        <TextBlock Text="{Binding WorkItemTypes.Count}"
                                    Style="{StaticResource CountTextBlock}"/>
                     </StackPanel>
                 </Border>
 
-                <DataGrid 
-                    ItemsSource="{Binding WorkItemTypes}"
-                    SelectedItem="{Binding SelectedWorkItemTypeGrid}"               
+                <!--<DataGrid 
+                    DataContext="{Binding WorkItemTypes}"
+                    ItemsSource="{Binding ResultItems}"
+                    SelectedItem="{Binding SelectedItem}"               
                     AutoGenerateColumns="True"
                     CanUserAddRows="False"
                     MaxHeight="500" FontSize="12"
                     ScrollViewer.CanContentScroll="True"
                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
                     ScrollViewer.VerticalScrollBarVisibility="Auto">
-                    <!--<DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Key">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding Key}" />
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
+                </DataGrid>-->
 
-                                <DataGridTemplateColumn Header="Value">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <ItemsControl ItemsSource="{Binding Value}">
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding}" Margin="0,0,5,0" />
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <StackPanel Orientation="Vertical" />
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                            </ItemsControl>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-                            </DataGrid.Columns>-->
+                <DataGrid 
+                    ItemsSource="{Binding WorkItemTypes.ResultItems}"
+                    SelectedItem="{Binding WorkItemTypes.SelectedItem}"               
+                    AutoGenerateColumns="True"
+                    CanUserAddRows="False"
+                    MaxHeight="500" FontSize="12"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
                 </DataGrid>
+
+                <TextBlock Text="{Binding WorkItems.SelectedItem}" />
+
+            </StackPanel>
+
+        </Expander>
+
+        <Expander Grid.Row="9" Header="Fields" FontSize="16" Foreground="Red" IsExpanded="False">
+
+            <StackPanel>
+
+                <Border Style="{StaticResource CountBorder}">
+                    <StackPanel Style="{StaticResource CountStackPanel}">
+                        <Label Content="Count:" />
+                        <TextBlock Text="{Binding Fields.Count}"
+                                   Style="{StaticResource CountTextBlock}"/>
+                    </StackPanel>
+                </Border>
+
+                <!--<DataGrid 
+                    DataContext="{Binding WorkItemTypes}"
+                    ItemsSource="{Binding ResultItems}"
+                    SelectedItem="{Binding SelectedItem}"               
+                    AutoGenerateColumns="True"
+                    CanUserAddRows="False"
+                    MaxHeight="500" FontSize="12"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                </DataGrid>-->
+
+                <DataGrid 
+                    ItemsSource="{Binding Fields.ResultItems}"
+                    SelectedItem="{Binding Fields.SelectedItem}"               
+                    AutoGenerateColumns="True"
+                    CanUserAddRows="False"
+                    MaxHeight="300" FontSize="12"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                </DataGrid>
+
+                <TextBlock Text="{Binding Fields.SelectedItem}" />
+
+            </StackPanel>
+
+        </Expander>
+
+
+        <Expander Grid.Row="10" Header="States" FontSize="16" Foreground="Red" IsExpanded="False">
+
+            <StackPanel>
+
+                <Border Style="{StaticResource CountBorder}">
+                    <StackPanel Style="{StaticResource CountStackPanel}">
+                        <Label Content="Count:" />
+                        <TextBlock Text="{Binding States.Count}"
+                                   Style="{StaticResource CountTextBlock}"/>
+                    </StackPanel>
+                </Border>
+
+                <!--<DataGrid 
+                    DataContext="{Binding WorkItemTypes}"
+                    ItemsSource="{Binding ResultItems}"
+                    SelectedItem="{Binding SelectedItem}"               
+                    AutoGenerateColumns="True"
+                    CanUserAddRows="False"
+                    MaxHeight="500" FontSize="12"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                </DataGrid>-->
+
+                <DataGrid 
+                    ItemsSource="{Binding States.ResultItems}"
+                    SelectedItem="{Binding States.SelectedItem}"               
+                    AutoGenerateColumns="True"
+                    CanUserAddRows="False"
+                    MaxHeight="300" FontSize="12"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                </DataGrid>
+
+                <TextBlock Text="{Binding States.SelectedItem}" />
 
             </StackPanel>
 

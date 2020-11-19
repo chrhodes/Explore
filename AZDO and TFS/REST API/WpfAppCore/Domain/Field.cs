@@ -1,31 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 
 namespace WpfAppCore.Domain
 {
-    public class WorkItemTypesRoot
+    public class FieldsRoot
     {
         public int count { get; set; }
-        public WorkItemType[] value { get; set; }
+        public Field[] value { get; set; }
     }
 
-    public class WorkItemType : INotifyPropertyChanged
+    public class Field
     {
         public string referenceName { get; set; }
         public string name { get; set; }
-        public string description { get; set; }
+        public string type { get; set; }
         public string url { get; set; }
         public string customization { get; set; }
-        public string color { get; set; }
-        public string icon { get; set; }
-        public bool isDisabled { get; set; }
-        public object inherits { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string description { get; set; }
+        public bool required { get; set; }
+        public string defaultValue { get; set; }
     }
-
 
     //public class Rootobject
     //{
@@ -37,13 +32,12 @@ namespace WpfAppCore.Domain
     //{
     //    public string referenceName { get; set; }
     //    public string name { get; set; }
-    //    public string description { get; set; }
+    //    public string type { get; set; }
     //    public string url { get; set; }
     //    public string customization { get; set; }
-    //    public string color { get; set; }
-    //    public string icon { get; set; }
-    //    public bool isDisabled { get; set; }
-    //    public object inherits { get; set; }
+    //    public string description { get; set; }
+    //    public bool required { get; set; }
+    //    public string defaultValue { get; set; }
     //}
 
 }
