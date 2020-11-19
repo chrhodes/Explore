@@ -22,6 +22,30 @@ namespace WpfAppCore.Domain
         public string defaultValue { get; set; }
     }
 
+    public class FieldDef
+    {
+        public string referenceName { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public bool required { get; set; }
+        public string defaultValue { get; set; }
+        public string url { get; set; }
+        public string customization { get; set; }
+    }
+
+
+    //public class Rootobject
+    //{
+    //    public string referenceName { get; set; }
+    //    public string name { get; set; }
+    //    public string type { get; set; }
+    //    public bool required { get; set; }
+    //    public string defaultValue { get; set; }
+    //    public string url { get; set; }
+    //    public string customization { get; set; }
+    //}
+
+
     //public class Rootobject
     //{
     //    public int count { get; set; }

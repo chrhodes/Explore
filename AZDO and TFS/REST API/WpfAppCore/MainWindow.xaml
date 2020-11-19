@@ -49,6 +49,7 @@
                 <TextBox Text="{Binding description}" />
             </StackPanel>
         </DataTemplate>
+        
         <DataTemplate x:Key="ProjectTemplateGrid">
             <Grid>
                 <Grid.RowDefinitions>
@@ -90,6 +91,46 @@
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding description}" />
             </Grid>
         </DataTemplate>
+
+        <DataTemplate x:Key="FieldDefTemplateGrid">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Field referenceName"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding referenceName}" />
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Field name"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding name}" />
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Field type"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding type}" />
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Field required" />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding required}" />
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Field defaultValue" />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding defaultValue}" />
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Field url" />
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding url}" />
+
+                <Label Grid.Row="6" Grid.Column="0" Content="Field customization" />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding customization}" />
+
+            </Grid>
+        </DataTemplate>
+
     </Window.Resources>
     
     <Grid>
@@ -104,6 +145,7 @@
             <RowDefinition Height="Auto" /> <!-- Lists -->
             <RowDefinition Height="Auto" /> <!-- WorkItemTypes -->
             <RowDefinition Height="Auto" /> <!-- Fields -->
+            <RowDefinition Height="Auto" /> <!-- Field -->
             <RowDefinition Height="Auto" /> <!-- States -->
         </Grid.RowDefinitions>
         
@@ -178,7 +220,9 @@
                     <TextBlock Text="{Binding WorkItemTypes.SelectedItem.referenceName}" />
                     <StackPanel>
                         <Button Click="GetFields_Click">GET Fields</Button>
+                        <Button Click="GetField_Click">GET Field</Button>
                         <Button Click="GetStates_Click">GET States</Button>
+                        <Button Click="GetState_Click">GET State</Button>
                     </StackPanel>
                 </StackPanel>
  
@@ -750,8 +794,55 @@
 
         </Expander>
 
+        <Expander Grid.Row="10" Header="Field" FontSize="16"  Foreground="Blue" IsExpanded="False">
 
-        <Expander Grid.Row="10" Header="States" FontSize="16" Foreground="Red" IsExpanded="False">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!--<StackPanel Grid.Column="0"
+                    Orientation="Vertical">
+                    <Label Content="Project id"/>
+                    <TextBox Text="{Binding SelectedProjectGrid.id}" />
+                    <Label Content="Project name"/>
+                    <TextBox Text="{Binding SelectedProjectGrid.name}" />
+                    <Label Content="Project url"/>
+                    <TextBox Text="{Binding SelectedProjectGrid.url}" />
+                    <Label Content="Project state" />
+                    <TextBox Text="{Binding SelectedProjectGrid.state}" />
+                    <Label Content="Project revision" />
+                    <TextBox Text="{Binding SelectedProjectGrid.revision}" />
+                    <Label Content="Project visibility" />
+                    <TextBox Text="{Binding SelectedProjectGrid.visibility}" />
+                    <Label Content="Project lastUpdateTime" />
+                    <TextBox Text="{Binding SelectedProjectGrid.lastUpdateTime}" />
+                    <Label Content="Project description" />
+                    <TextBox Text="{Binding SelectedProjectGrid.description}" />
+                </StackPanel>-->
+
+                <!--<ContentControl Grid.Column="1" FontSize="12"
+                                Content="{Binding SelectedProjectGrid}"
+                                ContentTemplate="{StaticResource ProjectTemplateStackPanel}"/>-->
+
+                <ContentControl Grid.Column="2"  FontSize="12"
+                                Content="{Binding FieldDef}"
+                                ContentTemplate="{StaticResource FieldDefTemplateGrid}"/>
+
+                <!--<ContentControl Grid.Column="2"  FontSize="12"
+                                Content="{Binding SelectedProjectGrid}"
+                                ContentTemplate="{StaticResource ProjectTemplateGrid}"/>-->
+
+            </Grid>
+        </Expander>
+
+
+        <Expander Grid.Row="11" Header="States" FontSize="16" Foreground="Red" IsExpanded="False">
 
             <StackPanel>
 

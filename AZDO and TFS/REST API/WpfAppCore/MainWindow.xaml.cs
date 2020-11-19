@@ -31,6 +31,7 @@ namespace WpfAppCore
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
+
         private object _propertyName;
         private static string _URI_BD_STS_QA2 = @"https://dev.azure.com/BD-STS-QA2";
         private static string _URI_BD_STS_PROD = @"https://dev.azure.com/BD-STS-PROD";
@@ -333,6 +334,7 @@ namespace WpfAppCore
         public RESTResult<Domain.WorkItemType> WorkItemTypes { get; set; } = new RESTResult<Domain.WorkItemType>();
         public RESTResult<Domain.State> States { get; set; } = new RESTResult<Domain.State>();
         public RESTResult<Domain.Field> Fields { get; set; } = new RESTResult<Domain.Field>();
+        //public RESTResult<Domain.FieldDef> FieldDef { get; set; } = new RESTResult<Domain.FieldDef>();
 
 
         //private RestResult<Domain.WorkItemType> _workItemTypes2;// = new RestResult<Domain.WorkItemType>();
@@ -433,12 +435,14 @@ namespace WpfAppCore
         private void LoadCollections()
         {
             AvailableCollections.Add(
-                new AvailableCollection { 
-                        Name="BD_STS_PROD", 
-                        Details= new CollectionDetails { 
-                            Uri = @"https://dev.azure.com/BD-STS-PROD", 
-                            PAT = _PAT_BD_STS_PROD
-                        }
+                new AvailableCollection
+                {
+                    Name = "BD_STS_PROD",
+                    Details = new CollectionDetails
+                    {
+                        Uri = @"https://dev.azure.com/BD-STS-PROD",
+                        PAT = _PAT_BD_STS_PROD
+                    }
                 });
 
             AvailableCollections.Add(
@@ -479,7 +483,7 @@ namespace WpfAppCore
         {
             CallResult = "";
             CallResult = await GetProjects(SelectedCollection.Details);
-		}
+        }
 
         private async void GetProject_Click(object sender, RoutedEventArgs e)
         {
@@ -625,7 +629,7 @@ namespace WpfAppCore
         }
 
         public async Task<string> GetProjects(CollectionDetails collection)
-		{
+        {
             string jsonResult = default;
             StringBuilder sb = new StringBuilder();
 
@@ -779,7 +783,7 @@ namespace WpfAppCore
                     }
                 }
 
-                
+
             }
             catch (Exception ex)
             {
@@ -902,10 +906,10 @@ namespace WpfAppCore
 
             // Create instance of VssConnection using Personal Access Token
             VssConnection connection = new VssConnection(
-                new Uri(collection.Uri), 
+                new Uri(collection.Uri),
                 new VssBasicCredential(string.Empty, collection.PAT));
             //_callResult = connection.ServerId.ToString();
-            
+
             return jsonResult;
         }
 
@@ -915,7 +919,7 @@ namespace WpfAppCore
 
             // Create instance of VssConnection using Visual Studio sign-in prompt
             VssConnection connection = new VssConnection(
-                new Uri(collection.Uri), 
+                new Uri(collection.Uri),
                 new VssClientCredentials());
             //_callResult = connection.ServerId.ToString();
             return jsonResult;
@@ -929,9 +933,9 @@ namespace WpfAppCore
 
             // Create instance of VssConnection using Azure AD Credentials for Azure AD backed account
             VssConnection connection = new VssConnection(
-                new Uri(collection.Uri), 
+                new Uri(collection.Uri),
                 new VssAadCredential(userName, password));
-            
+
             return jsonResult;
         }
 
@@ -941,9 +945,9 @@ namespace WpfAppCore
 
             // Create instance of VssConnection using OAuth Access token
             VssConnection connection = new VssConnection(
-                new Uri(collection.Uri), 
+                new Uri(collection.Uri),
                 new VssOAuthAccessTokenCredential(collection.PAT));
-            
+
             return jsonResult;
         }
 
@@ -1145,7 +1149,8 @@ namespace WpfAppCore
         }
 
         private async Task<string> GetFields(CollectionDetails collection,
-            Domain.Process selectedProcess, Domain.WorkItemType selectedWorkItem)
+            Domain.Process selectedProcess,
+            Domain.WorkItemType selectedWorkItem)
         {
             string jsonResult = default;
             StringBuilder sb = new StringBuilder();
@@ -1182,6 +1187,86 @@ namespace WpfAppCore
                         bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
 
                         Fields.Count = Fields.ResultItems.Count;
+
+                        //jsonResult = outJson;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            RequestResponseExchangeCount = RequestResponseExchange.Count();
+
+            return jsonResult;
+        }
+
+        private async void GetField_Click(object sender, RoutedEventArgs e)
+        {
+            CallResult = "";
+            CallResult = await GetField(SelectedCollection.Details,
+                Processes.SelectedItem,
+                WorkItemTypes.SelectedItem,
+                Fields.SelectedItem);
+        }
+
+        //FieldDef FieldDef { get; set;  }
+
+        private FieldDef _fieldDef;
+        public FieldDef FieldDef
+        {
+            get => _fieldDef;
+            set
+            {
+                if (_fieldDef == value)
+                    return;
+                _fieldDef = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FieldDef)));
+            }
+        }
+        
+
+        private async Task<string> GetField(CollectionDetails collection,
+            Domain.Process selectedProcess,
+            Domain.WorkItemType selectedWorkItem, 
+            Domain.Field selectedField)
+        {
+            string jsonResult = default;
+            StringBuilder sb = new StringBuilder();
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    InitializeHttpClient(collection, client);
+
+                    RequestUri = $"{collection.Uri}/_apis/work/processes/{selectedProcess.typeId}/workitemtypes/{selectedWorkItem.referenceName}/fields/{selectedField.referenceName}?api-version=6.1-preview.2";
+
+                    RequestResponseInfo exchange = InitializeExchange(client, RequestUri);
+
+                    using (HttpResponseMessage response = await client.GetAsync(RequestUri))
+                    {
+                        RecordExchangeResponse(response, exchange);
+
+                        response.EnsureSuccessStatusCode();
+
+                        string outJson = await response.Content.ReadAsStringAsync();
+                        //sb.Append(outJson);
+
+                        JObject o = JObject.Parse(outJson);
+
+                         FieldDef = JsonConvert.DeserializeObject<Domain.FieldDef>(outJson);
+                        ////WorkItemTypes = new ObservableCollection<WpfAppCore.Domain.WorkItemType>(resultRoot.value);
+                        ////WorkItemTypesCount = WorkItemTypes.Count;
+
+                        //FieldDef.ResultItems = new ObservableCollection<Domain.FieldDef>(resultRoot.value);
+
+                        //IEnumerable<string> continuationHeaders = default;
+
+                        //bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        //Fields.Count = Fields.ResultItems.Count;
 
                         //jsonResult = outJson;
                     }
@@ -1360,5 +1445,12 @@ namespace WpfAppCore
         }
 
         #endregion
+
+        private void GetState_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
