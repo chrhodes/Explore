@@ -17,7 +17,7 @@ namespace FriendOrganizer.Presentation.Friend
     public class FriendModule : IModule
     {
         private readonly IRegionManager _regionManager;
-        public static IContainerProvider _containerProvider;
+        //public static IContainerProvider _containerProvider;
 
         // 01
 
@@ -72,7 +72,7 @@ namespace FriendOrganizer.Presentation.Friend
         {
             Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
 
-            _containerProvider = containerProvider;
+            //_containerProvider = containerProvider;
 
             // Put FriendOrganizerMain on MainWindow
 

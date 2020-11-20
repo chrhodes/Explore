@@ -78,10 +78,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\VNC.Core\VNC.Core.csproj">
-      <Project>{C4E954D3-2A7A-48D2-B212-8B9A96BFEB4F}</Project>
-      <Name>VNC.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FriendOrganizer.Domain\FriendOrganizer.Domain.csproj">
       <Project>{7B947978-3A26-4B09-8D83-497774BCDF6E}</Project>
       <Name>FriendOrganizer.Domain</Name>
@@ -126,7 +122,6 @@
     <Content Include="Resources\Images\VNCDeveloperMotivation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>

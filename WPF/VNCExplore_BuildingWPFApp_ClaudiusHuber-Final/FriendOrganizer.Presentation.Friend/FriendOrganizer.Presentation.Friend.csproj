@@ -58,7 +58,7 @@
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="VNC.Logging">
-      <HintPath>..\..\..\..\Common\VNC.Logging.dll</HintPath>
+      <HintPath>..\..\..\..\vnc\Common\VNC.Logging.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -121,7 +121,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\VNC.Core\VNC.Core.csproj">
+    <ProjectReference Include="..\..\..\..\vnc\VNC.Core\VNC.Core.csproj">
       <Project>{c4e954d3-2a7a-48d2-b212-8b9a96bfeb4f}</Project>
       <Name>VNC.Core</Name>
     </ProjectReference>
