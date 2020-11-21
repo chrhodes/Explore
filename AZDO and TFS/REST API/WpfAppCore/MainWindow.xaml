@@ -201,7 +201,7 @@
                 <StackPanel Orientation="Vertical">
                     <Label Content="Work Item Tracking" />
                     <WrapPanel Width="200">
-
+                        <Button Click="Wit_GetWorkItemTypes_Click">GET WorkItemTypes</Button>
                     </WrapPanel>
                 </StackPanel>
                 

@@ -1134,6 +1134,70 @@ namespace WpfAppCore
         }
 
 
+        #region Work Item Tracking
+
+        private async void Wit_GetWorkItemTypes_Click(object sender, RoutedEventArgs e)
+        {
+            CallResult = "";
+            CallResult = await Wit_GetWorkItemTypes(SelectedCollection.Details, Projects.SelectedItem);
+        }
+
+        private async Task<string> Wit_GetWorkItemTypes(CollectionDetails collection, Domain.Project selectedProject)
+        {
+            string jsonResult = default;
+            StringBuilder sb = new StringBuilder();
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    InitializeHttpClient(collection, client);
+
+                    RequestUri = $"{collection.Uri}/{selectedProject.id}/_apis/wit/workitemtypes?api-version=4.1";
+
+                    RequestResponseInfo exchange = InitializeExchange(client, RequestUri);
+
+                    //WorkItemTypes2 = new RestResult<Domain.WorkItemType>();
+
+                    using (HttpResponseMessage response = await client.GetAsync(RequestUri))
+                    {
+                        RecordExchangeResponse(response, exchange);
+
+                        response.EnsureSuccessStatusCode();
+
+                        string outJson = await response.Content.ReadAsStringAsync();
+                        //sb.Append(outJson);
+
+                        JObject o = JObject.Parse(outJson);
+
+                        WitWorkItemTypesRoot resultRoot = JsonConvert.DeserializeObject<WitWorkItemTypesRoot>(outJson);
+                        ////WorkItemTypes = new ObservableCollection<WpfAppCore.Domain.WorkItemType>(resultRoot.value);
+                        ////WorkItemTypesCount = WorkItemTypes.Count;
+
+                        //WorkItemTypes.ResultItems = new ObservableCollection<Domain.WorkItemType>(resultRoot.value); ;
+                        //WorkItemTypes.Count = WorkItemTypes.ResultItems.Count;
+
+
+                        IEnumerable<string> continuationHeaders = default;
+
+                        bool hasContinuationToken = response.Headers.TryGetValues("x-ms-continuationtoken", out continuationHeaders);
+
+                        //jsonResult = outJson;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            RequestResponseExchangeCount = RequestResponseExchange.Count();
+
+            return jsonResult;
+        }
+
+
+        #endregion
 
         #region Work Item Tracking Process
 
