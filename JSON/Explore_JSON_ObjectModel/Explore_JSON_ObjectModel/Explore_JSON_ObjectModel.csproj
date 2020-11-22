@@ -51,15 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Diagrams\Newtonsoft.Json - Interfaces.cd" />
-    <None Include="Diagrams\Newtonsoft.Json-Classes - Colapsed.cd" />
-    <None Include="Diagrams\Newtonsoft.Json-Classes.cd" />
-    <None Include="Diagrams\Newtonsoft.Json-Classes-Attributes.cd" />
-    <None Include="Diagrams\Newtonsoft.Json-Enums.cd" />
-    <None Include="Diagrams\Newtonsoft.Json-Exceptions.cd" />
-    <None Include="Diagrams\Newtonsoft.Json.Converters.cd" />
-    <None Include="Diagrams\Newtonsoft.Json.Linq-Classes.cd" />
-    <None Include="Diagrams\Newtonsoft.Json.Linq-Classes - Colapsed.cd" />
+    <None Include="Diagrams\Classes - Newtonsoft.Json.Converters.cd" />
+    <None Include="Diagrams\Interfaces - Newtonsoft.Json.cd" />
+    <None Include="Diagrams\Classes - Newtonsoft.Json.cd" />
+    <None Include="Diagrams\Classes - Newtonsoft.Json- Expanded.cd" />
+    <None Include="Diagrams\Classes - Attributes - Newtonsoft.Json.cd" />
+    <None Include="Diagrams\Enums - Newtonsoft.Json.cd" />
+    <None Include="Diagrams\Classes - Exceptions - Newtonsoft.Json.cd" />
+    <None Include="Diagrams\Classes - Newtonsoft.Json.Converters - Expanded.cd" />
+    <None Include="Diagrams\Classes - Newtonsoft.Json.Linq - Expanded.cd" />
+    <None Include="Diagrams\Classes - Newtonsoft.Json.Linq.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

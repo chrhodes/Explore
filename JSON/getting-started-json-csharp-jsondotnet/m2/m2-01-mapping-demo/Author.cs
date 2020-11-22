@@ -15,6 +15,5 @@ namespace m2_01_mapping_demo
         public Car car { get; set; }
         public List<Author> favoriteAuthors { get; set; }
         public AuthorRelationship authorRelationship { get; set; }
-
     }
 }

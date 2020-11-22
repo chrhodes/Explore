@@ -15,4 +15,5 @@ namespace JsonSamples
         public string CourseTags { get; set; }
         public string CourseDuration { get; set; }
     }
+
 }

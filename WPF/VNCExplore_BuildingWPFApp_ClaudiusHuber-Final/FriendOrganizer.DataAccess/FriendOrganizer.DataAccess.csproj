@@ -41,7 +41,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VNC.Logging">
-      <HintPath>..\..\..\..\Common\VNC.Logging.dll</HintPath>
+      <HintPath>..\..\..\..\vnc\Common\VNC.Logging.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

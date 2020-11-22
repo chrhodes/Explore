@@ -13,8 +13,8 @@ namespace m2_02json_serializer_demo
     {
         /// <summary>
         /// In this demo I will show you how to write serialized JSON objects 
-        /// using different settings (indentation and ignore nulls) to compare 
-        /// the size of each generated file
+        /// using different settings (indentation and ignore nulls) 
+        /// to compare the size of each generated file
         /// </summary>
         public static void Show()
         {

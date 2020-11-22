@@ -19,4 +19,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Presentation\ViewModels\" />
+    <Folder Include="Presentation\Views\" />
+  </ItemGroup>
+
 </Project>
