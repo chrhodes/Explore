@@ -39,13 +39,13 @@ namespace WpfAppCore
 
         private static string _teamProjectName = "TFS";
 
-        private static string _PAT_BD_STS_PROD = "ktjisgkllgewl4lkazadc3ggj5rouzpkmwrieauz6sss62ajhl4a";
+        private static string _PAT_BD_STS_PROD = "";
 
-        //private static string _PAT_BD_STS_QA2 = "bjllb2zrs3izlgbvh5q2tqr4neudouk5yidulwn52boc5mkl3cwa";
-        private static string _PAT_BD_STS_QA2 = "3mesoqd2xxsgxvx6fqsdc7h2fhswo2ohpa2t6aennimb3x7wr6vq";
+        //private static string _PAT_BD_STS_QA2 = "";
+        private static string _PAT_BD_STS_QA2 = "";
 
-        private static string _PAT_VNC_DevelopmentLimited = "ssyqqvap35hunafmt6abskzgcrqroldvlhwrwl3hcjh3oo7mf5yq";
-        private static string _PAT_VNC_Development = "nioxcaauiyoxqaovxlcnbyodj6uvbvikm543gvuudxcekbjx5xsa";
+        private static string _PAT_VNC_DevelopmentLimited = "";
+        private static string _PAT_VNC_Development = "";
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
