@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <UseWPF>True</UseWPF>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <ApplicationIcon>Images\WiredBrainCoffeeIcon.ico</ApplicationIcon>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Remove="Images\delete.png" />
+      <None Remove="Images\logo.png" />
+      <None Remove="Images\WiredBrainCoffeeIcon.ico" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Resource Include="Images\delete.png" />
+      <Resource Include="Images\logo.png" />
+      <Resource Include="Images\WiredBrainCoffeeIcon.ico" />
+    </ItemGroup>
+</Project>

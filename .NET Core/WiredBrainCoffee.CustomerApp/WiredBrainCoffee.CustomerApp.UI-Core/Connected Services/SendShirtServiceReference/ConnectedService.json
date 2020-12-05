@@ -1,0 +1,26 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.40203.910",
+  "GettingStartedDocument": {
+    "Uri": "https://go.microsoft.com/fwlink/?linkid=858517"
+  },
+  "ExtendedData": {
+    "inputs": [
+      "http://localhost:8080"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, SendShirtServiceReference"
+    ],
+    "references": [
+      "C:\\VNC\\Git\\chrhodes\\Explore\\.NET Core\\WiredBrainCoffee.CustomerApp\\WiredBrainCoffee.CustomerApp.UI-Core\\out\\WiredBrainCoffee.CustomerApp.UI.Core\\bin\\Debug\\netcoreapp3.0\\WiredBrainCoffee.CustomerApp.DataAccess.dll",
+      "C:\\VNC\\Git\\chrhodes\\Explore\\.NET Core\\WiredBrainCoffee.CustomerApp\\WiredBrainCoffee.CustomerApp.UI-Core\\out\\WiredBrainCoffee.CustomerApp.UI.Core\\bin\\Debug\\netcoreapp3.0\\WiredBrainCoffee.CustomerApp.Models.dll",
+      "C:\\VNC\\Git\\chrhodes\\Explore\\.NET Core\\WiredBrainCoffee.CustomerApp\\WiredBrainCoffee.CustomerApp.UI-Core\\out\\WiredBrainCoffee.CustomerApp.UI.Core\\bin\\Debug\\netcoreapp3.0\\WiredBrainCoffee.WpfControls.dll"
+    ],
+    "targetFramework": "netcoreapp3.0",
+    "typeReuseMode": "All"
+  }
+}

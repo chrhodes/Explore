@@ -12,7 +12,7 @@ indent_size = 4
 
 [*.csproj]
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [*.json]
 indent_style = space
@@ -27,7 +27,7 @@ indent_size = 2
 indent_style = space
 
 [*.xaml]
-indent_size = 2
+indent_size = 4
 indent_style = space
 
 [*.plist]
