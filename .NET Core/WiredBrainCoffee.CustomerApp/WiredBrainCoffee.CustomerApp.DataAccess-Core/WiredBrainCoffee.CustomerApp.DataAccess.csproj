@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net48;netstandard2.1</TargetFrameworks>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="EntityFramework" Version="6.3.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\WiredBrainCoffee.CustomerApp.Models-Core\WiredBrainCoffee.CustomerApp.Models.csproj" />
+    </ItemGroup>
+</Project>
