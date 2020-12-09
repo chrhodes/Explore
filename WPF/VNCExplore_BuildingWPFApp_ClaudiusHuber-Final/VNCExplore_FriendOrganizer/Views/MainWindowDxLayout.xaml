@@ -80,7 +80,6 @@
 
                                 <!-- Individual LayoutGroups go here (if you use tabs or groups)-->
 
-
                                 <dxlc:LayoutGroup Header="20 - Final" >
                                     <Grid>
                                         <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static infra:RegionNames.MainRegion}" />

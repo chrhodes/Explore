@@ -29,6 +29,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             _instanceCountVM++;
             _dataService = friendLookupDataService;
             _eventAggregator = eventAggregator;
+
             Friends = new ObservableCollection<NavigationItemViewModel>();
 
             _eventAggregator.GetEvent<AfterDetailSavedEvent>()

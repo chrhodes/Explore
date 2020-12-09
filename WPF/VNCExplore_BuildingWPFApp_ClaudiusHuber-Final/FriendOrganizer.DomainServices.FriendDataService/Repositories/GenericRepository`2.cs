@@ -57,8 +57,8 @@ namespace FriendOrganizer.DomainServices.Repositories
             Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
 
             Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-            return Context.ChangeTracker.HasChanges();
+            var result = Context.ChangeTracker.HasChanges();
+            return result;
         }
 
         public void Remove(TEntity model)

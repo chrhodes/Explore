@@ -118,9 +118,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\vnc\VNC.Core\VNC.Core.csproj">
+    <ProjectReference Include="..\..\..\..\vnc\VNC.Core\VNC.CoreNF.csproj">
       <Project>{c4e954d3-2a7a-48d2-b212-8b9a96bfeb4f}</Project>
-      <Name>VNC.Core</Name>
+      <Name>VNC.CoreNF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\vnc\VNC.Logging\VNC.Logging\VNC.LoggingNF.csproj">
+      <Project>{0a14cb8d-94e2-4bd4-bab3-1dc242d49f03}</Project>
+      <Name>VNC.LoggingNF</Name>
     </ProjectReference>
     <ProjectReference Include="..\FriendOrganizer.DomainServices.FriendDataService\FriendOrganizer.DomainServices.csproj">
       <Project>{06ad7abc-115a-4f86-a001-57d5d2518ae8}</Project>

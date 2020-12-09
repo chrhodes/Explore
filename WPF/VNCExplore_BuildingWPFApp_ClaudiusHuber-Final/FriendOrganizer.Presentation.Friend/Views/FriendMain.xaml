@@ -47,7 +47,6 @@
         </Menu>
         
         <ContentControl Grid.Row="1" Grid.Column="0" 
-
                         prism:RegionManager.RegionName="{x:Static infra:RegionNames.RegionNavigation}" 
                         DataContext="{Binding NavigationViewModel}" />
         
