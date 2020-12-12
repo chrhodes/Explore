@@ -65,9 +65,6 @@
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>
     </PackageReference>
-    <PackageReference Include="VNC.Logging">
-      <Version>1.0.0</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

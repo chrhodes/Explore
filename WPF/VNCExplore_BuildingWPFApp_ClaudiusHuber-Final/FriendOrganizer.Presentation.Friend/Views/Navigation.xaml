@@ -47,8 +47,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="300" />
             <RowDefinition />
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="300" />
+            <RowDefinition  />
         </Grid.RowDefinitions>
         <GroupBox Header="Friends">
             <ScrollViewer
@@ -63,7 +63,7 @@
         <GroupBox Header="Meetings" Grid.Row="1">
             <ScrollViewer
                 VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Auto">
+                HorizontalScrollBarVisibility="Auto" Background="Black">
                 <ItemsControl
                     ItemsSource="{Binding Meetings}"
                     ItemContainerStyle="{StaticResource NavigationItemContainerStyle}"

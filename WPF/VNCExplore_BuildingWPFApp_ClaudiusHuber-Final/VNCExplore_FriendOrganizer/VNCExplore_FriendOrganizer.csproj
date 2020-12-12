@@ -116,10 +116,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\vnc\VNC.Logging\VNC.Logging\VNC.LoggingNF.csproj">
-      <Project>{0a14cb8d-94e2-4bd4-bab3-1dc242d49f03}</Project>
-      <Name>VNC.LoggingNF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FriendOrganizer.DomainServices.FriendDataService\FriendOrganizer.DomainServices.csproj">
       <Project>{06ad7abc-115a-4f86-a001-57d5d2518ae8}</Project>
       <Name>FriendOrganizer.DomainServices</Name>
@@ -152,6 +148,9 @@
     </PackageReference>
     <PackageReference Include="Unity.Abstractions">
       <Version>5.11.6</Version>
+    </PackageReference>
+    <PackageReference Include="VNC.LoggingNF">
+      <Version>1.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
