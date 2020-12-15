@@ -11,16 +11,16 @@ namespace FriendOrganizer.DataAccess.Migrations
     {
         public Configuration()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             AutomaticMigrationsEnabled = false;
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         protected override void Seed(FriendOrganizerDbContext context)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.PERSISTENCE("Enter", Common.LOG_APPNAME);
 
             //  This method will be called after migrating to the latest version.
 
@@ -87,7 +87,7 @@ namespace FriendOrganizer.DataAccess.Migrations
                 }
             );
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.PERSISTENCE("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

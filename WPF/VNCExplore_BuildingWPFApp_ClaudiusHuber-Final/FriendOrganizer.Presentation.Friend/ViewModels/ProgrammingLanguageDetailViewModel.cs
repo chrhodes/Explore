@@ -27,7 +27,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             IProgrammingLanguageRepository programmingLanguageRepository) 
             : base(eventAggregator, messageDialogService)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _programmingLanguageRepository = programmingLanguageRepository;
             Title = "Programming Languages";
@@ -36,7 +36,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             AddCommand = new DelegateCommand(OnAddExecute);
             RemoveCommand = new DelegateCommand(OnRemoveExecute, OnRemoveCanExecute);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public ICommand AddCommand { get; }
@@ -56,7 +56,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         public async override Task LoadAsync(int id)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(ProgrammingLanguageViewModel) Enter", Common.LOG_APPNAME);
 
             Id = id;
 
@@ -76,7 +76,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 ProgrammingLanguages.Add(wrapper);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(ProgrammingLanguageViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         void Wrapper_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -95,8 +95,8 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected override void OnDeleteExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
             throw new NotImplementedException();
         }
 
@@ -107,13 +107,14 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected async override void OnSaveExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(ProgrammingLanguageViewModel) Enter", Common.LOG_APPNAME);
 
             try
             {
                 await _programmingLanguageRepository.UpdateAsync();
                 HasChanges = _programmingLanguageRepository.HasChanges();
-                RaiseCollectionSavedEvent();
+
+                PublishAfterCollectionSavedEvent();
             }
             catch (Exception ex)
             {
@@ -128,12 +129,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 await LoadAsync(Id);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(ProgrammingLanguageViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         void OnAddExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(ProgrammingLanguageViewModel) Enter", Common.LOG_APPNAME);
 
             var wrapper = new ProgrammingLanguageWrapper(new Domain.ProgrammingLanguage());
             wrapper.PropertyChanged += Wrapper_PropertyChanged;
@@ -142,12 +143,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             wrapper.Name = "";  // Trigger the validation
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(ProgrammingLanguageViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private async void OnRemoveExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(ProgrammingLanguageViewModel) Enter", Common.LOG_APPNAME);
 
             var isReferenced =
                 await _programmingLanguageRepository.IsReferencedByFriendAsync(
@@ -168,7 +169,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             HasChanges = _programmingLanguageRepository.HasChanges();
             ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(ProgrammingLanguageViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         bool OnRemoveCanExecute()

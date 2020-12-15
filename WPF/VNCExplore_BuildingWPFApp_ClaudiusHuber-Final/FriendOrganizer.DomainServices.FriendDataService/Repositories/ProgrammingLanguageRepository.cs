@@ -16,19 +16,21 @@ namespace FriendOrganizer.DomainServices.Repositories
         public ProgrammingLanguageRepository(FriendOrganizerDbContext context) 
             : base(context)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public async Task<bool> IsReferencedByFriendAsync(int programmingLanguageId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(ProgrammingLanguageRepository) Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-            return await Context.Friends.AsNoTracking()
+            var result = await Context.Friends.AsNoTracking()
                 .AnyAsync(f => f.FavoriteLanguageId == programmingLanguageId);
+
+            Log.DOMAINSERVICES("(ProgrammingLanguageRepository) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
     }
 }

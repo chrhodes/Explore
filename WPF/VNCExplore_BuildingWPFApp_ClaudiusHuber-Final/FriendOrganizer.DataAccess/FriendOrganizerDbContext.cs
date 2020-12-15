@@ -11,9 +11,9 @@ namespace FriendOrganizer.DataAccess
     {
         public FriendOrganizerDbContext() : base("VNCFriendOrganizerDB")
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public DbSet<Friend> Friends{ get; set; }
@@ -26,7 +26,8 @@ namespace FriendOrganizer.DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.PERSISTENCE("Enter", Common.LOG_APPNAME);
+
             base.OnModelCreating(modelBuilder);
             
             // TODO(crhodes)
@@ -55,7 +56,7 @@ namespace FriendOrganizer.DataAccess
             //    //m.MapInheritedProperties();
             //    m.ToTable("Friend05");
             //});
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.PERSISTENCE("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 

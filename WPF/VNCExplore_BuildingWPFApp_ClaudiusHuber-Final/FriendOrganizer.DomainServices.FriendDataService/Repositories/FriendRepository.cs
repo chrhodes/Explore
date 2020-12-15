@@ -16,40 +16,44 @@ namespace FriendOrganizer.DomainServices.Repositories
     {
         public FriendRepository(FriendOrganizerDbContext context) : base(context)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public override async Task<Friend> FindByIdAsync(int friendId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(FriendRepository) Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-            return await Context.Friends
+            var result =  await Context.Friends
                 .Include(f => f.PhoneNumbers)
                 .SingleAsync(f => f.Id == friendId);
+
+            Log.DOMAINSERVICES("(FriendRepository) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
 
         public async Task<bool> HasMeetingsAsync(int friendId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(FriendRepository) Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-            return await Context.Meetings.AsNoTracking()
+            var result = await Context.Meetings.AsNoTracking()
                 .Include(m => m.Friends)
                 .AnyAsync(m => m.Friends.Any(f => f.Id == friendId));
+
+            Log.DOMAINSERVICES("(FriendRepository) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
 
         public void RemovePhoneNumber(FriendPhoneNumber model)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("Enter", Common.LOG_APPNAME);
 
             Context.FriendPhoneNumbers.Remove(model);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.DOMAINSERVICES("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

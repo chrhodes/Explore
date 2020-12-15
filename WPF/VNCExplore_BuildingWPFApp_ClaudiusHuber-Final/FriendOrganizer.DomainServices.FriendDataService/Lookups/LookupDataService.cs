@@ -20,22 +20,22 @@ namespace FriendOrganizer.DomainServices.Lookups
 
         public LookupDataService(Func<FriendOrganizerDbContext> contextCreator)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _contextCreator = contextCreator;
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public async Task<IEnumerable<LookupItem>> GetFriendLookupAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(LookupDataService) Enter", Common.LOG_APPNAME);
+
+            IEnumerable<LookupItem> result;
 
             using (var ctx = _contextCreator())
             {
-                Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-                return await ctx.Friends.AsNoTracking()
+                result = await ctx.Friends.AsNoTracking()
                   .Select(f =>
                   new LookupItem
                   {
@@ -44,17 +44,21 @@ namespace FriendOrganizer.DomainServices.Lookups
                   })
                   .ToListAsync();
             }
+
+            Log.DOMAINSERVICES("(LookupDataService) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
 
         public async Task<IEnumerable<LookupItem>> GetProgrammingLanguageLookupAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(LookupDataService) Enter", Common.LOG_APPNAME);
+
+            IEnumerable<LookupItem> result;
 
             using (var ctx = _contextCreator())
             {
-                Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-                return await ctx.ProgrammingLanguages.AsNoTracking()
+                result =  await ctx.ProgrammingLanguages.AsNoTracking()
                   .Select(f =>
                   new LookupItem
                   {
@@ -63,17 +67,21 @@ namespace FriendOrganizer.DomainServices.Lookups
                   })
                   .ToListAsync();
             }
+
+            Log.DOMAINSERVICES("(LookupDataService) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
 
         public async Task<IEnumerable<LookupItem>> GetMeetingLookupAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(LookupDataService) Enter", Common.LOG_APPNAME);
+
+            IEnumerable<LookupItem> result;
 
             using (var ctx = _contextCreator())
             {
-                Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-                return await ctx.Meetings.AsNoTracking()
+                 result = await ctx.Meetings.AsNoTracking()
                   .Select(m =>
                   new LookupItem
                   {
@@ -82,6 +90,10 @@ namespace FriendOrganizer.DomainServices.Lookups
                   })
                   .ToListAsync();
             }
+
+            Log.DOMAINSERVICES("(LookupDataService) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
     }
 }

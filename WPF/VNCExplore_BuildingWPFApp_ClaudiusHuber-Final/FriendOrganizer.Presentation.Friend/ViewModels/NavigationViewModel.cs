@@ -27,7 +27,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 IFriendLookupDataService friendLookupDataService,
                 IMeetingLookupDataService meetingLookupDataService)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _instanceCountVM++;
             _eventAggregator = eventAggregator;
@@ -44,7 +44,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             _eventAggregator.GetEvent<AfterDetailDeletedEvent>()
                 .Subscribe(AfterDetailDeleted);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         } 
 
         public int InstanceCountVM
@@ -55,7 +55,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         public async Task LoadAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(NavigationViewModel) Enter", Common.LOG_APPNAME);
 
             var lookupF = await _friendLookupDataService.GetFriendLookupAsync();
             Friends.Clear();
@@ -79,12 +79,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     _eventAggregator));
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(NavigationViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void AfterDetailSaved(AfterDetailSavedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             switch (args.ViewModelName)
             {
@@ -100,13 +100,13 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     throw new System.Exception($"AfterDetailSaved(): ViewModel {args.ViewModelName} not mapped.");
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void AfterDetailSaved(ObservableCollection<NavigationItemViewModel> items,
             AfterDetailSavedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             var lookupItem = items.SingleOrDefault(l => l.Id == args.Id);
 
@@ -121,12 +121,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 lookupItem.DisplayMember = args.DisplayMember;
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void AfterDetailDeleted(AfterDetailDeletedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             switch (args.ViewModelName)
             {
@@ -142,13 +142,13 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     throw new System.Exception($"AfterDetailDeleted(): ViewModel {args.ViewModelName} not mapped.");
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         void AfterDetailDeleted(ObservableCollection<NavigationItemViewModel> items,
             AfterDetailDeletedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             var lookupItem = items.SingleOrDefault(f => f.Id == args.Id);
 
@@ -157,7 +157,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 items.Remove(lookupItem);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

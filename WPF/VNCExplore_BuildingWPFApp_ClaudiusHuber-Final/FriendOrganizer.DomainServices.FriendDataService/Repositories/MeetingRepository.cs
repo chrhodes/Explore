@@ -17,35 +17,39 @@ namespace FriendOrganizer.DomainServices.Repositories
     {
         public MeetingRepository(FriendOrganizerDbContext context) : base(context)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public override async Task<Meeting> FindByIdAsync(int meetingId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(MeetingRepository) Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-            return await Context.Meetings
+            var result =  await Context.Meetings
                 .Include(m => m.Friends)
                 .SingleAsync(f => f.Id == meetingId);
+
+            Log.DOMAINSERVICES("(MeetingRepository) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
 
         public async Task<List<Friend>> GetAllFriendsAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(MeetingRepository) Enter", Common.LOG_APPNAME);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
-
-            return await Context.Set<Friend>()
+            var result = await Context.Set<Friend>()
                 .ToListAsync();
+
+            Log.DOMAINSERVICES("(MeetingRepository) Exit", Common.LOG_APPNAME, startTicks);
+
+            return result;
         }
 
         public async Task ReloadFriendAsync(int friendId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.DOMAINSERVICES("(MeetingRepository) Enter", Common.LOG_APPNAME);
 
             var dbEntityEntry = Context.ChangeTracker.Entries<Friend>()
                 .SingleOrDefault(db => db.Entity.Id == friendId);
@@ -55,7 +59,7 @@ namespace FriendOrganizer.DomainServices.Repositories
                 await dbEntityEntry.ReloadAsync();
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.DOMAINSERVICES("(MeetingRepository) Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

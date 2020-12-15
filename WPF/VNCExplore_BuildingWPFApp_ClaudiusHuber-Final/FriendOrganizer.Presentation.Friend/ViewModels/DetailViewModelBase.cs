@@ -27,7 +27,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             IEventAggregator eventAggregator,
             IMessageDialogService messageDialogService)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _instanceCountDVM++;
             EventAggregator = eventAggregator;
@@ -42,7 +42,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             CloseDetailViewCommand = new DelegateCommand(
                 OnCloseDetailViewExecute);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public ICommand SaveCommand { get; private set; }
@@ -86,9 +86,9 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected abstract void OnSaveExecute();
 
-        protected virtual void RaiseCollectionSavedEvent()
+        protected virtual void PublishAfterCollectionSavedEvent()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT("Enter", Common.LOG_APPNAME);
 
             EventAggregator.GetEvent<AfterCollectionSavedEvent>()
                 .Publish(new AfterCollectionSavedEventArgs
@@ -96,12 +96,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     ViewModelName = this.GetType().Name
                 });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         protected virtual void OnCloseDetailViewExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             if (HasChanges)
             {
@@ -114,6 +114,15 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 }
             }
 
+            PublishAfterDetailClosedEvent();
+
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
+        }
+
+        private void PublishAfterDetailClosedEvent()
+        {
+            Int64 startTicks = Log.EVENT("Enter", Common.LOG_APPNAME);
+
             EventAggregator.GetEvent<AfterDetailClosedEvent>()
                 .Publish(new AfterDetailClosedEventArgs
                 {
@@ -121,12 +130,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     ViewModelName = this.GetType().Name
                 });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT("Exit", Common.LOG_APPNAME, startTicks);
         }
 
-        protected virtual void RaiseDetailDeletedEvent(int modelId)
+        protected virtual void PublishAfterDetailDeletedEvent(int modelId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT("Enter", Common.LOG_APPNAME);
 
             EventAggregator.GetEvent<AfterDetailDeletedEvent>()
                 .Publish(new AfterDetailDeletedEventArgs
@@ -135,12 +144,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     ViewModelName = this.GetType().Name
                 });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT("Exit", Common.LOG_APPNAME, startTicks);
         }
 
-        protected virtual void RaiseDetailSavedEvent(int modelId, string displayMember)
+        protected virtual void PublishAfterDetailSavedEvent(int modelId, string displayMember)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT("Enter", Common.LOG_APPNAME);
 
             EventAggregator.GetEvent<AfterDetailSavedEvent>()
                 .Publish(new AfterDetailSavedEventArgs
@@ -150,7 +159,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     ViewModelName = this.GetType().Name
                 });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public int InstanceCountDVM
@@ -179,7 +188,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected async Task SaveWithOptimisticConcurrencyAsync(Func<Task> saveFunc, Action afterSaveAction)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             try
             {
@@ -193,7 +202,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 {
                     MessageDialogService.ShowInfoDialog(
                         "The entity has been deleted by another user.  Cannot continue.");
-                    RaiseDetailDeletedEvent(Id);
+                    PublishAfterDetailDeletedEvent(Id);
                     return;
                 }
 
@@ -221,7 +230,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             afterSaveAction();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

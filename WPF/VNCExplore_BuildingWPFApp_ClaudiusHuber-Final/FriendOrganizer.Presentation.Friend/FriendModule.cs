@@ -23,18 +23,18 @@ namespace FriendOrganizer.Presentation.Friend
 
         public FriendModule(IRegionManager regionManager)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _regionManager = regionManager;
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         // 02
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.MODULE("Enter", Common.LOG_APPNAME);
 
             containerRegistry.Register<ViewModels.IFriendDetailViewModel, ViewModels.FriendDetailViewModel>();
             containerRegistry.RegisterSingleton<Views.IFriendDetail, Views.FriendDetail>();
@@ -63,14 +63,14 @@ namespace FriendOrganizer.Presentation.Friend
 
             containerRegistry.Register<IMessageDialogService, MessageDialogService>();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.MODULE("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         // 03
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.MODULE("Enter", Common.LOG_APPNAME);
 
             //_containerProvider = containerProvider;
 
@@ -85,7 +85,7 @@ namespace FriendOrganizer.Presentation.Friend
 
             //_regionManager.RegisterViewWithRegion(RegionNames.RegionDetail, typeof(Views.FriendDetail));
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.MODULE("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

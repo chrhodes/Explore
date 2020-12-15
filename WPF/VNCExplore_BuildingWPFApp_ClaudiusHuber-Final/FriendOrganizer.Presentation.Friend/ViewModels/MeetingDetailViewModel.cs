@@ -35,7 +35,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             IMessageDialogService messageDialogService)
             : base(eventAggregator, messageDialogService)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _meetingRepository = meetingRepository;
 
@@ -51,12 +51,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             AddFriendCommand = new DelegateCommand(OnAddFriendExecute, OnAddFriendCanExecute);
             RemoveFriendCommand = new DelegateCommand(OnRemoveFriendExecute, OnRemoveFriendCanExecute);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private async void AfterDetailSaved(AfterDetailSavedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(MeetingDetailViewModel) Enter", Common.LOG_APPNAME);
 
             if (args.ViewModelName == nameof(FriendDetailViewModel))
             {
@@ -68,12 +68,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 SetupPicklist();
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(MeetingDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private async void AfterDetailDeleted(AfterDetailDeletedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(MeetingDetailViewModel) Enter", Common.LOG_APPNAME);
 
             if (args.ViewModelName == nameof(FriendDetailViewModel))
             {
@@ -82,7 +82,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 SetupPicklist();
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(MeetingDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public MeetingWrapper Meeting
@@ -124,9 +124,10 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 ((DelegateCommand)RemoveFriendCommand).RaiseCanExecuteChanged();
             }
         }
+
         public override async Task LoadAsync(int meetingId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(MeetingDetailViewModel) Enter", Common.LOG_APPNAME);
 
             var meeting = meetingId > 0
                 ? await _meetingRepository.FindByIdAsync(meetingId)
@@ -140,12 +141,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             SetupPicklist();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(MeetingDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void InitializeMeeting(Domain.Meeting meeting)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             Meeting = new MeetingWrapper(meeting);
 
@@ -176,7 +177,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             SetTitle();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void SetTitle()
@@ -186,15 +187,15 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected override async void OnSaveExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(MeetingDetailViewModel) Enter", Common.LOG_APPNAME);
 
             await _meetingRepository.UpdateAsync();
 
             HasChanges = _meetingRepository.HasChanges();
             Id = Meeting.Id;
-            RaiseDetailSavedEvent(Meeting.Id, Meeting.Title);
+            PublishAfterDetailSavedEvent(Meeting.Id, Meeting.Title);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(MeetingDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         protected override bool OnSaveCanExecute()
@@ -206,7 +207,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected override async void OnDeleteExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(MeetingDetailViewModel) Enter", Common.LOG_APPNAME);
 
             var result = MessageDialogService.ShowOkCancelDialog(
                 $"Do you really want to delete the meeting {Meeting.Title}?", "Question");
@@ -214,15 +215,15 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             {
                 _meetingRepository.Remove(Meeting.Model);
                 await _meetingRepository.UpdateAsync();
-                RaiseDetailDeletedEvent(Meeting.Id);
+                PublishAfterDetailDeletedEvent(Meeting.Id);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(MeetingDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private Domain.Meeting CreateNewMeeting()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             var meeting = new Domain.Meeting
             {
@@ -232,7 +233,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             _meetingRepository.Add(meeting);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
 
             return meeting;
         }
@@ -244,7 +245,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         private void OnRemoveFriendExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             var friendToRemove = SelectedAddedFriend;
 
@@ -254,7 +255,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             HasChanges = _meetingRepository.HasChanges();
             ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private bool OnAddFriendCanExecute()
@@ -264,7 +265,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         private void OnAddFriendExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(MeetingDetailViewModel) Enter", Common.LOG_APPNAME);
 
             var friendToAdd = SelectedAvailableFriend;
 
@@ -274,12 +275,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             HasChanges = _meetingRepository.HasChanges();
             ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(MeetingDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void SetupPicklist()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             var meetingFriendIds = Meeting.Model.Friends.Select(f => f.Id).ToList();
             var addedFriends = _allFriends.Where(f => meetingFriendIds.Contains(f.Id)).OrderBy(f => f.FirstName);
@@ -287,6 +288,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             AddedFriends.Clear();
             AvailableFriends.Clear();
+
             foreach (var addedFriend in addedFriends)
             {
                 AddedFriends.Add(addedFriend);
@@ -296,7 +298,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 AvailableFriends.Add(availableFriend);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

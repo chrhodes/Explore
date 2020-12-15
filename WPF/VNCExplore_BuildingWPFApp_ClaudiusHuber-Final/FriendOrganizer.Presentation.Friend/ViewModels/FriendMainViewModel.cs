@@ -38,7 +38,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             IEventAggregator eventAggregator,
             IMessageDialogService messageDialogService)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _eventAggregator = eventAggregator;
             _friendDetailViewModelCreator = friendDetailViewModelCreator;
@@ -65,7 +65,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             NavigationViewModel = navigationViewModel;
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public ObservableCollection<IDetailViewModel> DetailViewModels { get; }
@@ -85,18 +85,18 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         public async Task LoadAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(FriendMainViewModel) Enter", Common.LOG_APPNAME);
 
             await NavigationViewModel.LoadAsync();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(FriendMainViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private int _nextNewItemId = 0;
 
         private void OnCreateNewDetailExecute(Type viewModelType)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             OnOpenDetailView(
                 new OpenDetailViewEventArgs
@@ -105,12 +105,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     ViewModelName = viewModelType.Name
                 });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private async void OnOpenDetailView(OpenDetailViewEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(FriendMainViewModel) Enter", Common.LOG_APPNAME);
 
             var detailViewModel = DetailViewModels
                     .SingleOrDefault(vm => vm.Id == args.Id
@@ -147,36 +147,36 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     await NavigationViewModel.LoadAsync();
                     return;
                 }
-               
+
                 DetailViewModels.Add(detailViewModel);
             }
 
             SelectedDetailViewModel = detailViewModel;
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(FriendMainViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         void AfterDetailDeleted(AfterDetailDeletedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             RemoveDetailViewModel(args.Id, args.ViewModelName);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         void AfterDetailClosed(AfterDetailClosedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             RemoveDetailViewModel(args.Id, args.ViewModelName);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void RemoveDetailViewModel(int id, string viewModelName)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL(String.Format("Enter"), Common.LOG_APPNAME);
 
             var detailViewModel = DetailViewModels
                 .SingleOrDefault(vm => vm.Id == id
@@ -187,12 +187,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 DetailViewModels.Remove(detailViewModel);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         void OnOpenSingleDetailExecute(Type viewModelType)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             OnOpenDetailView(
                 new OpenDetailViewEventArgs
@@ -201,7 +201,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     ViewModelName = viewModelType.Name
                 });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

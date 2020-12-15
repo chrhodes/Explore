@@ -45,12 +45,12 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="300" />
-            <RowDefinition />
-            <RowDefinition Height="300" />
-            <RowDefinition  />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <GroupBox Header="Friends">
+        
+        <GroupBox Header="Friends" Grid.Row="0">
             <ScrollViewer
                 VerticalScrollBarVisibility="Auto"
                 HorizontalScrollBarVisibility="Auto" Background="Black">
@@ -60,6 +60,7 @@
                     ItemTemplate="{StaticResource NavigationItemTemplate}" />
             </ScrollViewer>
         </GroupBox>
+        
         <GroupBox Header="Meetings" Grid.Row="1">
             <ScrollViewer
                 VerticalScrollBarVisibility="Auto"
@@ -71,7 +72,7 @@
             </ScrollViewer>
         </GroupBox>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" >
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Black" >
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="V:" />
                 <Label Content="{Binding ElementName=ucNavigation, Path=InstanceCountV}" />
@@ -81,5 +82,6 @@
                 <Label Content="{Binding InstanceCountVM}" />
             </StackPanel>
         </StackPanel>
+
     </Grid>
 </UserControl>

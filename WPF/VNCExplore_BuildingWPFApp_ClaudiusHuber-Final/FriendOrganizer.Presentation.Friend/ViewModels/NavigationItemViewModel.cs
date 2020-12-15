@@ -6,10 +6,11 @@ using Prism.Events;
 using Prism.Mvvm;
 using VNC;
 using VNC.Core.Events;
+using VNC.Core.Mvvm;
 
 namespace FriendOrganizer.Presentation.Friend.ViewModels
 {
-    public class NavigationItemViewModel : BindableBase
+    public class NavigationItemViewModel : ViewModelBase
     {
         private IEventAggregator _eventAggregator;
 
@@ -22,7 +23,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             string detailViewModelName,
             IEventAggregator eventAggregator)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             Id = id;
             DisplayMember = displayMember;
@@ -31,7 +32,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             OpenDetailViewCommand = new DelegateCommand(OnOpenDetailViewExecute);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public int Id { get; set; }
@@ -44,7 +45,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 if (_displayMember == value)
                     return;
                 _displayMember = value;
-                RaisePropertyChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -52,7 +53,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         private void OnOpenDetailViewExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT("Enter", Common.LOG_APPNAME);
 
             _eventAggregator.GetEvent<OpenDetailViewEvent>()
                   .Publish
@@ -64,7 +65,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                         }
                     );
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

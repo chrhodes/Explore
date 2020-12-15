@@ -24,7 +24,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 IFriendLookupDataService friendLookupDataService,
                 IEventAggregator eventAggregator)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _instanceCountVM++;
             _dataService = friendLookupDataService;
@@ -38,7 +38,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             _eventAggregator.GetEvent<AfterDetailDeletedEvent>()
                 .Subscribe(AfterDetailDeleted);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         } 
 
         public int InstanceCountVM
@@ -49,7 +49,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         public async Task LoadAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(FriendViewModel) Enter", Common.LOG_APPNAME);
 
             var lookup = await _dataService.GetFriendLookupAsync();
             Friends.Clear();
@@ -62,12 +62,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     _eventAggregator));
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEW("(FriendViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void AfterDetailSaved(AfterDetailSavedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             switch (args.ViewModelName)
             {
@@ -87,12 +87,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     break;
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void AfterDetailDeleted(AfterDetailDeletedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             switch (args.ViewModelName)
             {
@@ -106,7 +106,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                     break;
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

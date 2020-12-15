@@ -42,7 +42,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             IProgrammingLanguageLookupDataService programmingLanguageLookupDataService)
             : base(eventAggregator, messageDialogService)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
 
             _friendRepository = friendRepository;
             _programmingLanguageLookupDataService = programmingLanguageLookupDataService;
@@ -59,19 +59,19 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             ProgrammingLanguages = new ObservableCollection<LookupItem>();
             PhoneNumbers = new ObservableCollection<FriendPhoneNumberWrapper>();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private async void AfterCollectionSaved(AfterCollectionSavedEventArgs args)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(FriendDetailViewModel) Enter", Common.LOG_APPNAME);
 
             if (args.ViewModelName == nameof(ProgrammingLanguageDetailViewModel))
             {
                 await LoadProgrammingLanguagesLookupAsync();
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(FriendDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public FriendWrapper Friend
@@ -97,7 +97,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         public override async Task LoadAsync(int friendId)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(FriendDetailViewModel) Enter", Common.LOG_APPNAME);
 
             var friend = friendId > 0
                 ? await _friendRepository.FindByIdAsync(friendId)
@@ -111,12 +111,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             await LoadProgrammingLanguagesLookupAsync();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(FriendDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void InitializeFriend(Domain.Friend friend)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             Friend = new FriendWrapper(friend);
 
@@ -149,7 +149,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
             SetTitle();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void SetTitle()
@@ -159,7 +159,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         private void InitializeFriendPhoneNumbers(ICollection<FriendPhoneNumber> phoneNumbers)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             foreach (var wrapper in PhoneNumbers)
             {
@@ -173,12 +173,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 wrapper.PropertyChanged += FriendPhoneNumberWrapper_PropertyChanged;
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void FriendPhoneNumberWrapper_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT("Enter", Common.LOG_APPNAME);
 
             if (!HasChanges)
             {
@@ -189,12 +189,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private async Task LoadProgrammingLanguagesLookupAsync()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("(FriendDetailViewModel) Enter", Common.LOG_APPNAME);
 
             ProgrammingLanguages.Clear();
 
@@ -209,22 +209,23 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 ProgrammingLanguages.Add(lookupItem);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("(FriendDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         protected override async void OnSaveExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(FriendDetailViewModel) Enter", Common.LOG_APPNAME);
 
             await SaveWithOptimisticConcurrencyAsync(_friendRepository.UpdateAsync,
               () =>
               {
                   HasChanges = _friendRepository.HasChanges();
                   Id = Friend.Id;
-                  RaiseDetailSavedEvent(Friend.Id, $"{Friend.FirstName} {Friend.LastName}");
+
+                  PublishAfterDetailSavedEvent(Friend.Id, $"{Friend.FirstName} {Friend.LastName}");
               });
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(FriendDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         protected override bool OnSaveCanExecute()
@@ -237,7 +238,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         protected override async void OnDeleteExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("(FriendDetailViewModel) Enter", Common.LOG_APPNAME);
 
             if (await _friendRepository.HasMeetingsAsync(Friend.Id))
             {
@@ -251,15 +252,15 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             {
                 _friendRepository.Remove(Friend.Model);
                 await _friendRepository.UpdateAsync();
-                RaiseDetailDeletedEvent(Friend.Id);
+                PublishAfterDetailDeletedEvent(Friend.Id);
             }
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("(FriendDetailViewModel) Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void OnAddPhoneNumberExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             var newNumber = new FriendPhoneNumberWrapper(new FriendPhoneNumber());
             newNumber.PropertyChanged += FriendPhoneNumberWrapper_PropertyChanged;
@@ -267,12 +268,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             Friend.Model.PhoneNumbers.Add(newNumber.Model);
             newNumber.Number = ""; // Trigger validation :-)
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private void OnRemovePhoneNumberExecute()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.EVENT_HANDLER("Enter", Common.LOG_APPNAME);
 
             SelectedPhoneNumber.PropertyChanged -= FriendPhoneNumberWrapper_PropertyChanged;
             _friendRepository.RemovePhoneNumber(SelectedPhoneNumber.Model);
@@ -281,7 +282,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
             HasChanges = _friendRepository.HasChanges();
             ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.EVENT_HANDLER("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         private bool OnRemovePhoneNumberCanExecute()
@@ -291,12 +292,12 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         private Domain.Friend CreateNewFriend()
         {
-            Int64 startTicks = Log.Trace(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             var friend = new Domain.Friend();
             _friendRepository.Add(friend);
 
-            Log.Trace(String.Format("Exit"), Common.LOG_APPNAME, startTicks);
+            Log.VIEWMODEL("Exit", Common.LOG_APPNAME, startTicks);
 
             return friend;
         }
