@@ -44,9 +44,9 @@
   <ItemGroup>
     <Compile Include="Common.cs" />
     <Compile Include="FriendOrganizerDbContext.cs" />
-    <Compile Include="Migrations\201905200314319_InitialDatabase.cs" />
-    <Compile Include="Migrations\201905200314319_InitialDatabase.Designer.cs">
-      <DependentUpon>201905200314319_InitialDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202012171639516_Initial Database.cs" />
+    <Compile Include="Migrations\202012171639516_Initial Database.designer.cs">
+      <DependentUpon>202012171639516_Initial Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905200314319_InitialDatabase.resx">
-      <DependentUpon>201905200314319_InitialDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012171639516_Initial Database.resx">
+      <DependentUpon>202012171639516_Initial Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

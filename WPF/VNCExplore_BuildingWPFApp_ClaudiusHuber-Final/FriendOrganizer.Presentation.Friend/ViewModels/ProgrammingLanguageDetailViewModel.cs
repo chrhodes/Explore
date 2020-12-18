@@ -124,7 +124,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
                 }
 
                 MessageDialogService.ShowInfoDialog(
-                    "Error while saving th entities, " +
+                    "Error while saving the entities, " +
                     "the data will be reloaded.  Details: " + ex.Message);
                 await LoadAsync(Id);
             }

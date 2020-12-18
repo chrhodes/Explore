@@ -176,7 +176,7 @@ namespace FriendOrganizer.Presentation.Friend.ViewModels
 
         private void RemoveDetailViewModel(int id, string viewModelName)
         {
-            Int64 startTicks = Log.VIEWMODEL(String.Format("Enter"), Common.LOG_APPNAME);
+            Int64 startTicks = Log.VIEWMODEL("Enter", Common.LOG_APPNAME);
 
             var detailViewModel = DetailViewModels
                 .SingleOrDefault(vm => vm.Id == id
