@@ -135,18 +135,18 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" /> <!-- Commands -->
-            <RowDefinition Height="Auto" /> <!-- HTTP -->
-            <RowDefinition Height="Auto" /> <!-- HTTP -->
-            <RowDefinition Height="Auto" /> <!-- Projects -->
-            <RowDefinition Height="Auto" /> <!-- Project -->
-            <RowDefinition Height="Auto" /> <!-- Process -->
-            <RowDefinition Height="Auto" /> <!-- Teams -->
-            <RowDefinition Height="Auto" /> <!-- Lists -->
-            <RowDefinition Height="Auto" /> <!-- WorkItemTypes -->
-            <RowDefinition Height="Auto" /> <!-- Fields -->
-            <RowDefinition Height="Auto" /> <!-- Field -->
-            <RowDefinition Height="Auto" /> <!-- States -->
+            <RowDefinition Height="Auto" /> <!-- 00 Commands -->
+            <RowDefinition Height="Auto" /> <!-- 01 HTTP -->
+            <RowDefinition Height="Auto" /> <!-- 02 HTTP -->
+            <RowDefinition Height="Auto" /> <!-- 03 Projects -->
+            <RowDefinition Height="Auto" /> <!-- 04 Project -->
+            <RowDefinition Height="Auto" /> <!-- 05 Process -->
+            <RowDefinition Height="Auto" /> <!-- 06 Teams -->
+            <RowDefinition Height="Auto" /> <!-- 07 Lists -->
+            <RowDefinition Height="Auto" /> <!-- 08 WorkItemTypes -->
+            <RowDefinition Height="Auto" /> <!-- 09 Fields -->
+            <RowDefinition Height="Auto" /> <!-- 10 Field -->
+            <RowDefinition Height="Auto" /> <!-- 11 States -->
         </Grid.RowDefinitions>
         
         <!-- Commands -->
@@ -547,7 +547,7 @@
             </Grid>
         </Expander>
 
-        <Expander Grid.Row="5" Header="Process" FontSize="16" Foreground="Red" IsExpanded="False">
+        <Expander Grid.Row="5" Header="Processes" FontSize="16" Foreground="Red" IsExpanded="False">
             
             <StackPanel>
 
@@ -840,7 +840,6 @@
 
             </Grid>
         </Expander>
-
 
         <Expander Grid.Row="11" Header="States" FontSize="16" Foreground="Red" IsExpanded="False">
 
