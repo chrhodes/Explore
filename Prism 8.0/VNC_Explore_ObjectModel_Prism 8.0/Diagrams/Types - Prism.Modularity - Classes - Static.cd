@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Prism.Modularity.FileModuleTypeLoader">
+    <Position X="0.5" Y="11.5" Width="6.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Modularity.IModuleCatalogCommonExtensions">
+    <Position X="0.5" Y="0.5" Width="4" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Modularity.IModuleCatalogExtensions">
+    <Position X="0.5" Y="2.5" Width="11" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Modularity.ModuleConfigurationElementCollection">
+    <Position X="0.5" Y="15" Width="6" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Modularity.ModuleDependencyCollection">
+    <Position X="8.5" Y="13.25" Width="5.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Modularity.ModuleDependencyConfigurationElement">
+    <Position X="10.25" Y="11.5" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Modularity.ModuleDependencySolver">
+    <Position X="8.5" Y="16.25" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Modularity.ModuleInfoGroupExtensions">
+    <Position X="0.5" Y="5.75" Width="8.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
