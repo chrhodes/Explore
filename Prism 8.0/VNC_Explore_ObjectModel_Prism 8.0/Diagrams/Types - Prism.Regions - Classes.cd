@@ -1,2 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Prism.Regions.AllActiveRegion">
+    <Position X="3.5" Y="0.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.ContentControlRegionAdapter">
+    <Position X="8.25" Y="0.5" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.IRegionBehaviorFactoryExtensions">
+    <Position X="10.75" Y="11.5" Width="6" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.ItemMetadata">
+    <Position X="7.5" Y="11.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.ItemsControlRegionAdapter">
+    <Position X="14.25" Y="0.5" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.NavigationAsyncExtensions">
+    <Position X="11" Y="13.25" Width="9.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.NavigationContext">
+    <Position X="10.5" Y="16" Width="7.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.NavigationParameters">
+    <Position X="4.25" Y="14.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.NavigationResult">
+    <Position X="13" Y="18.5" Width="4" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.Region">
+    <Position X="1" Y="3.75" Width="7.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Regions.RegionAdapterBase&lt;T&gt;">
+    <Position X="11.25" Y="3.25" Width="4.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Regions.RegionAdapterMappings">
+    <Position X="7.75" Y="18.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.RegionBehavior">
+    <Position X="7.75" Y="15.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Regions.RegionBehaviorCollection">
+    <Position X="1" Y="11.25" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Regions.RegionBehaviorFactory">
+    <Position X="1" Y="16.75" Width="4" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Regions.RegionContext">
+    <Position X="10" Y="21" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.RegionManager">
+    <Position X="16.75" Y="3.75" Width="9" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Prism.Regions.RegionMemberLifetimeAttribute">
+    <Position X="0.75" Y="14" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Prism.Regions.RegionNavigationContentLoader">
+    <Position X="0.75" Y="19.75" Width="6.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
