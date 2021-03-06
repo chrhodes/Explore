@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.BasicCustomTraceListenerData">
+    <Position X="16.5" Y="8.75" Width="8" />
+    <InheritanceLine Type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.TraceListenerData" ManuallyRouted="true">
+      <Path>
+        <Point X="19.125" Y="33" />
+        <Point X="19.125" Y="21.101" />
+        <Point X="20.5" Y="21.101" />
+        <Point X="20.5" Y="12.934" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.CustomTraceListenerData">
+    <Position X="12.75" Y="4.25" Width="6.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.EmailTraceListenerData">
+    <Position X="0.5" Y="14.75" Width="19.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FlatFileTraceListenerData">
+    <Position X="7" Y="22.25" Width="8.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FormattedEventLogTraceListenerData">
+    <Position X="5.75" Y="27.5" Width="9.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.MsmqTraceListenerData">
+    <Position X="21.5" Y="14.5" Width="21.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.RollingFlatFileTraceListenerData">
+    <Position X="21.5" Y="21.75" Width="15.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.SystemDiagnosticsTraceListenerData">
+    <Position X="21.25" Y="4.25" Width="7" />
+    <InheritanceLine Type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.BasicCustomTraceListenerData" ManuallyRouted="true">
+      <Path>
+        <Point X="20.5" Y="8.75" />
+        <Point X="20.5" Y="7.63" />
+        <Point X="24.75" Y="7.63" />
+        <Point X="24.75" Y="6.511" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.TraceListenerData">
+    <Position X="15.75" Y="33" Width="6.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.XmlTraceListenerData">
+    <Position X="21.75" Y="26.75" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

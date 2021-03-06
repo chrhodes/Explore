@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.CategoryFilterData">
+    <Position X="1" Y="0.75" Width="8.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.CustomLogFilterData">
+    <Position X="1" Y="4.5" Width="8" />
+    <InheritanceLine Type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LogFilterData" ManuallyRouted="true">
+      <Path>
+        <Point X="10.125" Y="8.5" />
+        <Point X="10.125" Y="8.358" />
+        <Point X="5" Y="8.358" />
+        <Point X="5" Y="8.108" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LogEnabledFilterData">
+    <Position X="11" Y="0.75" Width="3.5" />
+    <InheritanceLine Type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LogFilterData" ManuallyRouted="true">
+      <Path>
+        <Point X="10.125" Y="8.5" />
+        <Point X="10.125" Y="3.344" />
+        <Point X="12.75" Y="3.344" />
+        <Point X="12.75" Y="3.011" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LogFilterData">
+    <Position X="8.75" Y="8.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.PriorityFilterData">
+    <Position X="11" Y="3.75" Width="3.5" />
+    <InheritanceLine Type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LogFilterData" ManuallyRouted="true">
+      <Path>
+        <Point X="10.125" Y="8.5" />
+        <Point X="10.125" Y="7.034" />
+        <Point X="12.75" Y="7.034" />
+        <Point X="12.75" Y="6.204" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

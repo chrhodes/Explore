@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.ContextItems" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.ExceptionFormatter" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogEntry">
+    <Position X="10.5" Y="6" Width="9.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Logger">
+    <Position X="0.75" Y="13.25" Width="9.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LoggingConfiguration" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LoggingConfigurationExtensions" Collapsed="true">
+    <Position X="1.75" Y="6" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LoggingException" Collapsed="true">
+    <Position X="2.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogSource" Collapsed="true">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogSourceData" Collapsed="true">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogSourceDataCollection" Collapsed="true">
+    <Position X="4.25" Y="7" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogWriter">
+    <Position X="10.5" Y="13.25" Width="18" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogWriterFactory" Collapsed="true">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.LogWriterStructureHolder" Collapsed="true">
+    <Position X="5.75" Y="2.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.SpecialLogSourceData" Collapsed="true">
+    <Position X="6" Y="3.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.SpecialSourcesConfiguration" Collapsed="true">
+    <Position X="6" Y="4" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListenerFilter" Collapsed="true">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceManager" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.Tracer" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.XmlLogEntry">
+    <Position X="10" Y="3.25" Width="9.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="Microsoft.Practices.EnterpriseLibrary.Logging.CategoryFilterMode">
+    <Position X="0.5" Y="9" Width="1.75" />
+    <TypeIdentifier />
+  </Enum>
+  <Delegate Name="Microsoft.Practices.EnterpriseLibrary.Logging.ReportTracingError">
+    <Position X="2.75" Y="9" Width="1.75" />
+    <TypeIdentifier />
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

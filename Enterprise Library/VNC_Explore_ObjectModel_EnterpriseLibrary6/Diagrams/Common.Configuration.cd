@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedConfigurationElement">
+    <Position X="1.25" Y="5.5" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NameTypeConfigurationElement">
+    <Position X="1" Y="2.5" Width="3.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Configuration.ConfigurationElement">
+    <Position X="1" Y="9.25" Width="8" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

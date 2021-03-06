@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.AsynchronousTraceListenerWrapper">
+    <Position X="12.25" Y="1.25" Width="13.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.CustomTraceListener">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.EmailTraceListener">
+    <Position X="7.75" Y="8.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.EntLibLoggingProxyTraceListener">
+    <Position X="3.75" Y="0.5" Width="8" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.EnvironmentHelper">
+    <Position X="0.5" Y="2.5" Width="3.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FlatFileTraceListener">
+    <Position X="0.5" Y="25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedEventLogTraceListener">
+    <Position X="11.25" Y="5.75" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedTextWriterTraceListener">
+    <Position X="0.75" Y="27.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedTraceListenerBase">
+    <Position X="11.75" Y="12.25" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedTraceListenerWrapperBase">
+    <Position X="11.25" Y="8.5" Width="3.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.MsmqSendInterfaceFactory">
+    <Position X="7.25" Y="19.75" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.MsmqTraceListener">
+    <Position X="16" Y="8.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFilePurger">
+    <Position X="7.5" Y="17.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFileTraceListener">
+    <Position X="0.5" Y="16.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFileTraceListener.DateTimeProvider">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFileTraceListener.StreamWriterRollingHelper">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
