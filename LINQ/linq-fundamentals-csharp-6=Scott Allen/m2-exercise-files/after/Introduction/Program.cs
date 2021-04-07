@@ -15,6 +15,8 @@ namespace Introduction
             ShowLargeFilesWithoutLinq(path);
             Console.WriteLine("***");
             ShowLargeFilesWithLinq(path);
+            Console.WriteLine("\nEnter to Exit");
+            Console.ReadLine();
         }
 
         private static void ShowLargeFilesWithLinq(string path)

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Queries
 {
@@ -18,9 +15,37 @@ namespace Queries
             }
         }
                     
-        public static IEnumerable<T> Filter<T>(this IEnumerable<T> source,
+        public static IEnumerable<T> MyFilter<T>(this IEnumerable<T> source,
                                                Func<T, bool> predicate)
         {
+            var result = new List<T>();
+
+            foreach (var item in source)
+            {
+                if (predicate(item))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+
+            // LINQ does it this way
+
+            //foreach (var item in source)
+            //{
+            //    if (predicate(item))
+            //    {
+            //        yield return item;
+            //    }
+            //}
+        }
+
+        public static IEnumerable<T> MyFilterYield<T>(this IEnumerable<T> source,
+                                               Func<T, bool> predicate)
+        {
+            //LINQ does it this way
+
             foreach (var item in source)
             {
                 if (predicate(item))
