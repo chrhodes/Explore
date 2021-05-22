@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Interface Name="System.ComponentModel.IDataErrorInfo">
-    <Position X="5.75" Y="5.75" Width="1.5" />
+    <Position X="5.75" Y="5.75" Width="2.75" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="System.ComponentModel.INotifyPropertyChanged">
-    <Position X="0.5" Y="5.75" Width="3.25" />
+    <Position X="1" Y="5.75" Width="3.5" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.IPropertyOwner">
-    <Position X="3.5" Y="3.25" Width="3" />
+    <Position X="3.5" Y="3.25" Width="3.25" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="Microsoft.TeamFoundation.TestManagement.Client.ITestObject&lt;T&gt;">
-    <Position X="3.5" Y="0.5" Width="2.75" />
+    <Position X="3.5" Y="0.5" Width="3.25" />
     <InheritanceLine Type="System.ComponentModel.IDataErrorInfo" ManuallyRouted="true">
       <Path>
-        <Point X="6.5" Y="5.75" />
-        <Point X="6.5" Y="5.179" />
+        <Point X="7.125" Y="5.75" />
+        <Point X="7.125" Y="5.179" />
         <Point X="2.721" Y="5.179" />
         <Point X="2.721" Y="2.881" />
-        <Point X="4.875" Y="2.881" />
-        <Point X="4.875" Y="2.506" />
+        <Point X="5.125" Y="2.881" />
+        <Point X="5.125" Y="2.506" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier />
